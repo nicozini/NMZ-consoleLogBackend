@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+   <%- include('partials/head')%>
+   <link rel="stylesheet" href='/css/register.css'/>
+</head>   
+<body>
+  <%- include('partials/header')%>
+
+  <main class="main-register">
+    <section>
+      <div class="register">
+        <marquee>Registrate y Obtene Beneficios</marquee>
+        <form action="/" class="formulario">
+          <div class="form-control">
+            <input type="text" name="name" id="name" placeholder="Nombre" required class="control">
+            <span class="Feedback"></span>
+          </div>
+          <div class="form-control">
+            <input type="text" name="lastname" id="lastname" placeholder="Apellido" required class="control" >
+            <span class="Feedback"></span>
+          </div>          
+          <div class="form-control">
+            <input type="text" name="user" id="user" placeholder="Nombre de usuario" required class="control" >
+            <span class="Feedback"></span>
+          </div>
+          <div class="form-control">
+            <label class="label"for="dateBrith">Fecha de Nacimiento:</label>
+            <input type="date" name="dateBrith" id="dateBrith" class="control">
+          </div>
+
+          <div class="form-control form-address" >
+            <input type="text" name="address" id="address" placeholder="Domicilio" class="control" required>
+            <div class="address-especification">
+              <label  class="label" for="numaddress">Nro:</label>
+              <input type="number" name="numaddress" id="numaddress" placeholder="123" class="control" required>
+            </div>
+            <div class="address-especification">
+              <label class="label" for="floor">Piso:</label>
+              <input type="text" name="floor" id="floor" placeholder="PB" class="control">
+            </div>              
+            <div class="address-especification">
+              <label class="label" for="numFloor">Nro:</label>
+              <input type="number" name="numFloor" id="numFloor" placeholder="0" class="control">
+            </div>
+          </div>
+          <div class="form-control">
+            <label class="label" for="city">Localidad:</label>
+                <select name="city" id="city" class="control" required>
+                    <option value="CF">Capital Federal</option>
+                    <option value="Co">Cordoba</option>
+                    <option value="Ro">Rosario</option>
+                    <option value="MZ">Mendoza</option>
+                </select>
+          </div>
+          <div class="form-control">
+            <input type="email" name="email" id="email" placeholder="usuario@gmail.com" class="control" required>
+            <span class="Feedback"></span>
+          </div>
+          <div class="form-control">
+            <input type="password" name="pass" id="pass" placeholder="Contraseña" class="control" required>
+          </div>
+          <div class="form-control">
+            <input type="password" name="confirmpass" id="confirmpass" placeholder="Confirmar contraseña"
+              class="control" required>
+          </div>
+          <div class="form-control">
+            <label class="label" for="fiscalCondition">Condicion Fiscal:</label>
+            <select name="fiscalCondition" class="control" id="fiscalCondition">
+              <option selected value="CF">Consumidor Final</option>
+              <option value="RI">Responsable Inscripto</option>
+              <option value="Mo">Monotributo</option>
+              <option value="Ex">Exento</option>
+              <option value="NC">No categorizado</option>
+            </select>
+          </div>
+          <div class="form-control">
+            <input type="number" name="idfiscal" id="idfiscalame" placeholder="Cuit" required class="control">
+            <span class="Feedback"></span>
+          </div>
+          <div class="check">
+            <label class="label" for="agree">Acepto los terminos y condiciones de este sitio</label>
+              <input type="radio" name="agree" id="agree" required> 
+            <br>
+            <label  class="label" for="newsleter">Deseo recibir promociones y ofertas por e-mail</label>
+              <input type="radio" name="newsleter" id="newsleter" >
+          </div>          
+          <br>
+          <img src="/images/captcha.png" alt="Captcha">
+          <div class="form-control buttons">
+            <input type="submit" value="Enviar" class="submit button-form">
+            <input type="reset" value="Limpiar" class="button-form">
+          </div>
+        </form>
+      </div>  
+    </section>
+  </main>
+  <%- include('partials/footer')%>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/head')%>
+    <link rel="stylesheet" href="/css/productCart.css" />
+  </head>
+<body>
+  <%- include('partials/header')%>
+  <main class="main-cart">
+    <section class="list">
+      <h2>Mi pedido</h2>
+      <form action="/" class="cart-items">
+        <article>
+          <i class="fas fa-trash"></i>
+          <img src="/images/naranja.jpeg" alt="naranja" class="image">
+          <div class="product-detail">
+            <h3>Naranjas</h3>
+            <h5>Valor por Kilo</h5>
+            <h4>Cantdad</h4>
+          </div>
+          <div class="form-control">
+            <input type="number" name="amount" value="1" min="1" max="50" step="1" class="amount control" />
+          </div>
+          <h3 class="value">$130,00</h3>
+        </article>
+        <hr>
+        <article>
+          <i class="fas fa-trash"></i>
+          <img src="/images/Manzana.webp" alt="Manzana" class="image">
+          <div class="product-detail">
+            <h3>Manzanas</h3>
+            <h5>Valor por Kilo</h5>
+            <h4>Cantdad</h4>
+          </div>
+          <div class="form-control">
+            <input type="number" name="cant" value="1" min="1" max="50" step="1" class="amount control" />
+          </div>
+          <h3 class="value">$130,00</h3>
+        </article>
+        <hr>
+        <article>
+          <i class="fas fa-trash"></i>
+          <img src="/images/frutilla.jpeg" alt="frutilla" class="image">
+          <div class="product-detail">
+            <h3>Frutillas</h3>
+            <h5>Valor por Kilo</h5>
+            <h4>Cantdad</h4>
+          </div>
+          <div class="form-control">
+            <input type="number" name="cant" value="1" min="1" max="50" step="1" class="amount control" />
+          </div>
+          <h3 class="value">$130,00</h3>
+        </article>
+        <hr>
+        <article>
+          <i class="fas fa-trash"></i>
+          <img src="/images/pera.jpeg" alt="perz" class="image">
+          <div class="product-detail">
+            <h3>Peras</h3>
+            <h5>Valor por Kilo</h5>
+            <h4>Cantdad</h4>
+          </div>
+          <div class="form-control">
+            <input type="number" name="cant" value="1" min="1" max="50" step="1" class="amount control" />
+          </div>
+          <h3 class="value">$130,00</h3>
+        </article>
+        <hr>
+        <article>
+          <i class="fas fa-trash"></i>
+          <img src="/images/banana.jpg" alt="Banana" class="image">
+          <div class="product-detail">
+            <h3>Bananas</h3>
+            <h5>Valor por Kilo</h5>
+            <h4>Cantdad</h4>
+          </div>
+          <div class="form-control">
+            <input type="number" name="cant" value="1" min="1" max="50" step="1" class="amount control" />
+          </div>
+          <h3 class="value">$130,00</h3>
+        </article>
+        <hr>
+        <div class="total">
+          <i class="fas fa-truck"></i>
+          <h4>Total:$1.500,45</h4>
+        </div>
+        <div class="form-control buttons">
+          <input type="submit" value="Continuar" class="submit button-form">
+          <input type="reset" value="Volver a productos" class="button-form">
+        </div>
+      </form>
+    </section>
+    <section class="total-cart">
+      <form action="/" class="rigth-form">
+        <div class="resume balloon">
+          <p>Total del Pedido</p>
+          <h3>$1.500,45</h3>
+          <p>Código de Descuento</p>
+          <input type="text" name="disconunt-cod" id="disconunt-cod">
+          <p>Total cón descuento:</p>
+          <h2>$1.500,45</h2>
+        </div>
+        <div class="shipping balloon">
+          <h3>Detalle de Envío</h3>
+          <p>Su pedido sera entregado en</p>
+          <p>San Martin 455 PB <a href="/">cambiar</a></p>
+          <h3>Costo: $200</h3>
+        </div>
+        <div class="total-total balloon">
+          <h3>Total a Abonar</h3>
+          <h2>$1.700,45</h2>
+        </div>
+      </form>
+    </section>
+  </main>
+  <!-- El carrito no lleva Footer para manejar los botones fixed  -->
+  
+</body>
+</html>

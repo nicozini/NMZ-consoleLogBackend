@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/head')%>
+    <link rel="stylesheet" href="/css/styles.css" /> 
+  </head>
+  <body>
+    <%- include('partials/header')%>
+    <main>
+      <section class="order">
+        <h2>Mercado Online <br> de Frutas y Verduras.</h2>
+        <p>
+          Encuentra las mejores frutas y verduras en nuestro market.<br>¡Anímate y
+          explora!
+        </p>
+        <button class="order-button">
+          <a href="/views/productCart.html">¡Haz tu pedido aquí!</a>          
+        </button>
+      </section>
+
+      <div class="background-video">
+        <!-- <video autoplay muted loop width="100px" height="350px" id="video-fruits">
+          <source src="/videos/fruits240px.mp4" type="video/mp4">
+        </video>         -->
+        <img src="/images/image-fruits.png" alt="Frutas" class="image-fruits">
+      </div>
+
+      <section class="search">
+        <div class="search-bar">
+          <input type="text" id="searchterm" placeholder="Busca frutas, verduras y productos aquí"/>
+          <button type="button">
+              <i class="fas fa-search"></i>
+          </button>
+       </div>
+      </section>
+
+      <section class="products-main">
+        <article class="container">
+          <img src="/images/products-fruits.jpg" alt="Avatar" class="image" style="width:100%">
+          <div class="detail">
+            <div class="text">Frutas y Verduras</div>
+          </div>
+        </article>
+        <article class="container">
+          <img src="/images/products-bol.jpg" alt="Avatar" class="image" style="width:100%">
+          <div class="detail">
+            <div class="text">Bolsones</div>
+          </div>
+        </article>
+        <article class="container">
+          <img src="/images/products-diet.jpg" alt="Avatar" class="image" style="width:100%">
+          <div class="detail">
+            <div class="text">Productos Dieteticos</div>
+          </div>
+        </article>
+        <article class="container">
+          <img src="/images/products-grocery.jpg" alt="Avatar" class="image" style="width:100%">
+          <div class="detail">
+            <div class="text">Almacen Natural</div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <section class="banner-container">
+      <article class="banner-facebook">
+        <img src="/images/banner-facebook.jpg" alt="Banner facebook" style="width:100%">
+      </article>
+    </section>
+
+    <%-include('partials/footer')%>
+  </body>
+</html>

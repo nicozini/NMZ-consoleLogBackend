@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f6f6f6;
+}
+
+
+/* Trabajo sobre el nav */
+@media screen and (min-width: 361px) {
+article{
+  margin-top: 120px;
+}
+nav {
+  display: flex;
+  flex-direction: column;
+}
+.naranja-img{
+  margin-right: 18%;
+  margin-left: 18%;
+  width: 64%;
+  border-radius: 8px;
+}
+
+.product-desc{
+  margin-right: 18%;
+  margin-left: 18%;
+  width: 64%;
+}
+
+.product-desc h4{
+    margin: 8px 0px;
+}
+.product-desc h3{
+  margin: 8px 0px;
+}
+.column img{
+  border-radius: 6px;
+}
+.column2 img{
+  border-radius: 6px;
+}
+
+.buttons{
+      color: white;
+      padding: 15px 32px;
+      display: flex;
+      flex-direction: row;
+      font-size: 16px;
+      margin-right: 18%;
+      margin-left: 18%;
+      width: 64%;
+}
+
+.add-bt{
+  background-color: #8cb944;
+  padding: 10px 32px;
+  border-radius: 7px;
+}
+
+.description{
+  margin-right: 18%;
+  margin-left: 18%;
+  width: 64%;
+  margin-top: 25px;
+}
+.relproduct{
+  text-align: center;
+  margin-top: 25px;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 15px;
+  border-radius: 5px;
+}
+.column2{
+  display: none;
+}
+
+.product-desc2{
+    text-align: left;
+}
+.descrel{
+  font-weight: bold;
+}
+}
+
+@media only screen and (min-width: 769px) {
+    article{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        margin-right: 10%;
+        margin-left: 10%;
+        margin-top: 130px;
+    }
+     div .imgproduct{
+        width: 60%;
+        margin-right:0%;
+    }
+    .conteiner1{
+      width: 40%;
+    }
+    .product-desc{
+        text-align: left;
+        margin-left: 0%;
+    }
+    div .buttons{
+      
+      margin-left: 0px;
+      margin-right: 0px;
+      width: 100%;
+      display: flex;
+    }
+
+    .product-desc h3{
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .product-desc h4{
+      font-size: 15px;
+  }
+  .description{
+      margin-top: 50px;
+  }
+  
+  .column2{
+    display: block;
+    flex: 50%;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 15px;
+  border-radius: 5px;
+  }
+    
+}

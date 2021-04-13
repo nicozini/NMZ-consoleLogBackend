@@ -1,0 +1,177 @@
+/* ------ Reglas generales ------*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f6f6f6;
+}
+
+/* ------ Header y Menu Hamburguesa ------*/
+header {
+  width: 100%;
+  height: 60px;
+  background-color: #8cb944;
+  box-shadow: 0 3px 6px 0 rgb(0 0 0 / 30%);
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#btn-menu {
+  display: none;
+}
+
+header label {
+  display: none;
+}
+
+header label:hover {
+  cursor: pointer;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  text-align: center;
+}
+
+.menu li:hover {
+  text-shadow: 2px 9px 7px rgba(17, 68, 101, 0.93);
+  transition: all 600ms;
+}
+
+.menu li a {
+  text-decoration: none;
+  display: block;
+  padding: 20px;
+  color: #ffffff;
+}
+
+/* --- Logo --- */
+a .logo-verdu {
+  display: block;
+  max-width: 280px;
+  padding: 8px;
+}
+
+/* ------ Footer ------ */
+footer {
+  background-color: #f6d866;
+}
+footer div {
+  text-align: center;
+}
+footer i {
+  color: #8cb944;
+  font-size: 15px;
+}
+
+footer section {
+  text-align: center;
+}
+
+footer p {
+  color: #666;
+  line-height: 20px;
+  height: 100px;
+  font-size: 12px;
+}
+footer h3 {
+  color: #666;
+  font-size: 12px;
+}
+footer h5 {
+  color: white;
+  line-height: 30px;
+}
+
+/* ------ Media Queries ------ */
+@media screen and (min-width: 361px) {
+  footer p {
+    margin: 0;
+    line-height: 25px;
+    width: 100%;
+    height: 100%;
+  }
+  footer h5 {
+    font-size: 10px;
+    display: flex;
+  }
+  .menu li:hover {
+    box-shadow: rgba(0, 0, 0, 0.5);
+    transition: all 600ms;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .flex-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 1;
+  }
+
+  footer section .padre {
+    display: flex;
+    justify-content: space-around;
+  }
+  footer p {
+    margin: 0;
+    line-height: 15px;
+  }
+  footer h5 {
+    font-size: 10px;
+  }
+  footer section article {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* -- Menu Mobile -- */
+  .btn-container {
+    background-color: #007849;
+    border-radius: 3px;
+    width: 40px;
+    height: 30px;
+    color: #ffffff9d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 1;
+  }
+  header label {
+    display: block;
+    margin: 10px;
+  }
+  .menu {
+    position: absolute;
+    top: 50px;
+    background-color: #8cb944;
+    opacity: 0.94;
+    box-shadow: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    margin-left: -200%;
+    transition: all 500ms;
+    z-index: 1;
+  }
+  .menu ul {
+    flex-direction: column;
+  }
+  #btn-menu:checked ~ .menu {
+    margin-left: -100%;
+  }
+
+  .flex-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
