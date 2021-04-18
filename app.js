@@ -1,50 +1,35 @@
-const express = require('express')
-const app = express()
-const port = process.env.PORT;
+const express   = require('express')
+const app       = express()
+let  port       = process.env.PORT ;
+
+const productController     = require('./controllers/productController');
+const userController        = require('./controllers/userController');
+const mainController        = require('./controllers/mainController');
+
+// const path = require('path');
+port = port =! undefined ? port = 3030 : port = process.env.PORT;  
 
 
-const path = require('path');
 app.use(express.static('public'));
 app.set('view engine','ejs')
+
 
 app.listen(port || 3030, () => {
     console.log('VerduMarket Run on port '+ port);
 });
 
-// ------ Rutas linkeadas ------ //
+// ------ Rutas  ------ //
 
 //Home (index.html)
-app.get('/', (req, res) => {
-    res.render('index');
-});
-
-//Detalle del producto (productDetail.html)
-app.get('/views/productDetail.html', (req, res) => {
-    res.render('productDetail');
-});
-
-//Formulario de registro (register.html)
-app.get('/views/register.html', (req, res) => {
-    res.render('register');
-});
-
-//Formulario de login (login.html)
-app.get('/views/login.html', (req, res) => {
-    res.render('login');
-});
+app.get('/',mainController.home);
 
 //Carrito de compras (productCart.html)
-app.get('/views/productCart.html', (req, res) => {
-    res.render('productCart');
-});
+app.get('/productCart',productController.productCart);
+//Detalle del producto (productDetail.html)
+app.get('/productDetail',productController.productDetail);
 
 
-
-
-
-// ------ Rutas PENDIENTES ------ //
-
-//    ¿Template?
-app.get('/template2', (req, res) => {
-    res.sendFile(path.join(__dirname, './views/template2.html'));
-});
+//Formulario de registro (register.html)
+app.get('/register', userController.register);
+//Formulario de login (login.html)
+app.get('/login',userController.login);

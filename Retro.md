@@ -10,3 +10,17 @@ Continuar haciendo:
 Hacer menos:
 		-dejar de dudar y tomar más iniciativas propias para avanzar con confianza.
 Dejar de hacer:
+
+
+_______________________15/04/2021_________________________
+comenzar a hacer:
+	-Fortalecer vinculo colaborativo entre nosotros.
+hacer más: 
+	-utilizar aun más el trello como nuestra lista de temas pendientes.
+Continuar haciendo:
+	->Seguir comunicandonos de la forma que lo hacemos.
+	->Seguir Participando con responsabilidad en la reuniones planificadas.
+Hacer menos:
+	-
+Dejar de hacer:
+
