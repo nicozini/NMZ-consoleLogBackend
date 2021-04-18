@@ -1,13 +1,13 @@
 const express   = require('express')
 const app       = express()
-let  port       = process.env.PORT ;
+const port       = process.env.PORT ;
 
 const productController     = require('./controllers/productController');
 const userController        = require('./controllers/userController');
 const mainController        = require('./controllers/mainController');
 
 // const path = require('path');
-port = port =! undefined ? port = 3030 : port = process.env.PORT;  
+//port = port =! undefined ? port = 3030 : port = process.env.PORT;  
 
 
 app.use(express.static('public'));
