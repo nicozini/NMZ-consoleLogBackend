@@ -2,9 +2,14 @@ const express               = require('express');
 const router                = express.Router()
 const productController     = require('../controllers/productController');
 
+// Listado de productos
+router.get('/', productController.list);
+
+// Detalle producto: nombre, imagen, descripcion, precio
+router.get('/:id/productDetail', productController.productDetail);
+
 //Carrito de compras (productCart.html)
-router.get('/productCart',productController.productCart);
-//Detalle del producto (productDetail.html)
-router.get('/productDetail',productController.productDetail);
+// router.get('/productCart',productController.productCart);
+
 
 module.exports = router;
