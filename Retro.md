@@ -13,6 +13,8 @@ Dejar de hacer:
 
 
 _______________________15/04/2021_________________________
+LINK TRELLO https://trello.com/b/4Y5KhZ9u/verdu-market
+
 comenzar a hacer:
 	-Fortalecer vinculo colaborativo entre nosotros.
 hacer más: 
