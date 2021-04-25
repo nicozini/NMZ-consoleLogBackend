@@ -17,7 +17,8 @@ module.exports = {
     productDetail: (req, res) => {
         const id = req.params.id;
         let product = fileOperations.findById(id);
-        res.render('products/productDetail', { product } )
+        // res.render('products/productDetail', { product } )
+        res.send(product.name)
     }
 
 
