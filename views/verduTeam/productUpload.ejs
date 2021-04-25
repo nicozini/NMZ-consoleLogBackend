@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+   <%- include('../partials/head')%>
+   <link rel="stylesheet" href='/css/productUpload.css'/>
+</head>   
+<body>
+  <%- include('../partials/header')%>
+
+  <main class="main-register">
+    <section>
+      <div class="register">
+        <marquee>Subí un nuevo producto</marquee>
+        <form action="/" class="formulario">
+          <div class="form-control">
+            <input type="text" name="name" id="name" placeholder="Nombre" required class="control">
+            <span class="Feedback"></span>
+          </div>
+          <div class="form-control">
+            <input type="text" name="price" id="price" placeholder="Precio" required class="control" >
+            <span class="Feedback"></span>
+          </div>          
+          <div class="form-control">
+            <input type="text" name="category" id="category" placeholder="Categoria" required class="control" >
+            <span class="Feedback"></span>
+          </div>
+          <div class="form-control">
+            <input type="text" name="Description" id="Description" placeholder="Descripción" required class="control" >
+            <span class="Feedback"></span>
+          </div>
+          <label> Seleccionar una imagen para el producto </label>
+          <input type="file" name="Imagen" accept=".png" multiple>
+          <div class="form-control">
+            <input type="text" name="facts" id="facts" placeholder="Nutrición" required class="control" >
+            <span class="Feedback"></span>
+          </div>
+          <div class="form-control">
+            <input type="email" name="email" id="email" placeholder="usuario@gmail.com" class="control" required>
+            <span class="Feedback"></span>
+          </div>
+          <div class="form-control">
+            <input type="password" name="pass" id="pass" placeholder="Contraseña" class="control" required>
+          </div>
+          <div class="check">
+            <label class="label" for="agree">Acepto los terminos y condiciones de este sitio</label>
+              <input type="radio" name="agree" id="agree" required> 
+            <br>        
+          <br>
+          <img src="/images/captcha.png" alt="Captcha">
+          <div class="form-control buttons">
+            <input type="submit" value="Enviar" class="submit button-form">
+            <input type="reset" value="Limpiar" class="button-form">
+          </div>
+        </form>
+      </div>  
+    </section>
+  </main>
+  <%- include('../partials/footer')%>
+</body>
+</html>

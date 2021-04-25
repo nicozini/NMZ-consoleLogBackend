@@ -1,0 +1,104 @@
+/* ------ Reglas generales ------*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: "Roboto", sans-serif;
+    background-color: #f6f6f6;
+  }
+  
+  /* ------ Especificaciones del Formualario de Registro ------ */
+  .main-register {
+    width: 330px;
+    margin: auto;
+    color: #666;
+  }
+  
+  /* ------ Formulario de registro ------ */
+  .main-register section .register {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  
+  marquee {
+    margin-top: 20px;
+  }
+  
+  .main-register section .register .form-control {
+    margin-top: 15px;
+    display: block;
+  }
+  .main-register section .register .form-control .control {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #8cb944;
+    border-radius: 5px;
+    font-size: 16px;
+  
+  }
+  .main-register section .register .form-address {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .main-register section .register .form-address #address {
+    width: 100%;
+  }
+  .main-register section .register .form-address .address-especification {
+    width: 30%;
+  }
+  .main-register section .register .form-control .control:focus {
+    background-color: #f6d866;
+  }
+  
+  .main-register section .register .buttons {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .main-register section .register .button-form {
+    width: 50%;
+    padding: 15px;
+    background-color:#666;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+    margin: 1px;
+    border: none;
+  }
+  
+  .main-register section .register .submit {
+    background-color: #8cb944;
+    font-weight: bold;
+  }
+  .main-register section .register .check {
+    margin: 15px 0;
+    font-size: 13px;
+  }
+  .main-register section .register img {
+    background-color: #98ded9;
+    width: 100%;
+    margin: auto;
+  }
+  /* ------  MQ Register    ------ */
+  @media screen and (min-width: 769px) {
+    .main-register{
+      width: 600px;
+    }
+    
+    .main-register section .register img {
+      width: 300px;
+    }
+    .main-register .label{
+      color:#ffffff;
+      font-weight: bold;
+    }
+    body {
+      background-image: url('/images/fondo-cart.jpg');
+      background-size: cover;
+     }
+  }
