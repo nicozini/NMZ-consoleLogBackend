@@ -11,7 +11,7 @@ router.get("/", productController.list);
 router.get("/:id/productDetail", productController.productDetail);
 
 // Carrito de compras (productCart.html)
-router.get('/productCart',productController.productCart);
+router.get('/productCart', productController.productCart);
 
 
 module.exports = router;

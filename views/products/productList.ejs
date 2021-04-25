@@ -12,33 +12,24 @@
 
     <h1>Estructura de productos</h1>
 
-
-
     <section>
         <article class="container">
             
             <div class="name">
                 <% products.forEach(product => { %>
                     <h3>
-                        <a href="/<%= product.id%>/produtDetail"><%= product.name %></a>
+                        <a href="/<%= product.id%>/productDetail"><%= product.name %></a>
                     </h3>
                     <p>
+                        <b>Precio por KG: $</b>
                         <%= product.price %> 
                     </p>                   
-                    <img src="<%= product.img %> " alt="Product image">   
+                    <img src="<%= product.img %> " width="25%" alt="Product image">   
                 <% }); %>
             </div>
          
         </article>
     </section>
-
-
-    
-
-
-
-
-
 
 
 

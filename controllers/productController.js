@@ -15,7 +15,8 @@ module.exports = {
     },
     
     productDetail:(req,res)=>{
-        res.render('products/productDetail', {productDB});
+        res.send('DETALLE DE PRODUCTO SEGUN ID')
+        // res.render('products/productDetail', { products });
     }
 
 

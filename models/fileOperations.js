@@ -8,9 +8,18 @@ module.exports = {
         const jsonProducts = fs.readFileSync(archivo);
         const products = JSON.parse(jsonProducts);
         return products;
+    },
+
+    findById: function(id) {
+        let products = this.getProductList();
+        let productFinded = products.find(oneProduct => oneProduct.id === id);
+        return productFinded;
+    },
+
+    weekProduct: function(week) {
+        let products = this.getProductList();
+        let weekProduct = products.filter(weekProduct => weekProduct.week === week);
+        return weekProduct;
     }
-
-    
-
 
 };
