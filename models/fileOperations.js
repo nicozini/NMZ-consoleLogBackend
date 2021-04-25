@@ -12,7 +12,8 @@ module.exports = {
 
     findById: function(id) {
         let products = this.getProductList();
-        let productFinded = products.find(oneProduct => oneProduct.id === id);
+        let productFinded = products.find(element => element.id == id);
+        
         return productFinded;
     },
 
@@ -21,5 +22,4 @@ module.exports = {
         let weekProduct = products.filter(weekProduct => weekProduct.week === week);
         return weekProduct;
     }
-
 };

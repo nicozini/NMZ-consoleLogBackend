@@ -15,12 +15,10 @@ module.exports = {
     },
     
     productDetail: (req, res) => {
-        const id = req.params.id;
-        let product = fileOperations.findById(id);
+        let product = fileOperations.findById(req.params.id)
         res.render('products/productDetail', { product } )
     }
 
-
-
-
 };
+
+
