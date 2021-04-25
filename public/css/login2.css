@@ -1,0 +1,86 @@
+/* ------ Reglas generales ------*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: "Roboto", sans-serif;
+    background-color: #f6f6f6;
+    background-image: url('/images/LoginFondo.png');
+    background-size: cover;
+  }
+  
+  /* ------ Especificaciones del Formualario de Registro ------ */
+  .main-login {
+    width: 330px;
+    height: 450px;
+    margin: auto;
+    color: #666;
+  }
+  
+  /* ------ Formulario de registro ------ */
+  .main-login section .login {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  
+  marquee {
+    margin-top: 20px;
+    color: white;
+  }
+  
+  .main-login section .login .form-control {
+    margin-top: 15px;
+    display: block;
+  }
+  .main-login section .login .form-control .control {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #8cb944;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  .main-login section .login .form-control .control:focus {
+    background-color: #f6d866;
+  }
+  .main-login section .login .buttons {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .main-login section .login .button-form {
+    width: 50%;
+    padding: 15px;
+    background-color:#666;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+    margin: 1px;
+    border: none;
+  }
+  
+  .main-login section .login .submit {
+    background-color: #8cb944;
+    font-weight: bold;
+  }
+  .main-login section .login .check {
+    margin: 15px 0;
+    font-size: 18px;
+  }
+
+  .main-login .label{
+    color:#666;
+    background-color: #ffffff75;
+  }
+
+  /* ------  MQ LOGIN    ------ */
+  @media screen and (min-width: 769px) {
+    .main-login{
+      width: 600px;
+    }
+    
+
+  }

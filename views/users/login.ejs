@@ -1,36 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 <head>
-    <%- include('../partials/head')%>
-    <link rel="stylesheet" href="/css/login.css">
-</head>
+   <%- include('../partials/head')%>
+   <link rel="stylesheet" href='/css/login2.css'/>
+</head>   
 <body>
-    <p class="banner"> ¡REGISTRATE Y OBTENÉ UN 10% DE DESCUENTO EN TU PRIMERA COMPRA! ¡SI TU COMPRA ES MAYOR A $3500
-        TENÉS EL ENVÍO BONIFICADO!</p>
+  <%- include('../partials/header')%>
 
-    <%- include('../partials/header')%>
-
-    <main>
-        <div class="image">
-            <section class="forms-login" >
-                <form accion="./views/home.html" method="POST">
-                    <input class="form-l" type="text" placeholder="Nombre de usuario" name="usuario" />
-                    <input class="form-l" type="password" placeholder="Contraseña" name="clave" />
-                </form>
-                <input type="radio">Recordame</button>
-                <input class="send-l" type="submit" value="Enviar" /> <a href="#"></a>
-                <nav role="navigation">
-                    <ul class="menu-login">
-                        <li><a href="#">Recuperá tu contrasena
-                            </a></li>
-                        <li><a href="./views/register.html">REGISTRATE
-                            </a></li>
-                    </ul>
-                </nav>
-            </section>
-        </div>
-    </main>
-    <%- include('../partials/footer')%>
+  <main class="main-login">
+    <section>
+      <div class="login">
+        <marquee>Ingresá a tu cuenta</marquee>
+        <form action="/" class="formulario">
+          <div class="form-control">
+            <input type="text" name="name" id="name" placeholder="Usuario" required class="control">
+            <span class="Feedback"></span>
+          </div>
+          <div class="form-control">
+            <input type="text" name="lastname" id="lastname" placeholder="Contraseña" required class="control" >
+            <span class="Feedback"></span>
+          </div>          
+          <div class="check">
+            <label class="label" for="agree">Recordame</label>
+              <input type="radio" name="agree" id="agree" required>       
+          <br>
+          <div class="form-control buttons">
+            <input type="href" value="Recuperá tu contraseña" class="button-form">
+            <input type="submit" value="Enviar" class="submit button-form">
+            <input type="href" value="Registrate" class="button-form">
+          </div>
+        </form>
+      </div>  
+    </section>
+  </main>
+  <%- include('../partials/footer')%>
 </body>
-
 </html>

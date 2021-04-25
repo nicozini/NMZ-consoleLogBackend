@@ -60,6 +60,28 @@ a .logo-verdu {
   padding: 8px;
 }
 
+.searchBar{
+  margin: 10px;
+  width: 30%;
+  padding: 10px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  text-align: right;
+  text-indent: 30px;  
+
+}
+
+.lupe{
+  position: relative;
+  padding: 7px;
+  margin: 13px;
+  margin-left: ;
+  color: #666;
+  background-color: white;
+  border-radius: 5px;
+}
+
 /* ------ Footer ------ */
 footer {
   background-color: #f6d866;
@@ -107,6 +129,7 @@ footer h5 {
     box-shadow: rgba(0, 0, 0, 0.5);
     transition: all 600ms;
   }
+
 }
 
 @media screen and (min-width: 769px) {
@@ -173,5 +196,11 @@ footer h5 {
   .flex-container {
     flex-direction: row;
     flex-wrap: wrap;
+  }
+  .searchBar{
+    display: none;
+   }
+   .lupe{
+    display: none;
   }
 }
