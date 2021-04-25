@@ -1,21 +1,23 @@
-let datosProductos = require('../data/datosProductos'); //en el futuro alamacenaremos nuestros datos aqui
+let fileOperations = require('../models/fileOperations'); 
 
 
-let productControler = {
-
+module.exports = {
+    
+    // Traer listado de productos
     list: (req, res) => {
-        res.send('Acá la lista de todos los productos');
+        let products = fileOperations.getProductList();
+        res.render('products/productList', { products });
     },
-
+    
     productCart:(req,res)=>{    
         console.log('Entro en productCart');
         res.render('products/productCart');
     },
-
+    
     productDetail:(req,res)=>{
-        res.render('products/productDetail', {productDB});
-    },
+        res.send('DETALLE DE PRODUCTO SEGUN ID')
+        // res.render('products/productDetail', { products });
+    }
 
-}
 
-module.exports = productControler;
+};

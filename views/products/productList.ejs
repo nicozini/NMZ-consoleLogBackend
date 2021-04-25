@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ('../partials/head') %> 
+    <link rel="stylesheet" href="/css/productList.css">
+</head>
+
+<body>
+
+    <%- include ('../partials/header') %> 
+
+    <h1>Estructura de productos</h1>
+
+    <section>
+        <article class="container">
+            
+            <div class="name">
+                <% products.forEach(product => { %>
+                    <h3>
+                        <a href="/<%= product.id%>/productDetail"><%= product.name %></a>
+                    </h3>
+                    <p>
+                        <b>Precio por KG: $</b>
+                        <%= product.price %> 
+                    </p>                   
+                    <img src="<%= product.img %> " width="25%" alt="Product image">   
+                <% }); %>
+            </div>
+         
+        </article>
+    </section>
+
+
+
+
+    <%-include('../partials/footer')%>
+
+</body>
+
+</html>

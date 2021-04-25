@@ -1,14 +1,25 @@
 const fs = require('fs');
 const path = require('path');
 
-let operacionesArchivos =
-{
-    archivo: path.join('models','productsDataBase.json'),
-    leerArchivoJson: function () {
-        return JSON.parse(fs.readFileSync(this.archivo, 'utf-8'));
+module.exports = {
+
+    getProductList: () => {
+        const archivo = path.join(__dirname + '/../data/productsDataBase.json');
+        const jsonProducts = fs.readFileSync(archivo);
+        const products = JSON.parse(jsonProducts);
+        return products;
     },
-    grabarUnJson: function (dato) {
-        return  fs.writeFileSync(this.archivo, dato)
+
+    findById: function(id) {
+        let products = this.getProductList();
+        let productFinded = products.find(oneProduct => oneProduct.id === id);
+        return productFinded;
     },
-}
-module.exports = operacionesArchivos;
+
+    weekProduct: function(week) {
+        let products = this.getProductList();
+        let weekProduct = products.filter(weekProduct => weekProduct.week === week);
+        return weekProduct;
+    }
+
+};
