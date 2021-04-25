@@ -8,6 +8,7 @@
   body {
     font-family: "Roboto", sans-serif;
     background-color: #f6f6f6;
+    color: #666;
   }
   
   /* ------ Especificaciones del Formualario de Registro ------ */
@@ -31,6 +32,7 @@
   .main-register section .register .form-control {
     margin-top: 15px;
     display: block;
+    color: #666;
   }
   .main-register section .register .form-control .control {
     width: 100%;
@@ -84,6 +86,31 @@
     width: 100%;
     margin: auto;
   }
+
+  .image {
+      background-color: rgba(255, 255, 255, 0.7);
+  }
+  .options {
+    color: #666;
+    border-radius: 5px;
+    padding: 7px;
+  }
+  textarea {
+      color: #666;
+  }
+.text {
+    color: #666;
+    background-color:rgba(255, 255, 255, 0.7);
+}
+  .main-register .label{
+    color:#666;
+    font-weight: bold;
+    background-color:rgba(255, 255, 255, 0.7);
+  }
+  body {
+    background-image: url('/images/fondo-cart.jpg');
+    background-size: cover;
+   }
   /* ------  MQ Register    ------ */
   @media screen and (min-width: 769px) {
     .main-register{
@@ -93,12 +120,5 @@
     .main-register section .register img {
       width: 300px;
     }
-    .main-register .label{
-      color:#ffffff;
-      font-weight: bold;
-    }
-    body {
-      background-image: url('/images/fondo-cart.jpg');
-      background-size: cover;
-     }
+
   }

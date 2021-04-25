@@ -25,28 +25,38 @@
             <span class="Feedback"></span>
           </div>
           <div class="form-control">
-            <input type="text" name="Description" id="Description" placeholder="Descripción" required class="control" >
-            <span class="Feedback"></span>
+            <label class="text" for="category">Categoría:</label>
+                <select class= "options" name="category" id="category" class="control" required>
+                    <option value="frutas">Frutas</option>
+                    <option value="verduras">Verduras</option>
+                    <option value="almacen">Almacén</option>
+                    <option value="dietetica">Dietética</option>
+                </select>
           </div>
-          <label> Seleccionar una imagen para el producto </label>
-          <input type="file" name="Imagen" accept=".png" multiple>
+          <div class="form-control">
+          <textarea type="text" name="description" id="Description" placeholder="Descripción" required class="control"> Descripción </textarea>
+          <span class="Feedback"></span>
+          </div>
+          <br>
+          <label class= "image" > Seleccionar una imagen para el producto </label>
+          <br>
+          <input class="image" type="file" name="Imagen" accept=".png" multiple>
+          <br>
           <div class="form-control">
             <input type="text" name="facts" id="facts" placeholder="Nutrición" required class="control" >
             <span class="Feedback"></span>
           </div>
           <div class="form-control">
-            <input type="email" name="email" id="email" placeholder="usuario@gmail.com" class="control" required>
+            <input type="email" name="email" id="email" placeholder="Usuario" class="control" required>
             <span class="Feedback"></span>
           </div>
           <div class="form-control">
             <input type="password" name="pass" id="pass" placeholder="Contraseña" class="control" required>
           </div>
           <div class="check">
-            <label class="label" for="agree">Acepto los terminos y condiciones de este sitio</label>
+            <label class="label" for="agree">Recordame</label>
               <input type="radio" name="agree" id="agree" required> 
             <br>        
-          <br>
-          <img src="/images/captcha.png" alt="Captcha">
           <div class="form-control buttons">
             <input type="submit" value="Enviar" class="submit button-form">
             <input type="reset" value="Limpiar" class="button-form">
