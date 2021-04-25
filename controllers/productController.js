@@ -9,15 +9,18 @@ module.exports = {
         res.render('products/productList', { products });
     },
     
-    productCart:(req,res)=>{    
+    productCart:(req,res) => {    
         console.log('Entro en productCart');
         res.render('products/productCart');
     },
     
-    productDetail:(req,res)=>{
-        res.send('DETALLE DE PRODUCTO SEGUN ID')
-        // res.render('products/productDetail', { products });
+    productDetail: (req, res) => {
+        const id = req.params.id;
+        let product = fileOperations.findById(id);
+        res.render('products/productDetail', { product } )
     }
+
+
 
 
 };
