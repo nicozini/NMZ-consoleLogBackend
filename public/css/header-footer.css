@@ -51,34 +51,52 @@ header label:hover {
   display: block;
   padding: 20px;
   color: #ffffff;
+  font-size: 13px;
 }
 
 /* --- Logo --- */
 a .logo-verdu {
   display: block;
-  max-width: 280px;
+  max-width: 200px;
   padding: 8px;
+  margin: 8px;
 }
 
-.searchBar{
-  margin: 10px;
-  width: 30%;
-  padding: 10px;
-  height: 40px;
-  border: none;
+header .search {
+  align-self: center;
+  margin: 35px;
   border-radius: 5px;
-  text-align: right;
-  text-indent: 30px;  
-
+  background: white;
+  max-height: 30px;
+  max-block-size: 100px;
+  flex: nowrap;
 }
 
-.lupe{
-  position: relative;
-  padding: 7px;
-  margin: 13px;
+header section input {
+  border: 0;
+  border-radius: 5px;
+  padding-left: 10px;
+  max-block-size: 30px; 
+  width: 200px;
+  font-size: 13px
+}
+
+header section .search-bar button {
+  background: #ffffff;
+  border: 0;
+  margin: 2px;
+  max-height: 30px;
+  width: 40px;
+  border-radius: 5px;
   color: #666;
-  background-color: white;
-  border-radius: 5px;
+}
+
+
+
+
+.menu .cart a {
+  color: #ffffff;
+  font-size: 18px;
 }
 
 /* ------ Footer ------ */
@@ -134,7 +152,6 @@ footer h5 {
 @media screen and (min-width: 769px) {
   .flex-container {
     flex-direction: row;
-    flex-wrap: wrap;
     flex-grow: 1;
   }
 
@@ -196,10 +213,8 @@ footer h5 {
     flex-direction: row;
     flex-wrap: wrap;
   }
-  .searchBar{
+  .search{
     display: none;
    }
-   .lupe{
-    display: none;
-  }
+  
 }

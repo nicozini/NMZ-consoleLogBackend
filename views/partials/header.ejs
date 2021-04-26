@@ -2,8 +2,15 @@
     <a href="/">
       <img src="/images/logo2b.png" alt="Logo" class="logo-verdu">
     </a>
-    <input class="searchBar" type="search" placeholder="Buscar productos"> 
-    <div class="lupe"><span class="fas fa-search"></span> </div> 
+    <section class="search">
+      <div class="search-bar">
+        <input type="text" id="searchterm" placeholder="Busca frutas, verduras y productos aquí"/>
+        <button type="button">
+            <i class="fas fa-search"></i>
+        </button>
+     </div>
+    </section>
+   
     <div class="hamburger-container">
       <input type="checkbox" id="btn-menu" />
       <div class="btn-container">
@@ -11,11 +18,13 @@
       </div>
       <nav class="menu">
         <ul>
-          <li><a href="/product">Productos</a></li>
-          <li><a href="#">Quienes Somos</a></li>
-          <li><a href="/users/register">Registrate</a></li>
-          <li><a href="/users/login">Ingresá</a></li>
-          <li><a href="#">Contacto</a></li>
+          <li><a href="/product">Productos <i class="fas fa-carrot"></i></a> </li> 
+          <li><a href="#">Quienes Somos <i class="fas fa-users"></i></a></li>
+          <li><a href="/users/register">Registrate <i class="fas fa-address-card"></i></a></li>
+          <li><a href="/users/login">Ingresá <i class="fas fa-sign-in-alt"></i></a></li>
+          <li><a href="#">Contacto <i class="fas fa-phone"></i></a></li>
+          <br>
+          <li class="cart"><a href="#"><i class="fas fa-shopping-cart"></i> </a></li>
         </ul>
       </nav>
     </div>
