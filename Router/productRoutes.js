@@ -13,6 +13,10 @@ router.get('/productCreate', productController.productCreate);
 // Guarda el nuevo producto Create (productCart.html)
 router.post('/productSaveNew', productController.productSaveNew);
 
+// Carrito de compras (productCart.html)
+router.get('/productCart', productController.productCart);
+
+
 // Product Create (productCart.html)
 router.get('/edit/:id', productController.productEdit);
 
@@ -21,8 +25,6 @@ router.put('/save/:id', productController.productSave);
 // Detalle producto
 router.get("/:id", productController.productDetail);
 
-// Carrito de compras (productCart.html)
-router.get('/productCart', productController.productCart);
 
 
 
