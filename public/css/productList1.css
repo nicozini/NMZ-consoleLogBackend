@@ -10,6 +10,23 @@
      .main-list .list {
       width: 100%;
      }
+     .main-list .new{
+       position: fixed;
+       z-index: 1;
+       width: 80px;
+       height: 80px;
+       bottom:10px;
+       right:10px;
+       background-color:  #8cb944 ;
+       box-shadow: 0px 0px 10px #646464;
+       border-radius: 50%;
+       font-size: 70px;
+       font-weight: bold;
+       color: #ffffff;
+       text-align: center;
+       text-decoration: none;
+     }
+
      .main-list .list h2{
        color:#666;
        font-size: 24px;

@@ -9,14 +9,18 @@
   <main class="main-register">
     <section>
       <div class="register">
-        <h2>Creacion de un nuevo producto</h2>
-        <form action="/product/productSaveNew" method=POST class="formulario">
+        <% if (product.id > 0 ) { %>
+         <marquee behavior="" direction="">Edicion de <%=product.name%> </marquee>
+         <% } else { %>
+          <marquee behavior="" direction="">Creacion de un nuevo producto </marquee>
+        <% } %>
+        <form action="/product/save/<%=product.id%>?_method=PUT" method=POST class="formulario">
           <div class="form-control">
-            <input type="text" name="name" id="name" placeholder="Nombre" required class="control" >
+            <input type="text" name="name" id="name" placeholder="Nombre" required class="control" value="<%=product.name%> ">
             <span class="Feedback"></span>
           </div>
           <div class="form-control">
-            <input type="text" name="price" id="price" placeholder="Precio" required class="control" ">
+            <input type="text" name="price" id="price" placeholder="Precio" required class="control" value="<%=product.price%>">
             <span class="Feedback"></span>
           </div>          
           <!-- <div class="form-control">
@@ -25,7 +29,7 @@
           </div> -->
           <div class="form-control">
             <label class="text" for="category">Categoría:</label>
-                <select class= "options" name="category" id="category" class="control" required " >
+                <select class= "options" name="category" id="category" class="control" required value="<%=product.category%>" >
                     <option value="fruta">Frutas</option>
                     <option value="verdura">Verduras</option>
                     <option value="almacen">Almacén</option>
@@ -33,22 +37,25 @@
                 </select>
           </div>
           <div class="form-control">
-          <textarea type="text" name="description" id="Description"  placeholder="Descripción" required class="control"></textarea>
+          <textarea type="text" name="description" id="Description"  placeholder="Descripción" required class="control"><%=product.description%></textarea>
           <span class="Feedback"></span>
           </div>
           <br>
+          <div class="imagen">
+            <img src="/img/<%=product.image%>"  alt="">            
+          </div>
           <br>
           <label class= "image" > Seleccionar una imagen para el producto </label>
           <br>
           <input class="image" type="file" name="Imagen" accept=".png" multiple>
           <br>
           <div class="form-control">
-            <input type="text" name="facts" id="facts" placeholder="Nutrición" required class="control" >
+            <input type="text" name="facts" id="facts" placeholder="Nutrición" required class="control" value="<%=product.nutricion%> ">
             <span class="Feedback"></span>
           </div>
           <div class="form-control">
             <label class="text" for="in-sale">Oferta:</label>
-                <select class= "options" name="in-sale" id="in-sale" class="control" required >
+                <select class= "options" name="in-sale" id="in-sale" class="control" required value="<%if (product.week==true) { "week" }%>" >
                     <option value="week">Oferta de la semana</option>
                     <option value="weekFalse">Común</option>
                 </select>

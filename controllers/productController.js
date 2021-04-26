@@ -18,26 +18,49 @@ module.exports = {
         let product = fileOperations.findById(req.params.id)
         res.render('products/productDetail', { product } )
     },
+    productSaveNew:(req, res) => {
 
-    productCreate: (req, res) => {
         let products = fileOperations.getProductList();
-        let nuevo = 0;
+        var nuevoId = 0;
+        
+        console.log(products);
+        
+
         products.forEach((i)=> {
             
-            if (nuevo < i ) { nuevo = i} ;
-            nuevo++
+            if ( nuevoId < i.id ) {
+                nuevoId = i.id
+                console.log('nuevoid');
+                console.log(nuevoId) ;
+            };
+            
         });
 
+        nuevoId++
+        
+
         let nuevoProducto= {
-            id : nuevo
+            id : nuevoId,
+            name : req.body.name,
+            price : req.body.price,
+            category : req.body.category,
+            description : req.body.description,
+            nutricion : req.body.nutricion,
+            facts : req.body.facts
         };
 
-        res.render('products/productCreate',{ 'product': nuevoProducto })
+        fileOperations.saveNew(nuevoProducto)
+        res.redirect('/product')
+    },
+
+
+    productCreate: (req, res) => {
+        res.render('products/productCreate')
     },
 
     productEdit: (req, res) => {
         let product = fileOperations.findById(req.params.id)
-        res.render('products/productCreate', { product })
+        res.render('products/productEdit', { product })
     },
     productSave: (req, res) => {
         let products = fileOperations.getProductList();

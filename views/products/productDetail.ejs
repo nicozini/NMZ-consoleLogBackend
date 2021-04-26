@@ -32,7 +32,7 @@
             </h4>
           </div>
           <div class="buttons">
-              <h3 class but><a href="/product/edit/<%= product.id %>">Modificar</a></h3>
+              <h3 class="but"><a href="/product/edit/<%= product.id %>">Modificar</a></h3>
           </div>
         </div>
       </article>
@@ -42,7 +42,11 @@
         <p>
           <%= product.description %>
         </p>
+        <h4>
+          Informacion Nutricional:<%= product.facts%>
+        </h4>
       </div>
+      
 
       <h2 class="relproduct">Productos relacionados</h2>
 

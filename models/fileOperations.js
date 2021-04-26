@@ -26,5 +26,18 @@ module.exports = {
         
         fs.writeFileSync(archivo, productJSON, 'utf-8');
         return true;
+    },
+    saveNew: (product) => {
+        //recibo un un solo articulo
+        const jsonProducts = fs.readFileSync(archivo);
+        let products = JSON.parse(jsonProducts);
+        
+
+        products.push(product);
+
+        const productJSON = JSON.stringify(products, null, 2);
+        
+        fs.writeFileSync(archivo, productJSON, 'utf-8');
+        return true;
     }
 };
