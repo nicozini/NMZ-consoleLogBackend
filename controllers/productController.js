@@ -20,7 +20,45 @@ module.exports = {
     },
 
     productCreate: (req, res) => {
-        res.render('products/productCreate')
-  
+        let products = fileOperations.getProductList();
+        let nuevo = 0;
+        products.forEach((i)=> {
+            
+            if (nuevo < i ) { nuevo = i} ;
+            nuevo++
+        });
+
+        let nuevoProducto= {
+            id : nuevo
+        };
+
+        res.render('products/productCreate',{ 'product': nuevoProducto })
+    },
+
+    productEdit: (req, res) => {
+        let product = fileOperations.findById(req.params.id)
+        res.render('products/productCreate', { product })
+    },
+    productSave: (req, res) => {
+        let products = fileOperations.getProductList();
+        
+        products.forEach( (i)=> {
+            if (i.id == req.params.id) {
+
+                i.name = req.body.name
+                i.price = req.body.price
+                i.category = req.body.category
+                i.description = req.body.description
+                i.nutricion = req.body.nutricion
+                i.facts = req.body.facts
+
+                // if (req.body.in-sale === 'week'){
+                //     products.week = true
+                // };
+            };
+        });
+        
+        fileOperations.save(products)
+        res.redirect('/product')
     }
 };

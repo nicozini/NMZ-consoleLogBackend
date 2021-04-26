@@ -1,0 +1,174 @@
+[
+    {
+     "id": 1,
+     "name": "Naranja",
+     "price": 100,
+     "category": "fruta",
+     "description": "La naranja es una de las frutas más populares ya que tiene un alto contenido en vitamina C, 100 gramos de naranja contiene el 90% de necesidades diarias de esta vitamina. Además contiene flavonoides (con efectos antioxidante, antiinflamatorio y antitumoral) y limonoides (anticancerígeno).",
+     "image": "img-000000001.jpg",
+     "nutricion": "Excelente fuente de Vitaminas A, B y C.",
+     "week": false
+    },
+    {
+     "id": 2,
+     "name": "Manzana",
+     "price": 140,
+     "category": "fruta",
+     "description": "La manzana es el fruto ideal para tomar a cualquier hora y participa positivamente en la consecución del equilibrio alimentario. La piel puede ser de color verde, amarilla o rojiza, y la carne va desde un sabor agrio hasta el dulce.",
+     "image": "img-000000002.jpg",
+     "nutricion": "Gran fuente de Vitaminas A, B, C, y E.",
+     "week": false
+    },
+    {
+     "id": 3,
+     "name": "Banana",
+     "price": 220,
+     "category": "fruta",
+     "description": "La banana es una fruta amarilla, de forma alargada, que encontramos en el mercado en grupos de tres a veinte, de forma similar a un pepino triangular, oblongo y normalmente de color amarillo. Su sabor es más o menos dulce según la variedad.",
+     "image": "img-000000003.jpg",
+     "nutricion": "Aporta Vitaminas B y C.",
+     "week": false
+    },
+    {
+     "id": 4,
+     "name": "Frutilla",
+     "description": "La frutilla es un fruto de color rojo brillante, suculento y fragante que se obtiene de la planta que recibe su mismo nombre. Además de poderse comer cruda se puede consumir como compota, mermelada,... Es empleada con fines medicinales ya que posee excelentes propiedades que ayudan a preservar la salud.",
+     "price": 330,
+     "image": "img-000000004.jpg",
+     "category": "fruta",
+     "nutricion": "Contiene Potasio, Fósforo, Magnesio y Calcio.",
+     "week": false
+    },
+    {
+     "id": 5,
+     "name": "Sandia",
+     "description": "La sandía es un fruto grande y de forma más o menos esférica que suele consumirse cruda como postre. Su pulpa es de color rojizo o amarillento y de sabor dulce. Resulta un alimento muy refrescante que aporta muy pocas calorías al organismo, también aporta algunas vitaminas y minerales.",
+     "price": 300,
+     "image": "img-000000005.jpg",
+     "category": "fruta",
+     "nutricion": "Rica en vitamina C",
+     "week": false
+    },
+    {
+     "id": 6,
+     "name": "Pera",
+     "description": "La pera es un fruto muy extendido hoy en día por todo el mundo, que se consume tanto en fresco como cocinada, y que está disponible durante todo el año. Existen numerosas variedades cultivadas, que varían tanto en forma como en tamaño y colores.",
+     "price": 200,
+     "image": "img-000000006.jpg",
+     "category": "fruta",
+     "nutricion": "Gran aporte de Potasio, Azúcares y Fibras.",
+     "week": false
+    },
+    {
+     "id": 7,
+     "name": "Anana",
+     "description": "La anana madura tiene una fragancia muy singular. Es de hermoso color y agradable sabor agridulce. Se puede comer cruda o como ingrediente en zumos, conservas, licores, etc. Tanto el fruto como las hojas se usan en la preparación de compuestos medicinales.",
+     "price": 470,
+     "image": "img-000000007.jpg",
+     "category": "fruta",
+     "nutricion": "Posee un alto contenido de Hierro, Zinc, Magnesio, Manganeso, Calcio, Potasio y Yodo.",
+     "week": false
+    },
+    {
+     "id": 8,
+     "name": "Uvas",
+     "description": "La uva es un fruta que crece en racimos apretados. Su pulpa es blanca o púrpura y de sabor dulce. Se consume como fruta fresca o zumo, aunque su utilidad principal es la obtención de vinos. También se realizan conservas con ella. Contiene diversos minerales y vitaminas, y se piensa que tiene poderes antioxidantes y anticancerígenos.",
+     "price": 250,
+     "image": "img-000000008.jpg",
+     "category": "fruta",
+     "nutricion": " Alto contenido de Vitamina B.",
+     "week": false
+    },
+    {
+     "id": 9,
+     "name": "Lechuga",
+     "description": "La lechuga es una hortaliza muy popular que se cultiva por sus grandes hojas que en algunos casos se aprietan formando repollos más o menos compactos. Existen muchísimas variedades de esta verdura, y el número aumenta cada año. Las propiedades nutritivas de esta planta son escasas, siendo un alimento bajo en calorías que aporta algunas vitaminas y minerales.",
+     "price": 160,
+     "image": "img-000000009.jpg",
+     "category": "verdura",
+     "conservacion": "Se pueden colocar en la heladera por un máximo de 4 días. Recomendamos envolverlas en papel para protegerlas del frío excesivo.",
+     "nutricion": "Alto contenido de Vitamina A, B, C y K.",
+     "week": false
+    },
+    {
+     "id": 10,
+     "name": "Espinaca",
+     "description": "La espinaca es una planta herbácea cuyas hojas, verdes y dispuestas en roseta, se consumen tanto crudas como cocinadas. Las hojas tienen forma ovalada y aspecto rugoso, pudiendo ser enteras o dentadas. Es muy nutritiva, sabrosa y fácil de digerir. Los árabes la consideraban la reina de las verduras.",
+     "price": 120,
+     "image": "img-0000000010.jpg",
+     "category": "verdura",
+     "conservacion": "Para su correcta conservación es importante lavarlas detenidamente pues pueden contener tierra y desperdicios. Luego, se pueden colocar dentro de la heladera hasta por 1 semana. De todos modos, sus hojas más frescas deben consumirse rápidamente para aprovechar al máximo sus nutrientes.",
+     "nutricion": "Aporte de Vitaminas A, B, C y E y Omega-3.",
+     "week": false
+    },
+    {
+     "id": 11,
+     "name": "Ajo",
+     "description": "El ajo es un cultivo muy antiguo aprovechado por el bulbo que forma en la base de sus hojas. Es muy apreciado como condimento por el fuerte y característico sabor que presenta, y es un ingrediente muy utilizado sobre todo en la cocina mediterránea. Posee múltiples efectos medicinales, debidos a las sustancias azufradas que contiene.",
+     "price": 90,
+     "image": "img-0000000011.jpg",
+     "category": "verdura",
+     "conservacion": "Recomendamos conservar el ajo en la heladera, sin separar sus dientes de toda la cabeza durante alrededor de 3 semanas.",
+     "nutricion": "Aporta Vitaminas B, C y E.",
+     "week": false
+    },
+    {
+     "id": 12,
+     "name": "Perejil",
+     "description": "El perejil puede ser de hojas lisas o rizadas. El de hojas lisas se utiliza más para dar sabor y las de hojas rizadas para decorar diversos platos.",
+     "price": 299,
+     "image": "img-0000000012.jpg",
+     "category": "verdura",
+     "conservacion": "Para su correcta conservación, podemos optar por mantenerlo en la heladera dentro de un envase hermético, o bien, envuelto en una toalla de papel apenas húmeda. Fuera del refrigerador, es posible colocar la hierba dentro de un envase de vidrio bien cerrado en un lugar fresco, seco y lejos del sol. Por otro lado, congelar el perejil también es una opción, tanto ramilletes enteros como ya picados.",
+     "nutricion": "Gran aporte de Vitamina A, B, C y K.",
+     "week": false
+    },
+    {
+     "id": 13,
+     "name": "Albahaca",
+     "description": "La albahaca es una planta muy extendida por toda la cocina mediterránea, pero con muchas variedades y usos diferentes que la alzan como una de las hierbas aromáticas más populares del mundo. Su inconfundible aroma embriaga con solo rozar las hojas frescas y aporta un sabor fresco, dulzón y muy penetrante, mucho más tenue en el formato de especia seca. Se puede consumir en crudo o cocinada, y admite multitud de maridajes y preparaciones diferentes.",
+     "price": 34990,
+     "discount": 0,
+     "image": "img-0000000013.jpg",
+     "category": "verdura",
+     "conservacion": "Recomendamos almacenarla dentro de la heladera envuelta en papel para evitar que el frío “queme” sus hojas.",
+     "nutricion": "Gran aporte de Vitamina A, C y K.",
+     "week": false
+    },
+    {
+     "id": 14,
+     "name": "Tomate",
+     "description": "El tomate es la hortaliza de mayor importancia en el mundo. Se cultiva en todo el mundo, siendo los principales países productores China y Estados Unidos. Se consume de múltiples maneras, tanto en crudo como procesado para la industria. Hoy en día existen multitud de variedades, cultivadas durante todo el año, y con frutos de distintos tamaños, formas y colores. Además, es un alimento rico en fibra y bajo en calorías que aporta vitaminas y minerales.",
+     "price": 130,
+     "image": "img-0000000014.jpg",
+     "category": "verdura",
+     "conservacion": "Respecto a su conservación es correcto colocarlos en la heladera una vez que se encuentran maduros. Si aún se encuentran “verdes” es preferible situarlos a temperatura ambiente y aguardar que maduren.",
+     "nutricion": "Vitaminas A, B y C.",
+     "week": false
+    },
+    {
+     "id": 15,
+     "name": "Zanahoria",
+     "description": "La zanahoria es una de las hortalizas más cultivadas en el mundo. Su consumo se ha extendido ampliamente, ya que actualmente se encuentra disponible en los mercados durante todo el año. La parte consumida de la zanahoria es su raíz, de la que existen múltiples formas y sabores. Destaca por su contenido en caroteno y vitaminas A, B y C.",
+     "price": 150,
+     "image": "img-0000000015.jpg",
+     "category": "verdura",
+     "conservacion": "Recomendamos mantener en un lugar fresco y aireado, un buen consejo es limpiar la superficie con un trapo húmedo antes de guardarlas. En la heladera la zanahoria puede alcanzar 2 semanas aproximadamente.",
+     "nutricion": "Vitamina A, B, C y E.",
+     "week": false
+    },
+    {
+     "id": 16,
+     "name": "Morron",
+     "description": "El morron puede comerse crudo, asado, espolvoreado o cocido. Sirve como condimento o colorante para una gran variedad de comidas y platos, e incluso para la preparación de embutidos. También se puede consumir frito o utilizarse para la elaboración de salsas y cremas.",
+     "price": 300,
+     "image": "img-0000000016.jpg",
+     "category": "verdura",
+     "conservacion": "Para su correcta conserva, podemos colocarlo dentro de la heladera durante unos 7 días aproximadamente. ",
+     "nutricion": "Alto contenido de Vitamina A y C",
+     "week": false
+    }
+   ]
+
+
+

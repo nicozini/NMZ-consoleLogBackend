@@ -1,0 +1,197 @@
+/* Especificaciones del main del carrito de compras*/
+   .main-list{
+      margin: auto;
+      width: 330px;
+      color:#666;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content: space-between;      
+     }  
+     .main-list .list {
+      width: 100%;
+     }
+     .main-list .list h2{
+       color:#666;
+       font-size: 24px;
+       padding:15px;
+     }
+        .main-list section article{
+          margin-top:10px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: center;
+          padding: 10px;
+          background-color:#ffffff;
+          opacity: 85%;
+        }
+
+        .main-list section article .product-detail{
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+        }
+        .main-list section article .value{
+          align-self: center;
+        }
+        .main-list section article .image{
+          width: 100px;
+          display: none;
+        }
+        .main-list section article .fa-trash{
+          transition:all 350ms;
+        }
+        .main-list section article .fa-trash:hover{
+          color: #8cb944;
+        }
+        .main-list section .form-control{
+            margin-top: 15px;
+            display: block;
+        }
+        .main-list section .form-control .control{
+            width: 70px;
+            padding: 10px;
+            border: 1px solid #8cb944;
+            border-radius: 5px;
+            font-size: 16px;
+            color:#161d6f;
+            text-align: center;
+        }
+        .main-list section article hr{
+          border: 1px solid #666;
+        }
+        .main-list .total{
+          margin:5px; 
+          text-align: right;
+          display:flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: flex-end;
+          background-color: #8cb944;
+          color: #ffffff;
+          padding: 20px;
+        }
+        .main-list h4{
+         font-weight: normal;
+        }
+
+        .main-list section .buttons{
+            display: flex;
+            justify-content: center;
+        }
+        .main-list section .button-form{
+            width:50%;
+            padding:15px; 
+            background-color:#98ded9;
+            color:#ffffff;
+            font-size: 16px;
+            text-align: center;
+            margin: 1px;
+            border:none;
+        }
+      
+      .main-list section .buttons{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .main-list section .form-control .control:focus{
+      background-color:#56e1b1;
+    }
+    .main-list section .buttons{
+      max-width: 500px;
+      position: fixed;
+      margin: auto;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+    } 
+    .main-list section .button-form{
+        width:50%;
+        padding:15px; 
+        background-color:#f6d866;
+        color:#ffffff;
+        font-size: 16px;
+        text-align: center;
+        margin: 1px;
+        border:none
+    }
+    .main-list section .form-control .submit{
+      background-color:#8cb944;
+      font-weight: bold;
+    }
+    .main-list .total-cart{
+      display:none;
+    }
+
+    .main-list .balloon{
+      border: 1px #8cb944 solid;
+      width: 100%;
+      border-radius: 20px;
+      padding: 15px;
+      margin: 5px;
+      transition: all 350px;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+
+    }
+    .main-list .shipping{
+      background-color: #f6d866
+    }
+    .main-list .resume{
+      background-color: #ffffff;
+      opacity: 85%;
+    }
+    .main-list .resume  #disconunt-cod{
+      padding:7px;
+      width: 80%;
+      border-radius: 15px;
+      border: 1px solid #8cb944 ;
+      margin: 5px;
+    }
+    .main-list .total-total{
+      background-color: #8cb944;
+      color: #ffffff;
+    }
+    .main-list .total-cart .rigth-form{
+      margin: auto;
+    }
+      /*fin de Carrito de Compras*/
+@media (min-width: 769px){
+  .main-list{
+    width: 760px;
+  }
+  .main-list .list{
+    width: 100%;
+  }
+  .main-list .list h2{
+    color:#ffffff;
+  }
+  .main-list .total-cart{
+    width: 40%;
+    display:flex;
+  }
+  .main-list .total{
+    display: none;
+  }
+  .main-list section article {
+    transition: all 300ms;
+  }
+  .main-list section article .image{
+    display: block;
+  }
+
+  .main-list section article:hover {
+    box-shadow: 0px 0px 10px #646464;
+  }
+  .main-list .balloon:hover{
+    box-shadow: 0px 0px 10px #646464;
+  }
+  body {
+    background-image: url('/images/fondo-cart.jpg');
+    background-size: cover;
+   }
+  
+}

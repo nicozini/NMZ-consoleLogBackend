@@ -9,7 +9,10 @@ router.get("/", productController.list);
 
 // Product Create (productCart.html)
 router.get('/productCreate', productController.productCreate);
+// Product Create (productCart.html)
+router.get('/edit/:id', productController.productEdit);
 
+router.put('/save/:id', productController.productSave);
 
 // Detalle producto
 router.get("/:id", productController.productDetail);

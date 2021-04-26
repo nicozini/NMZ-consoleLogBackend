@@ -22,21 +22,17 @@
         <div class="conteiner1">
           <div class="product-desc">
             <h4>
-              <%= product.category %>
+              Categoría: <%= product.category %>
             </h4>
             <h3>
               <%= product.name %>
             </h3>
             <h4>
-              <%= product.price %>
+              Precio por Kilo:<%= product.price %>
             </h4>
           </div>
           <div class="buttons">
-            <form action="" method="POST">
-              <!-- <input type="submit" value="- Cant +" class="cant-bt">  -->
-              <input type="number" name="amount" value="1" min="1" max="50" step="1" class="amount-control" />
-              <input type="submit" value="Enviar" class="add-bt">
-            </form>
+              <h3 class but><a href="/product/edit/<%= product.id %>">Modificar</a></h3>
           </div>
         </div>
       </article>
@@ -52,13 +48,7 @@
 
       <div class="row">
 
-        <%- include('../partials/relproduct')%>
-
-          <%- include('../partials/relproduct')%>
-
-            <%- include('../partials/relproduct2')%>
-
-              <%- include('../partials/relproduct2')%>
+        <!-- <%-// include('../partials/relproduct',{ i })%>> -->
 
       </div>
     </main>

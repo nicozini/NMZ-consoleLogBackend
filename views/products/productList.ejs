@@ -3,33 +3,29 @@
 
 <head>
     <%- include ('../partials/head') %> 
-    <link rel="stylesheet" href="/css/productList.css">
+    <link rel="stylesheet" href="/css/productList1.css">
 </head>
 
 <body>
-
     <%- include ('../partials/header') %> 
-
-    <h1>Estructura de productos</h1>
-
-    <section>
-        <article class="container">
-            
-            <div class="name">
-                <% products.forEach(product => { %>
-                    <h3>
-                        <a href="/product/<%= product.id%>"><%= product.name %></a>
-                    </h3>
+    <main class="main-list">
+        <a href="/product/productCreate">Crear Nuevo Producto</a>
+        <section class="list">
+            <% products.forEach(product => { %>
+                <article>                
+                    <img src="/img/<%=product.image%> " alt="<%=product.name %> " class="image">
+                    <a href="/product/<%= product.id%>"><%= product.name %></a>
                     <p>
                         <b>Precio por KG: $</b>
                         <%= product.price %> 
-                    </p>                   
-                    <img src="<%= product.img %> " width="25%" alt="Product image">   
-                <% }); %>
-            </div>
-         
-        </article>
-    </section>
+                    </p>
+                    <p><%= product.description%></p>                   
+                    <br>
+                    <p>Categoría:<%= product.category%></p>                   
+                </article>
+            <% }); %>
+        </section>
+    </main>
 
 
 

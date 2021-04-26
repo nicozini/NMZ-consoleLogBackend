@@ -6,36 +6,43 @@
 </head>   
 <body>
   <%- include('../partials/header')%>
-
   <main class="main-register">
     <section>
       <div class="register">
-        <marquee>Subí un nuevo producto</marquee>
-        <form action="/" class="formulario">
+        <% if (product.id > 0 ) { %>
+         <marquee behavior="" direction="">Edicion de <%=product.name%> </marquee>
+         <% } else { %>
+          <marquee behavior="" direction="">Creacion de un nuevo producto </marquee>
+        <% } %>
+        <form action="/product/save/<%=product.id%>?_method=PUT" method=POST class="formulario">
           <div class="form-control">
-            <input type="text" name="name" id="name" placeholder="Nombre" required class="control">
+            <input type="text" name="name" id="name" placeholder="Nombre" required class="control" value="<%=product.name%> ">
             <span class="Feedback"></span>
           </div>
           <div class="form-control">
-            <input type="text" name="price" id="price" placeholder="Precio" required class="control" >
+            <input type="text" name="price" id="price" placeholder="Precio" required class="control" value="<%=product.price%>">
             <span class="Feedback"></span>
           </div>          
-          <div class="form-control">
-            <input type="text" name="category" id="category" placeholder="Categoria" required class="control" >
+          <!-- <div class="form-control">
+            <input type="text" name="category" id="category" placeholder="Categoria" required class="control"  >
             <span class="Feedback"></span>
-          </div>
+          </div> -->
           <div class="form-control">
             <label class="text" for="category">Categoría:</label>
-                <select class= "options" name="category" id="category" class="control" required>
-                    <option value="frutas">Frutas</option>
-                    <option value="verduras">Verduras</option>
+                <select class= "options" name="category" id="category" class="control" required value="<%=product.category%>" >
+                    <option value="fruta">Frutas</option>
+                    <option value="verdura">Verduras</option>
                     <option value="almacen">Almacén</option>
                     <option value="dietetica">Dietética</option>
                 </select>
           </div>
           <div class="form-control">
-          <textarea type="text" name="description" id="Description" placeholder="Descripción" required class="control"> Descripción </textarea>
+          <textarea type="text" name="description" id="Description"  placeholder="Descripción" required class="control"><%=product.description%></textarea>
           <span class="Feedback"></span>
+          </div>
+          <br>
+          <div class="imagen">
+            <img src="/img/<%=product.image%>"  alt="">            
           </div>
           <br>
           <label class= "image" > Seleccionar una imagen para el producto </label>
@@ -43,8 +50,15 @@
           <input class="image" type="file" name="Imagen" accept=".png" multiple>
           <br>
           <div class="form-control">
-            <input type="text" name="facts" id="facts" placeholder="Nutrición" required class="control" >
+            <input type="text" name="facts" id="facts" placeholder="Nutrición" required class="control" value="<%=product.nutricion%> ">
             <span class="Feedback"></span>
+          </div>
+          <div class="form-control">
+            <label class="text" for="in-sale">Oferta:</label>
+                <select class= "options" name="in-sale" id="in-sale" class="control" required value="<%if (product.week==true) { "week" }%>" >
+                    <option value="week">Oferta de la semana</option>
+                    <option value="weekFalse">Común</option>
+                </select>
           </div>
           <div class="form-control">
             <input type="email" name="email" id="email" placeholder="Usuario" class="control" required>
@@ -55,11 +69,11 @@
           </div>
           <div class="check">
             <label class="label" for="agree">Recordame</label>
-              <input type="radio" name="agree" id="agree" required> 
+              <input type="radio" name="agree" id="agree" > 
             <br>        
           <div class="form-control buttons">
             <input type="submit" value="Enviar" class="submit button-form">
-            <input type="reset" value="Limpiar" class="button-form">
+            <!-- <input type="reset" value="Limpiar" class="button-form"> -->
           </div>
         </form>
       </div>  
