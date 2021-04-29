@@ -18,7 +18,7 @@ app.use('/', mainRoutes) ;
 
 app.use('/users', userRoutes) ;
 
-app.use('/product', productRoutes) ;
+app.use('/products', productRoutes) ;
 
  
 
