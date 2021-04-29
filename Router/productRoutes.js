@@ -7,23 +7,25 @@ const productController = require("../controllers/productController");
 // Listado de productos
 router.get("/", productController.list);
 
-// Product Create (productCart.html)
-router.get('/productCreate', productController.productCreate);
+// Formulario de creación de productos (productCart.html)
+router.get('/create', productController.productCreate);
 
 // Guarda el nuevo producto Create (productCart.html)
-router.post('/productSaveNew', productController.productSaveNew);
+router.post('/products', productController.productSaveNew);
 
 // Carrito de compras (productCart.html)
 router.get('/productCart', productController.productCart);
 
+// Formulario de creación de productos
+router.get('/:id/edit', productController.productEdit);
 
-// Product Create (productCart.html)
-router.get('/edit/:id', productController.productEdit);
+// Acción de edición
+router.put('/:id', productController.productSave);
 
-router.put('/save/:id', productController.productSave);
-
-// Detalle producto
+// Detalle de producto según :id
 router.get("/:id", productController.productDetail);
+
+// PENDIENTE RUTA PARA ELIMINAR PRODUCTOS
 
 
 module.exports = router;
