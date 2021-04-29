@@ -83,5 +83,8 @@ module.exports = {
         
         fileOperations.save(products)
         res.redirect('/product')
+    },
+    productDelete: (req, res) => {
+        
     }
 };

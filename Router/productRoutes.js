@@ -26,6 +26,4 @@ router.put('/save/:id', productController.productSave);
 router.get("/:id", productController.productDetail);
 
 
-
-
 module.exports = router;
