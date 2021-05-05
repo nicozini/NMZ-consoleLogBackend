@@ -37,8 +37,10 @@ header label:hover {
 .menu ul {
   list-style: none;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   text-align: center;
+  margin:auto;  
 }
 
 .menu li:hover {
@@ -49,36 +51,54 @@ header label:hover {
 .menu li a {
   text-decoration: none;
   display: block;
-  padding: 20px;
+  padding: 15px 5px;
   color: #ffffff;
   font-size: 13px;
 }
 
 /* --- Logo --- */
-a .logo-verdu {
+.logo-verdu {
   display: block;
-  max-width: 200px;
-  padding: 8px;
   margin: 8px;
+  width: 100%;
+  min-width:100px;
+  max-width:270px;
+}
+.logo-verdu img{
+  width: 100%;
 }
 
 header .search {
   align-self: center;
-  margin: 35px;
-  border-radius: 5px;
-  background: white;
-  max-height: 30px;
-  max-block-size: 100px;
-  flex: nowrap;
+  width: 25%;
+  flex: 1 1 auto;
 }
 
-header section input {
+
+header .search .search-bar{
+  border-radius: 5px;
+  background-color: #ffffff;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 300ms;
+  opacity: 50%;
+  border: 1px solid #666;
+}
+header .search .search-bar:hover{
+  opacity: 100%;
+}
+
+.search .search-bar #searchterm {
+  width: 90%;
+}
+
+header .search-bar input {
   border: 0;
   border-radius: 5px;
-  padding-left: 10px;
-  max-block-size: 30px; 
-  width: 200px;
-  font-size: 13px
+  padding: 9px;
+  font-size: 13px;
 }
 
 header section .search-bar button {
@@ -90,9 +110,12 @@ header section .search-bar button {
   border-radius: 5px;
   color: #666;
 }
-
-
-
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .menu .cart a {
   color: #ffffff;
@@ -146,10 +169,17 @@ footer h5 {
     box-shadow: rgba(0, 0, 0, 0.5);
     transition: all 600ms;
   }
-
+  .logo-verdu{
+    width: 30%;
+  }
+  .search{
+    display: block;
+  }
+  
 }
 
 @media screen and (min-width: 769px) {
+  
   .flex-container {
     flex-direction: row;
     flex-grow: 1;
@@ -169,6 +199,7 @@ footer h5 {
   footer section article {
     display: flex;
   }
+  
 }
 
 @media screen and (max-width: 768px) {
@@ -214,7 +245,7 @@ footer h5 {
     flex-wrap: wrap;
   }
   .search{
-    display: none;
-   }
+   display: none;
+   } 
   
 }
