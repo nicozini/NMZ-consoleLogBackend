@@ -10,9 +10,7 @@ module.exports = {
     },
     
     productCart:(req,res) => {    
-        console.log('Entro en productCart');
-        // res.render('products/productCart');
-        res.send('carrito');
+        res.render('products/productCart');
     },
     
     productDetail: (req, res) => {
