@@ -7,62 +7,128 @@
 <body>
   <%- include('../partials/header')%>
 
-  <main class="main-register">
+  <main class="main-register" >
     <section>
       <div class="register">
         <marquee>Registrate y Obtene Beneficios</marquee>
-        <form action="/" class="formulario">
+        <form method="post" action="/users/register/" class="formulario">
           <div class="form-control">
-            <input type="text" name="name" id="name" placeholder="Nombre" required class="control">
+            <input type="text" name="name" id="name" placeholder="Nombre" required class="control" <%= locals.Errors && errors.name ? 'is-invalid' : null %>" 
+            >
             <span class="Feedback"></span>
+            <% if(locals.errors && errors.name) { %>
+              <div class="text-danger">
+                <%= errors.name.msg %> 
+              </div>
+            <% } %>
           </div>
           <div class="form-control">
-            <input type="text" name="lastname" id="lastname" placeholder="Apellido" required class="control" >
+            <input type="text" name="lastname" id="lastname" placeholder="Apellido" required class="control" <%= locals.Errors && errors.lastname ? 'is-invalid' : null %>" 
+            >
             <span class="Feedback"></span>
+            <% if(locals.errors && errors.lastname) { %>
+              <div class="text-danger">
+                <%= errors.lastname.msg %> 
+              </div>
+            <% } %>
           </div>          
           <div class="form-control">
-            <input type="text" name="user" id="user" placeholder="Nombre de usuario" required class="control" >
+            <input type="text" name="user" id="user" placeholder="Nombre de usuario" required class="control" <%= locals.Errors && errors.user ? 'is-invalid' : null %>" 
+            >
             <span class="Feedback"></span>
+            <% if(locals.errors && errors.user) { %>
+              <div class="text-danger">
+                <%= errors.user.msg %> 
+              </div>
+            <% } %>
           </div>
-          <div class="form-control">
+          <div class="form-control" <%= locals.Errors && errors.dateBrith ? 'is-invalid' : null %>" 
+            >
             <label class="label"for="dateBrith">Fecha de Nacimiento:</label>
             <input type="date" name="dateBrith" id="dateBrith" class="control">
+            <% if(locals.errors && errors.dateBrith) { %>
+              <div class="text-danger">
+                <%= errors.dateBrith.msg %> 
+              </div>
+            <% } %>
           </div>
-
           <div class="form-control form-address" >
-            <input type="text" name="address" id="address" placeholder="Domicilio" class="control" required>
+            <input type="text" name="address" id="address" placeholder="Domicilio" class="control" required <%= locals.Errors && errors.address ? 'is-invalid' : null %>" 
+            >
             <div class="address-especification">
               <label  class="label" for="numaddress">Nro:</label>
-              <input type="number" name="numaddress" id="numaddress" placeholder="123" class="control" required>
+              <input type="number" name="numaddress" id="numaddress" placeholder="123" class="control" required <%= locals.Errors && errors.numaddress ? 'is-invalid' : null %>" 
+              >
+              <% if(locals.errors && errors.address) { %>
+                <div class="text-danger">
+                  <%= errors.name.msg %> 
+                </div>
+              <% } %>
             </div>
             <div class="address-especification">
               <label class="label" for="floor">Piso:</label>
-              <input type="text" name="floor" id="floor" placeholder="PB" class="control">
+              <input type="text" name="floor" id="floor" placeholder="PB" class="control" <%= locals.Errors && errors.floor ? 'is-invalid' : null %>" 
+              >
+              <% if(locals.errors && errors.floor) { %>
+                <div class="text-danger">
+                  <%= errors.floor.msg %> 
+                </div>
+              <% } %>
             </div>              
             <div class="address-especification">
               <label class="label" for="numFloor">Nro:</label>
-              <input type="number" name="numFloor" id="numFloor" placeholder="0" class="control">
+              <input type="number" name="numFloor" id="numFloor" placeholder="0" class="control" <%= locals.Errors && errors.numFloor ? 'is-invalid' : null %>" 
+              >
+              <% if(locals.errors && errors.numFloor) { %>
+                <div class="text-danger">
+                  <%= errors.numFloor.msg %> 
+                </div>
+              <% } %>
             </div>
           </div>
           <div class="form-control">
-            <label class="label" for="city">Localidad:</label>
-                <select name="city" id="city" class="control" required>
+            <label class="label" for="city">Localidad:</label> 
+                <select name="city" id="city" class="control" required <%= locals.Errors && errors.city ? 'is-invalid' : null %>" 
+                  >
                     <option value="CF">Capital Federal</option>
                     <option value="Co">Cordoba</option>
                     <option value="Ro">Rosario</option>
                     <option value="MZ">Mendoza</option>
                 </select>
+                <% if(locals.errors && errors.city) { %>
+                  <div class="text-danger">
+                    <%= errors.city.msg %> 
+                  </div>
+                <% } %>
           </div>
           <div class="form-control">
-            <input type="email" name="email" id="email" placeholder="usuario@gmail.com" class="control" required>
+            <input type="email" name="email" id="email" placeholder="usuario@gmail.com" class="control" required <%= locals.Errors && errors.email ? 'is-invalid' : null %>" 
+            >
             <span class="Feedback"></span>
+            <% if(locals.errors && errors.email) { %>
+              <div class="text-danger">
+                <%= errors.email.msg %> 
+              </div>
+            <% } %>
           </div>
           <div class="form-control">
-            <input type="password" name="pass" id="pass" placeholder="Contraseña" class="control" required>
+            <input type="password" name="pass" id="pass" placeholder="Contraseña" class="control" required <%= locals.Errors && errors.pass ? 'is-invalid' : null %>" 
+            >
+            <% if(locals.errors && errors.pass) { %>
+              <div class="text-danger">
+                <%= errors.pass.msg %> 
+              </div>
+            <% } %>
           </div>
           <div class="form-control">
             <input type="password" name="confirmpass" id="confirmpass" placeholder="Confirmar contraseña"
-              class="control" required>
+              class="control" required <%= locals.Errors && errors.confirmpass ? 'is-invalid' : null %>" 
+              >
+              <% if(locals.errors && errors.confirmpass) { %>
+                <div class="text-danger">
+                  <%= errors.confirmpass.msg %> 
+                </div>
+              <% } %>
           </div>
           <div class="form-control">
             <label class="label" for="fiscalCondition">Condicion Fiscal:</label>
@@ -75,8 +141,14 @@
             </select>
           </div>
           <div class="form-control">
-            <input type="number" name="idfiscal" id="idfiscalame" placeholder="Cuit" required class="control">
+            <input type="number" name="idfiscal" id="idfiscalame" placeholder="Cuit" required class="control" <%= locals.Errors && errors.idfiscal ? 'is-invalid' : null %>" 
+            >
             <span class="Feedback"></span>
+            <% if(locals.errors && errors.idfiscal) { %>
+              <div class="text-danger">
+                <%= errors.idfiscal.msg %> 
+              </div>
+            <% } %>
           </div>
           <div class="check">
             <label class="label" for="agree">Acepto los terminos y condiciones de este sitio</label>
@@ -92,7 +164,7 @@
             <input type="reset" value="Limpiar" class="button-form">
           </div>
         </form>
-      </div>  
+      </div> 
     </section>
   </main>
   <%- include('../partials/footer')%>
