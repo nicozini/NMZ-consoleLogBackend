@@ -39,5 +39,8 @@ module.exports = {
         
         fs.writeFileSync(archivo, productJSON, 'utf-8');
         return true;
+    },
+    productDelete: function(id) {
+
     }
 };

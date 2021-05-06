@@ -84,7 +84,11 @@ module.exports = {
         fileOperations.save(products)
         res.redirect('/product')
     },
-    productDelete: (req, res) => {
+    productDelete: (req,res) => {
+        let  products= this.list()
+        let productsNew = products.filter(i => i.id != req.params.id);
+    
+        res.send(productsNew);
         
     }
 };
