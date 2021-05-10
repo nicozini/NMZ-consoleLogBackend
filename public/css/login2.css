@@ -8,7 +8,6 @@
   body {
     font-family: "Roboto", sans-serif;
     background-color: #f6f6f6;
-    background-image: url('/images/LoginFondo.png');
     background-size: cover;
   }
   
@@ -29,7 +28,6 @@
   
   marquee {
     margin-top: 20px;
-    color: white;
   }
   
   .main-login section .login .form-control {
@@ -73,7 +71,7 @@
 
   .main-login .label{
     color:#666;
-    background-color: #ffffff75;
+    background-color: #ffffff98;
   }
 
   /* ------  MQ LOGIN    ------ */
@@ -81,6 +79,11 @@
     .main-login{
       width: 600px;
     }
+  
+    body {
+      background-image: url('/images/fondo-cart.jpg');
+      background-size: cover;
+     }
     
 
   }
