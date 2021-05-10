@@ -31,13 +31,13 @@
               Precio por Kilo:<%= product.price %>
             </h4>
           </div>
-          <div class="buttons">
-              <h3 class="but"><a href="/products/edit/<%= product.id %>/edit">Modificar</a></h3>
+          <div>
+              <h3 class="buttons"><a href="/products/edit/<%= product.id %>/edit">Modificar</a></h3>
           </div>
-          <div class="buttons">
+          <div >
             <form method="POST" action="delete/<%= product.id %>?_method=DELETE">
-    <button type="submit" class="delete">Delete</button>
-  </form>
+            <input class="buttons" type="submit" value="Eliminar">
+          </form>
           </div>
         </div>
       </article>
@@ -53,7 +53,7 @@
       </div>
       
 
-      <h2 class="relproduct">Productos relacionados</h2>
+      <!-- <h2 class="relproduct">Productos relacionados</h2> -->
 
       <div class="row">
 
