@@ -25,7 +25,7 @@ router.put('/:id', productController.productSave);
 // Detalle de producto según :id
 router.get("/:id", productController.productDetail);
 
-// PENDIENTE RUTA PARA ELIMINAR PRODUCTOS
-router.delete('/delete/:id', productController.productDelete)
+// Ruta para eliminar productos
+router.delete('/delete/:id', productController.productDelete);
 
 module.exports = router;

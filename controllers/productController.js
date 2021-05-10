@@ -1,3 +1,4 @@
+const fs = require('fs');
 let fileOperations = require('../models/fileOperations'); 
 
 
@@ -83,13 +84,26 @@ module.exports = {
         fileOperations.save(products)
         res.redirect('/product')
     },
-    productDelete: (req,res) => {
-        let products = fileOperations.getProductList();
-        let productsNew = products.filter(i => i.id != req.params.id);
+
+
+    // productDelete: (req,res) => {
+    //     let products = fileOperations.getProductList();
+    //     let productsNew = products.filter(i => i.id != req.params.id);
     
-        // res.send(productsNew);
-        fileOperations.save(products)
-        res.redirect('/product')
+    //     // res.send(productsNew);
+    //     fileOperations.save(products)
+    //     res.redirect('/product')
         
+    // }
+
+    productDelete: function (req,res) {
+        let idToDelete = req.params.id;
+        let products = fileOperations.delete(idToDelete); 
+        return res.redirect('/products');       
     }
+
+
+
+
+
 };
