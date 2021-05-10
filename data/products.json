@@ -167,29 +167,5 @@
     "conservacion": "Para su correcta conserva, podemos colocarlo dentro de la heladera durante unos 7 días aproximadamente. ",
     "facts": "Alto contenido de Vitamina A y C",
     "week": false
-  },
-  {
-    "id": 17,
-    "name": "prueba",
-    "price": "1234",
-    "category": "fruta",
-    "description": "dfadfasdfdsafsdfd",
-    "facts": "asdfsa"
-  },
-  {
-    "id": 18,
-    "name": "nuevo de prueba",
-    "price": "100",
-    "category": "fruta",
-    "description": "sadfsdafdf",
-    "facts": "asfdfdsa"
-  },
-  {
-    "id": 19,
-    "name": "nuevo",
-    "price": "100",
-    "category": "fruta",
-    "description": "sadfddfas",
-    "facts": "sadfsdaf"
   }
 ]

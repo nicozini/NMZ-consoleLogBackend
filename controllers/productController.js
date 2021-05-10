@@ -88,7 +88,8 @@ module.exports = {
         let productsNew = products.filter(i => i.id != req.params.id);
     
         // res.send(productsNew);
-        fileOperations.save(products)
+        fileOperations.save(productsNew)
+
         res.redirect('/products')
         
     }
