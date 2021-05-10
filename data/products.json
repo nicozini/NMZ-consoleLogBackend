@@ -175,5 +175,21 @@
     "category": "fruta",
     "description": "dfadfasdfdsafsdfd",
     "facts": "asdfsa"
+  },
+  {
+    "id": 18,
+    "name": "nuevo de prueba",
+    "price": "100",
+    "category": "fruta",
+    "description": "sadfsdafdf",
+    "facts": "asfdfdsa"
+  },
+  {
+    "id": 19,
+    "name": "nuevo",
+    "price": "100",
+    "category": "fruta",
+    "description": "sadfddfas",
+    "facts": "sadfsdaf"
   }
 ]

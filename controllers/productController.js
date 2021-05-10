@@ -50,7 +50,7 @@ module.exports = {
         };
 
         fileOperations.saveNew(nuevoProducto)
-        res.redirect('/product')
+        res.redirect('/products')
     },
 
 
@@ -82,7 +82,7 @@ module.exports = {
         });
         
         fileOperations.save(products)
-        res.redirect('/product')
+        res.redirect('/products')
     },
 
 
@@ -90,9 +90,9 @@ module.exports = {
     //     let products = fileOperations.getProductList();
     //     let productsNew = products.filter(i => i.id != req.params.id);
     
-    //     // res.send(productsNew);
-    //     fileOperations.save(products)
-    //     res.redirect('/product')
+        // res.send(productsNew);
+        // fileOperations.save(products)
+        // res.redirect('/products')
         
     // }
 

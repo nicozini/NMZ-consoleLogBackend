@@ -17,35 +17,35 @@ main {
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 main .order {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   padding: 20px 20px 0;
 }
 
 .order h2 {
-  text-align: left;
+  text-align: center;
   margin-bottom: 20px;
   color: rgba(0, 0, 0, 0.5);
   line-height: 35px;
 }
 
 .order p {
-  text-align: left;
+  text-align: center;
   min-width: 320px;
   max-width: 650px;
   font-size: 1em;
-  color: #ffffff;
-  background-color: rgba(0, 0, 0, 0.3);
+  color:rgba(0, 0, 0, 0.5);
   margin-bottom: 20px;
 }
 
 /* --- Botón orden y carrito --- */
 .order .order-button {
-  border: none;
+  border: #8cb944;
   border-radius: 4px;
   padding: 16px 32px;
   text-align: center;
@@ -54,7 +54,7 @@ main .order {
   transition-duration: 0.4s;
   cursor: pointer;
   text-transform: uppercase;
-  background-color: #008cba;
+  background-color: #007849;
   align-self: center;
   width: 40%;
   min-width: 300px;
@@ -79,16 +79,16 @@ main .order {
 
 
 /* --- Search bar --- */
-main .search {
+/* main .search {
   align-self: center;
   margin: 40px 0;
   border-radius: 15px;
   background: #e0e0e0;
   box-shadow:  8px 8px 30px #bebebe,
              -8px -8px 30px #ffffff;
-}
+} */
 
-main section input {
+/* main section input {
   border: 0;
   border-radius: 5px;
   padding-left: 10px;
@@ -103,7 +103,7 @@ main section .search-bar button {
   width: 40px;
   border-radius: 5px;
   color: #666;
-}
+} */
 
 
 /* --- 4 imágenes productos --- */
