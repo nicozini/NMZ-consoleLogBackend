@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const archivo = path.join(__dirname + '/../data/productsDataBase.json')
+const archivo = path.join(__dirname + '/../data/productsVerduDataBase.json')
 
 module.exports = {
     
