@@ -35,7 +35,7 @@
               <h3 class="buttons"><a href="/products/<%= product.id %>/edit">Modificar</a></h3>
           </div>
           <div >
-            <form method="POST" action="delete/<%= product.id %>?_method=DELETE">
+            <form method="POST" action="/products/delete/<%= product.id %>?_method=DELETE">
             <input class="buttons" type="submit" value="Eliminar">
           </form>
           </div>
