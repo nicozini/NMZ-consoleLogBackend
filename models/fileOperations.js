@@ -40,7 +40,13 @@ module.exports = {
         fs.writeFileSync(archivo, productJSON, 'utf-8');
         return true;
     },
-    productDelete: function(id) {
+    delete: function(id) {
+        let allProducts = this.getProductList();
+        let finalProducts = allProducts.filter(oneProduct => oneProduct.id !== id);
+        let writedProducts = this.save(finalProducts);
+        return writedProducts;
 
+        // fs.writeFileSync(archivo, JSON.stringify(finalProducts, null, ' '));
+        // return finalProducts;
     }
 };
