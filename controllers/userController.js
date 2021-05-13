@@ -1,5 +1,13 @@
 console.log('entro en Controlador de usuario');
+
 const {validationResult} = require('express-validator');
+
+const bcryptjs = require('bcryptjs');
+
+const User = require('../models/');
+
+
+// Funcionalidad userController
 let userControler = {
     
     register:(req,res)=>{
@@ -37,9 +45,54 @@ let userControler = {
         */
         //guardarla
 
+
+    // Nico: por get traigo la vista de Login    
     login:(req,res)=>{    
         res.render('users/login');
+    },
+
+    // Nico: por post proceso la informacion del logueo e inicio session
+    processLogin: (req,res) => {
+        // usuario logueado?
+        let userToLogin = User.findByField('email', req.body.email);
+
+        if (userToLogin) {
+            // True. Verifico password y encripto
+            let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
+
+            if (isOkThePassword) {
+                delete userToLogin.password;
+                req.session.userLogged = userToLogin;
+
+                // Nico: ver cookie de recordame
+                // if (req.body.remember_user) {
+                //     res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) *2 });                    
+                // }
+
+                return res.redirect('/user/profile');                
+            }    
+
+            // False. Muestro error generico
+            return res.render('userLoginForm', {
+                errors: {
+                    email: {
+                        msg: 'Error... las credenciales son inválidas'
+                    }
+                }
+            });    
+        }
+
+        // userToLogin es undefined significa que no está ese email
+        return res.render('userLoginForm', {
+            errors: {
+                email: {
+                    msg: 'No se encuentra este email en nuestra base de datos'
+                }
+            }
+        })
     }
+
+    
 };
 
 module.exports = userControler;
