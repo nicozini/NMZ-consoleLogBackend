@@ -4,7 +4,7 @@ const {validationResult} = require('express-validator');
 
 const bcryptjs = require('bcryptjs');
 
-const User = require('../models/');
+const User = require('../models/Users');
 
 
 // Funcionalidad userController
