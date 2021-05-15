@@ -22,10 +22,14 @@ const validations = [
     body('idfiscal').notEmpty() .withMessage('Completá el ID'),
 ];
 
+// Registro
 router.get('/register',userController.register);
 router.post('/register', validations, userController.processRegister);
 
-
+// Login - Inicio Sesión
 router.get('/login',userController.login);
+router.post('/login',userController.processLogin);
+
+
 
 module.exports = router;
