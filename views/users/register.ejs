@@ -11,7 +11,7 @@
     <section>
       <div class="register">
         <marquee>Registrate y Obtene Beneficios</marquee>
-        <form method="post" action="/users/register/" class="formulario">
+        <form method="post" action="/users/register/" class="formulario" enctype="multipart/form-data">
           <div class="form-control">
             <input type="text" name="name" id="name" placeholder="Nombre" required class="control" <%= locals.Errors && errors.name ? 'is-invalid' : null %>" 
             >
@@ -149,6 +149,11 @@
                 <%= errors.idfiscal.msg %> 
               </div>
             <% } %>
+          </div>
+          <br>
+          <div>
+            <label><b>Imagen de perfil:</b></label>
+            <input class='form-control' type="file" name="avatar">
           </div>
           <div class="check">
             <label class="label" for="agree">Acepto los terminos y condiciones de este sitio</label>

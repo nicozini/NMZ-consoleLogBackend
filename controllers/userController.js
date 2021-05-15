@@ -1,6 +1,6 @@
 console.log('entro en Controlador de usuario');
 
-const {validationResult} = require('express-validator');
+const {validationResult, body} = require('express-validator');
 
 const bcryptjs = require('bcryptjs');
 
