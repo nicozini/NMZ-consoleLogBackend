@@ -3,7 +3,7 @@ const fs = require('fs');
 // Funcionalidades usuarios
 const User = {
 
-    fileName: './database/users.json',
+    fileName: './data/users.json',
 
     // Traer a todos los usuarios del JSON a un ARRAY de OL
     getData: function() {
