@@ -8,7 +8,7 @@ const User = require('../models/Users');
 
 
 // Funcionalidad userController
-let userControler = {
+let userController = {
     
     register:(req,res)=>{
         console.log('entro en método register');
@@ -25,26 +25,8 @@ let userControler = {
         }
         return res.send ('Ok, las validaciones pasaron con éxito!')
     },        
-        //return res.send(resultValidation);
-        /*let user = {
-            name: req.body.name,
-            lastname: req.body.lastname,
-            user: req.body.user,
-            dateBrith: req.body.dateBrith,
-            address: req.body.address,
-            numaddress: req.body.numaddress,
-            floor: req.body.floor,
-            numFloor: req.body.numFloor,
-            city: req.body.city,
-            email: req.body.email,
-            pass: req.body.pass,
-            confirmpass: req.body.confirmpass,
-            fiscalCondition: req.body.fiscalCondition,
-            idfiscal: req.body.idfiscal,
-        }
-        */
-        //guardarla
-
+ 
+    
 
     // Nico: por get traigo la vista de Login    
     login:(req,res)=>{    
@@ -95,4 +77,4 @@ let userControler = {
     
 };
 
-module.exports = userControler;
+module.exports = userController;

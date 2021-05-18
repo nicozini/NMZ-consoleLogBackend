@@ -43,7 +43,7 @@ const User = {
 
     // Crear un usuario
     create: function(userData) {
-        let allUsers = this.findAll();
+        let allUsers = this.findAll(); 
 
         let newUser = {
             id: this.generateId(),
