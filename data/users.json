@@ -7,7 +7,7 @@
     "password": "CtwS9dDV",
     "category": "user",
     "image": "user_1.jpg",
-    " vegetarian": false
+    "vegetarian": false
   },
   {
     "id": 2,
@@ -17,7 +17,7 @@
     "password": "Gi2LgBt5",
     "category": "user",
     "image": "user_2.jpg",
-    " vegetarian": true
+    "vegetarian": true
   },
   {
     "id": 3,
@@ -27,7 +27,7 @@
     "password": "uwHX548Ldgqz",
     "category": "user",
     "image": "user_3.jpg",
-    " vegetarian": true
+    "vegetarian": true
   },
   {
     "id": 4,
@@ -37,7 +37,7 @@
     "password": "DxefCummEb",
     "category": "user",
     "image": "user_4.jpg",
-    " vegetarian": true
+    "vegetarian": true
   },
   {
     "id": 5,
@@ -47,7 +47,7 @@
     "password": "WS0yCMPwgd",
     "category": "user",
     "image": "user_5.jpg",
-    " vegetarian": false
+    "vegetarian": false
   },
   {
     "id": 6,
@@ -57,7 +57,7 @@
     "password": "HCWkRJ7iM4NG",
     "category": "user",
     "image": "user_6.jpg",
-    " vegetarian": true
+    "vegetarian": true
   },
   {
     "id": 7,
@@ -67,7 +67,7 @@
     "password": "JL8c7R7",
     "category": "user",
     "image": "user_7.jpg",
-    " vegetarian": false
+    "vegetarian": false
   },
   {
     "id": 8,
@@ -77,7 +77,7 @@
     "password": "Saw20V",
     "category": "user",
     "image": "user_8.jpg",
-    " vegetarian": false
+    "vegetarian": false
   },
   {
     "id": 9,
@@ -87,7 +87,7 @@
     "password": "8qr2I4sLq8f6",
     "category": "user",
     "image": "user_9.jpg",
-    " vegetarian": false
+    "vegetarian": false
   },
   {
     "id": 10,
@@ -97,7 +97,7 @@
     "password": "36sLnj",
     "category": "user",
     "image": "user_10.jpg",
-    " vegetarian": true
+    "vegetarian": true
   },
   {
     "id": 11,
@@ -107,7 +107,7 @@
     "password": "qweiFfZM",
     "category": "user",
     "image": "user_11.jpg",
-    " vegetarian": true
+    "vegetarian": true
   },
   {
     "id": 12,
@@ -117,7 +117,7 @@
     "password": "ZkiZmzum",
     "category": "user",
     "image": "user_12.jpg",
-    " vegetarian": true
+    "vegetarian": true
   },
   {
     "id": 13,
@@ -127,7 +127,7 @@
     "password": "XGzfincciK",
     "category": "user",
     "image": "user_13.jpg",
-    " vegetarian": false
+    "vegetarian": false
   },
   {
     "id": 14,
@@ -137,7 +137,7 @@
     "password": "DgA5DHtiuzv",
     "category": "user",
     "image": "user_14.jpg",
-    " vegetarian": false
+    "vegetarian": false
   },
   {
     "id": 15,
@@ -147,7 +147,7 @@
     "password": "2KZ9gB",
     "category": "user",
     "image": "user_15.jpg",
-    " vegetarian": false
+    "vegetarian": false
   },
   {
     "id": 16,
@@ -157,7 +157,7 @@
     "password": "slqOLBhZb",
     "category": "user",
     "image": "user_16.jpg",
-    " vegetarian": true
+    "vegetarian": true
   },
   {
     "id": 17,
@@ -167,7 +167,7 @@
     "password": "mGD9t7",
     "category": "user",
     "image": "user_17.jpg",
-    " vegetarian": false
+    "vegetarian": false
   },
   {
     "id": 18,
@@ -177,7 +177,7 @@
     "password": "NfegqMepH6f",
     "category": "user",
     "image": "user_18.jpg",
-    " vegetarian": true
+    "vegetarian": true
   },
   {
     "id": 19,
@@ -187,7 +187,7 @@
     "password": "qKTEO7Xq",
     "category": "user",
     "image": "user_19.jpg",
-    " vegetarian": false
+    "vegetarian": false
   },
   {
     "id": 20,
@@ -197,6 +197,6 @@
     "password": "owLz3Bv9hYB",
     "category": "user",
     "image": "user_20.jpg",
-    " vegetarian": true
+    "vegetarian": true
   }
 ]

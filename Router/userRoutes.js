@@ -39,7 +39,7 @@ const validations = [
         let file = req.file; 
         let acceptedExtensions = ['.jpg', '.png', '.gif']
         
-        if (!file); {
+        if (!file) {
             throw new Error ('Tienes que subir una imagen');
         } else {
             let fileExtension = path.extname(file.originalname);
@@ -53,7 +53,7 @@ const validations = [
 
 router.get('/register',userController.register);
 router.post('/register', uploadFile.single('avatar'), validations, userController.processRegister);
-];
+
 
 // Registro
 router.get('/register',userController.register);

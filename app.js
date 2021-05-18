@@ -4,6 +4,7 @@ const port          = process.env.PORT ;
 const methodOverride = require('method-override');
 const session = require('express-session');
 
+//Rutas
 const userRoutes    = require('./Router/userRoutes');
 const productRoutes = require('./Router/productRoutes');
 const mainRoutes    = require('./Router/mainRoutes');
@@ -20,10 +21,12 @@ app.set('view engine','ejs');
 app.use(express.urlencoded({ extended: false }));
 // Middleware compatibilidad PUT y DELETE
 app.use(methodOverride('_method'));
+//middleware de Sesion 
+//app.use(userLoggedMiddleware()) ;
 
 app.use('/', mainRoutes) ;
 
-app.use('/users', userRoutes) ;
+app.use('/users', userRoutes) ; 
 
 app.use('/products', productRoutes) ;
 
