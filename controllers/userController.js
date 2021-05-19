@@ -1,36 +1,54 @@
 console.log('entro en Controlador de usuario');
 
-const {validationResult, body} = require('express-validator');
-
+const {
+	validationResult
+} = require('express-validator');
 const bcryptjs = require('bcryptjs');
-
 const User = require('../models/Users');
 
 
 // Funcionalidad userController
-let userController = {
-    
-    register:(req,res)=>{
-        console.log('entro en método register');
-        res.render('users/register');
-    },
-    processRegister: (req, res) => {
-        const resultValidation = validationResult(req);
-        
-        if (resultValidation.errors.length > 0) {
-            return res.render('userRegisterForm', {
-                errors: resultValidation.mapped(),
-                oldData: req.body(),
-            });
-        }
-        return res.send ('Ok, las validaciones pasaron con éxito!')
-    },        
- 
-    
+    const userController = {
+        //register, cuando entro
+        register: (req, res) => {
+            console.log('entro en método register');
+            return res.render('users/register');
+        },
+        // process register (post)
+        processRegister: (req, res) => {
+            const resultValidation = validationResult(req);
+            // si hay errores, volver a la data guardada
+            if (resultValidation.errors.length > 0) {
+                return res.render('users/register', {
+                    errors: resultValidation.mapped(),
+                    oldData: req.body
+                });
+            }
+            let userInDB = User.findByField('email', req.body.email);
+            //si no hay errores, buscar login
+            if (userInDB) {
+                return res.render('users/register', {
+                    errors: {
+                        email: {
+                            msg: 'Este email ya está registrado'
+                        }
+                    },
+                    oldData: req.body
+                });
+            }
+            let userToCreate = {
+                ...req.body,
+                password: bcryptjs.hashSync(req.body.password, 10),
+                avatar: req.file.filename
+            }
+            let userCreated = User.create(userToCreate);
+            return res.redirect('/user/login');
+        },
+
 
     // Nico: por get traigo la vista de Login    
     login:(req,res)=>{    
-        res.render('users/login');
+        return res.render('users/login');
     },
 
     // Nico: por post proceso la informacion del logueo e inicio session
