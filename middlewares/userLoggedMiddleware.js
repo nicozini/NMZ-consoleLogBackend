@@ -3,7 +3,7 @@
 // para login y register, pero si estoy logueado que no aparezcan y aparezca el usuario en el header
 
 
-const User = require('../models/User');
+const User = require('../models/Users');
 
 
 function userLoggedMiddleware(req,res,next) {

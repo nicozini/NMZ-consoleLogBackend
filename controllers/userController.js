@@ -90,9 +90,18 @@ const User = require('../models/Users');
                 }
             }
         })
+    },
+    profile: (req,res) => {
+        let userPrueba={
+            first_name: "Lindie",
+            last_name: "Camblin",
+            email: "lcamblin0@shop-pro.jp",
+            category: "user",
+            image: "user_1.jpg",
+            vegetarian: false
+        }
+        res.render('users/profile',{data:userPrueba})
     }
-
-    
 };
 
 module.exports = userController;
