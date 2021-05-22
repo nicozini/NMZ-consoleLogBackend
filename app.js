@@ -24,7 +24,7 @@ app.use(express.urlencoded({ extended: false }));
 // Middleware compatibilidad PUT y DELETE
 app.use(methodOverride('_method'));
 //middleware de Sesion 
-//app.use(userLoggedMiddleware()) ;
+app.use(userLoggedMiddleware()) ;
 
 app.use('/', mainRoutes) ;
 
