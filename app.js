@@ -8,6 +8,8 @@ const session = require('express-session');
 const userRoutes    = require('./Router/userRoutes');
 const productRoutes = require('./Router/productRoutes');
 const mainRoutes    = require('./Router/mainRoutes');
+//Middleware de Session
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
 app.use(session({
     secret: 'verduSecret, shh!',

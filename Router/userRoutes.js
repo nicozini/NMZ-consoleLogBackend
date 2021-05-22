@@ -29,6 +29,7 @@ router.post('/login',userController.processLogin);
 // NOS QUEDA hacer esto de las user routes
 // Perfil de Usuario
 //router.get('/profile/', authMiddleware, userController.profile);
+router.get('/profile/', userController.profile);//saco temporalmente para probar la vista
 
 // Logout
 //router.get('/logout/', userController.logout);

@@ -1,0 +1,34 @@
+/* first mobile */
+.center-conteiner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.center-conteiner .image{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.center-conteiner .image .picture{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+
+
+.center-conteiner .data .buyCard{
+    background-color: #f6d866;
+    border-radius: 10%;
+    padding:10%;
+    margin:auto;
+
+}
+@media screen and (min-width: 360px) {
+    /* .center-conteiner .image .picture{
+        width: 30%;
+    } */
+}
