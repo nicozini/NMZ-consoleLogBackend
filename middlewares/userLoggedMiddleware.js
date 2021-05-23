@@ -7,6 +7,7 @@ const User = require('../models/Users');
 
 
 function userLoggedMiddleware(req,res,next) {
+    
     // Pregunto si hay alguien en session, si lo esta, le muestro una parte la la nav bar
     // Creo en locals el false para el usuario logueado (no está logueado)
     res.locals.isLogged = false;

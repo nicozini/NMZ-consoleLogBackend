@@ -73,7 +73,7 @@ const User = require('../models/Users');
             }    
 
             // False. Muestro error generico
-            return res.render('userLoginForm', {
+            return res.render('login', {
                 errors: {
                     email: {
                         msg: 'Error... las credenciales son inválidas'
@@ -83,13 +83,15 @@ const User = require('../models/Users');
         }
 
         // userToLogin es undefined significa que no está ese email
-        return res.render('userLoginForm', {
-            errors: {
-                email: {
-                    msg: 'No se encuentra este email en nuestra base de datos'
-                }
-            }
-        })
+        // return res.render('login', {
+        // errors: {
+        //         email: {
+        //             msg: 'No se encuentra este email en nuestra base de datos'
+        //         }
+        //     }
+        // })
+        res.render('login');
+        
     },
     profile: (req,res) => {
         let userPrueba={

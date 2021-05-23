@@ -11,8 +11,10 @@
     <section>
       <div class="login">
         <marquee>Ingresá a tu cuenta</marquee>
-
-        <form action="/" class="formulario" >
+        <% if ( locals.errors && errors.error ) {%> 
+          <p> errors.error.msg </p>
+        <% }  %> 
+        <form action="login" method="POST" class="formulario" >
           <div class="form-control">
             <input type="text" name="name" id="name" placeholder="Usuario" required class="control">
             <span class="Feedback"></span>
