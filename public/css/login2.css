@@ -19,7 +19,7 @@
     color: #666;
   }
   
-  /* ------ Formulario de registro ------ */
+  /* ------ Formulario de Login ------ */
   .main-login section .login {
     display: flex;
     flex-wrap: wrap;
@@ -72,6 +72,14 @@
   .main-login .label{
     color:#666;
     background-color: #ffffff98;
+  }
+
+  .text-danger {
+    color: red;
+    font-size: 20px;
+    text-align: right;
+    background-color: #ededed56;
+    border-radius: 5px;
   }
 
   /* ------  MQ LOGIN    ------ */

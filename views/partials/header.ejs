@@ -20,13 +20,22 @@
       </div>
       <nav class="menu">
         <ul>
-          <li><a href="/products">Productos <i class="fas fa-carrot"></i></a> </li> 
-          <li><a href="#">Quienes Somos <i class="fas fa-users"></i></a></li>
-          <li><a href="/users/register">Registrate <i class="fas fa-address-card"></i></a></li>
-          <li><a href="/users/login">Ingresá <i class="fas fa-sign-in-alt"></i></a></li>
-          <li><a href="#">Contacto <i class="fas fa-phone"></i></a></li>
+          <% if (locals.isLogged) { %>
+            <li><a href="/users/profile">MI PERFIL</a></li><br>
+            <p>Hola <%= locals.userLogged.name %>!</p><br>
+            <img src="/avatars/<%= locals.userLogged.avatar %>" alt="Imagen de usuario" width="30px" height="30px">
+            <li class="cart"><a href="/products/productCart"><i class="fas fa-shopping-cart"></i> </a></li>
+            <li><a href="/products">Productos <i class="fas fa-carrot"></i></a> </li> 
+            <li><a href="#">Quienes Somos <i class="fas fa-users"></i></a></li>
+            <li><a href="#">Contacto <i class="fas fa-phone"></i></a></li>
+            <% } else { %>
+              <li><a href="/products">Productos <i class="fas fa-carrot"></i></a> </li> 
+              <li><a href="#">Quienes Somos <i class="fas fa-users"></i></a></li>
+              <li><a href="#">Contacto <i class="fas fa-phone"></i></a></li>
+              <li><a href="/users/register">Registrate <i class="fas fa-address-card"></i></a></li>
+              <li><a href="/users/login">Ingresá <i class="fas fa-sign-in-alt"></i></a></li>
           <br>
-          <li class="cart"><a href="/products/productCart"><i class="fas fa-shopping-cart"></i> </a></li>
+          <% } %>
         </ul>
       </nav>
     </div>

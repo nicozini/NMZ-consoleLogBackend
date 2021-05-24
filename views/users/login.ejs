@@ -15,19 +15,17 @@
 
         <marquee>Ingresá a tu cuenta</marquee>
 
-        <% if ( locals.errors && errors.error ) {%> 
-          <p> errors.error.msg </p>
-        <% }  %> 
-
         <form action="/users/login/" method="POST" class="formulario">
 
           <div class="form-control">
             <input type="email" name="email" id="email" placeholder="Email" class="control">
+
             <% if (locals.errors && errors.email) { %>
               <div class="text-danger">
                 <%= errors.email.msg %> 
               </div>
             <% } %>
+
             <span class="Feedback"></span>
           </div>
 
@@ -37,14 +35,14 @@
           </div>    
 
           <div class="check">
-            <input type="radio" name="agree" id="agree">       
-            <label class="label" for="agree">Recordame</label>
+            <input type="radio" name="remember" id="remember">       
+            <label class="label" for="remember">Recordame</label>
           </div>  
 
           <br>
 
           <div class="form-control buttons">
-            <input type="submit" value="Enviar" class="submit button-form">
+            <input type="submit" value="Iniciar sesión" class="submit button-form">
             <input type="href" value="Registrate" class="button-form">
           </div>
 

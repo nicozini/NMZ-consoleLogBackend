@@ -1,14 +1,12 @@
 // Nivel: ruta
-// Objetivo del MD: Si el usuario esta registrado/logueado se lo derive a la vista login
+// Objetivo: Si el usuario esta registrado/logueado pero no en session, hago redirect a la vista login
 
 function authMiddleware(req, res, next) {
-    // Primero pregunto si hay algun unsuario en session
+    // Primero pregunto si NO hay algun unsuario en session
     if (!req.session.userLogged) {
-        return res.redirect('/user/login');
+        return res.redirect('/users/login');
     }
     next();
-
-
 };
 
 module.exports = authMiddleware;
