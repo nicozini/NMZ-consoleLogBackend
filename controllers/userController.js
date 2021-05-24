@@ -1,63 +1,72 @@
-console.log('entro en Controlador de usuario');
-
-const {
-	validationResult
-} = require('express-validator');
-const bcryptjs = require('bcryptjs');
+// Modelo o DB
 const User = require('../models/Users');
+
+// Modulos requeridos
+const {	validationResult } = require('express-validator');
+const bcryptjs = require('bcryptjs');
+
 
 
 // Funcionalidad userController
-    const userController = {
-        //register, cuando entro
-        register: (req, res) => {
-            console.log('entro en método register');
-            return res.render('users/register');
-        },
-        // process register (post)
-        processRegister: (req, res) => {
-            const resultValidation = validationResult(req);
-            // si hay errores, volver a la data guardada
-            if (resultValidation.errors.length > 0) {
-                return res.render('users/register', {
-                    errors: resultValidation.mapped(),
-                    oldData: req.body
-                });
-            }
-            let userInDB = User.findByField('email', req.body.email);
-            //si no hay errores, buscar login
-            if (userInDB) {
-                return res.render('users/register', {
-                    errors: {
-                        email: {
-                            msg: 'Este email ya está registrado'
-                        }
-                    },
-                    oldData: req.body
-                });
-            }
-            let userToCreate = {
-                ...req.body,
-                password: bcryptjs.hashSync(req.body.password, 10),
-                avatar: req.file.filename
-            }
-            let userCreated = User.create(userToCreate);
-            return res.redirect('/user/login');
-        },
+const userController = {
+    
+    // Registro (GET)
+    register: (req, res) => {
+        return res.render('users/register');
+    },
 
+    // Registro (POST)
+    processRegister: (req, res) => {
+        const resultValidation = validationResult(req);
 
-    // Nico: por get traigo la vista de Login    
-    login:(req,res)=>{    
+        // Si hay errores, devolver data ingresada y validaciones
+        if (resultValidation.errors.length > 0) {
+            return res.render('users/register', {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            });
+        }
+
+        // Verifico que el email no este registrado caso contrario retorno error
+        let userInDB = User.findByField('email', req.body.email);
+
+        if (userInDB) {
+            return res.render('users/register', {
+                errors: {
+                    email: {
+                        msg: 'Este email ya está registrado.'
+                    }
+                },
+                oldData: req.body
+            });            
+        }
+
+        // Si paso las validaciones y el email no esta registrado, creo el usuario
+        let userToCreate = {
+            ...req.body,
+            password: bcryptjs.hashSync(req.body.password, 10),
+            confirmpass: bcryptjs.hashSync(req.body.confirmpass, 10),
+            avatar: req.file.filename
+        }
+
+        let userCreated = User.create(userToCreate);
+
+        return res.redirect('/users/login');
+    },
+
+    // Login (GET)    
+    login:(req, res)=>{    
         return res.render('users/login');
     },
 
-    // Nico: por post proceso la informacion del logueo e inicio session
-    processLogin: (req,res) => {
-        // usuario logueado?
+    // Login (POST) - Session de usuario
+    processLogin: (req, res) => {
+
+        // Verifico si el usuario está registrado
         let userToLogin = User.findByField('email', req.body.email);
 
         if (userToLogin) {
-            // True. Verifico password y encripto
+            // Si el usuario esta logueado (true)
             let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
 
             if (isOkThePassword) {
@@ -72,7 +81,7 @@ const User = require('../models/Users');
                 return res.redirect('/user/profile');                
             }    
 
-            // False. Muestro error generico
+            // Si el usuario no esta logueado (false)
             return res.render('login', {
                 errors: {
                     email: {
@@ -90,7 +99,7 @@ const User = require('../models/Users');
         //         }
         //     }
         // })
-        res.render('login');
+        res.render('/users/login/');
         
     },
     profile: (req,res) => {

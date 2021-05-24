@@ -32,7 +32,7 @@ marquee {
   margin-top: 15px;
   display: block;
 }
-.main-register section .register .form-control .control {
+.main-register .form-control .control {
   width: 100%;
   padding: 15px;
   border: 1px solid #8cb944;
@@ -77,13 +77,27 @@ marquee {
 }
 .main-register section .register .check {
   margin: 15px 0;
-  font-size: 13px;
+  font-size: 20px;
 }
 .main-register section .register img {
   background-color: #98ded9;
   width: 100%;
   margin: auto;
 }
+
+.main-register section .register .formulario .is-invalid {
+  border: 1px solid red;
+}
+
+.text-danger {
+  color: red;
+  font-size: 20px;
+  text-align: right;
+  background-color: #ededed56;
+  border-radius: 5px;
+}
+
+
 /* ------  MQ Register    ------ */
 @media screen and (min-width: 769px) {
   .main-register{

@@ -8,30 +8,46 @@
   <%- include('../partials/header')%>
 
   <main class="main-login">
+
     <section>
+
       <div class="login">
+
         <marquee>Ingresá a tu cuenta</marquee>
+
         <% if ( locals.errors && errors.error ) {%> 
           <p> errors.error.msg </p>
         <% }  %> 
-        <form action="login" method="POST" class="formulario" >
+
+        <form action="/users/login/" method="POST" class="formulario">
+
           <div class="form-control">
-            <input type="text" name="name" id="name" placeholder="Usuario" required class="control">
+            <input type="email" name="email" id="email" placeholder="Email" class="control">
+            <% if (locals.errors && errors.email) { %>
+              <div class="text-danger">
+                <%= errors.email.msg %> 
+              </div>
+            <% } %>
             <span class="Feedback"></span>
           </div>
+
           <div class="form-control">
-            <input type="password" name="lastname" id="lastname" placeholder="Contraseña" required class="control" >
+            <input type="password" name="password" id="password" placeholder="Contraseña" class="control" >
             <span class="Feedback"></span>
-          </div>          
+          </div>    
+
           <div class="check">
+            <input type="radio" name="agree" id="agree">       
             <label class="label" for="agree">Recordame</label>
-              <input type="radio" name="agree" id="agree" required>       
+          </div>  
+
           <br>
+
           <div class="form-control buttons">
-            <input type="href" value="Recuperá tu contraseña" class="button-form">
             <input type="submit" value="Enviar" class="submit button-form">
             <input type="href" value="Registrate" class="button-form">
           </div>
+
         </form>
 
       </div>  

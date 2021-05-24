@@ -34,9 +34,7 @@ const User = {
 
     // Buscar a un usuario por cualquier campo
     findByField: function(field, text) {
-        // Obtengo todos los usuarios
         let allUsers = this.findAll();
-        // Filtro según lo que este buscando
         let userFound = allUsers.find(oneUser => oneUser[field] === text);
         return userFound;
     },
