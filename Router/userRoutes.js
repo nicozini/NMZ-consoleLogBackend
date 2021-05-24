@@ -1,12 +1,13 @@
-const express           = require('express');
-const router            = express.Router()
-const userController    = require('../controllers/userController');
+// Express
+const express = require('express');
+const router = express.Router();
 
-console.log('entro en rutas de usuario');
+// Controller
+const userController = require('../controllers/userController');
 
-//middlewares
-const validations = require('../middlewares/validateRegisterMiddleware');
-const uploadFile = require('../middlewares/multerMiddleware');
+// Middlewares
+const uploadFile = require('../middlewares/multerMiddleware'); 
+const formValidations = require('../middlewares/validateRegisterMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 
@@ -16,14 +17,14 @@ const authMiddleware = require('../middlewares/authMiddleware');
 router.get('/register', guestMiddleware, userController.register);
 
 // Procesar el registro
-router.post('/register', uploadFile.single('avatar'), validations, userController.processRegister);
-
+router.post('/register', uploadFile.single('avatar'), formValidations, userController.processRegister);
 
 // Formulario de login
 router.get('/login', guestMiddleware, userController.login);
 
 // Procesar el login
-router.post('/login',userController.processLogin);
+router.post('/login', userController.processLogin);
+
 
 
 // NOS QUEDA hacer esto de las user routes
