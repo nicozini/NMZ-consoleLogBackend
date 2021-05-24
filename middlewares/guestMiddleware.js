@@ -1,14 +1,12 @@
 // Nivel: ruta
-// Objetivo del MD: Si el usuario esta registrado no permitir que ingresar a login o register
+// Objetivo: Si el usuario esta registrado no permitir ingresar a login o register
 
 function guestMiddleware(req, res, next) {
-    // Primero pregunto si hay algun unsuario en session
+    // Primero pregunto si hay algun unsuario en session y lo redirijo a su perfil
     if (req.session.userLogged) {
-        return res.redirect('/user/profile');
+        return res.redirect('/users/profile');
     }
     next();
-
-
 };
 
 module.exports = guestMiddleware;

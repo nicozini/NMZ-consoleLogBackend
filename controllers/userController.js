@@ -66,52 +66,48 @@ const userController = {
         let userToLogin = User.findByField('email', req.body.email);
 
         if (userToLogin) {
-            // Si el usuario esta logueado (true)
             let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
-
             if (isOkThePassword) {
+                // Guardo al usuario en Session pero borro su contraseña
                 delete userToLogin.password;
                 req.session.userLogged = userToLogin;
 
-                // Nico: ver cookie de recordame
-                // if (req.body.remember_user) {
-                //     res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) *2 });                    
-                // }
+                // Creo una cookie para guardar el email, si el usuario opto por ser recordado
+                if (req.body.remember) {
+                    res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60})
+                }
 
-                return res.redirect('/user/profile');                
-            }    
-
-            // Si el usuario no esta logueado (false)
-            return res.render('login', {
+                return res.redirect('/users/profile')
+            }   
+            return res.render('users/login', {
                 errors: {
                     email: {
-                        msg: 'Error... las credenciales son inválidas'
+                        msg: 'Email o contraseña inválida'
                     }
                 }
-            });    
+            })     
         }
 
-        // userToLogin es undefined significa que no está ese email
-        // return res.render('login', {
-        // errors: {
-        //         email: {
-        //             msg: 'No se encuentra este email en nuestra base de datos'
-        //         }
-        //     }
-        // })
-        res.render('/users/login/');
-        
+        return res.render('users/login', {
+            errors: {
+                email: {
+                    msg: 'Email no registrado'
+                }
+            }
+        })
     },
+
     profile: (req,res) => {
-        let userPrueba={
-            first_name: "Lindie",
-            last_name: "Camblin",
-            email: "lcamblin0@shop-pro.jp",
-            category: "Usuario",
-            image: "user_1.jpg",
-            newsLetter: true
-        }
-        res.render('users/profile',{data:userPrueba})
+        console.log(req.cookies.userEmail);
+        return res.render('users/profile', {
+            user: req.session.userLogged
+        });
+    },
+
+    logout: (req,res) => {
+        res.clearCookie('userEmail');
+        req.session.destroy();
+        return res.redirect('/');
     }
 };
 

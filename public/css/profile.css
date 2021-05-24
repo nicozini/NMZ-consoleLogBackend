@@ -10,7 +10,6 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-
 }
 
 .center-conteiner .image .picture{
@@ -18,15 +17,37 @@
     height: 250px;
     border-radius: 50%;
 }
-
-
 .center-conteiner .data .buyCard{
     background-color: #f6d866;
     border-radius: 10%;
     padding:10%;
     margin:auto;
-
 }
+.center-conteiner .data .form-data{
+    width: 100%;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+}
+.center-conteiner .data .form-data{
+    width: 100%;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+}
+.btn {
+    width: 150px;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    background-color:#8cb944 ;
+}
+
+
 @media screen and (min-width: 360px) {
     /* .center-conteiner .image .picture{
         width: 30%;

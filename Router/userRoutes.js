@@ -25,13 +25,10 @@ router.get('/login', guestMiddleware, userController.login);
 // Procesar el login
 router.post('/login', userController.processLogin);
 
-// NOS QUEDA hacer esto de las user routes
 // Perfil de Usuario
-//router.get('/profile/', authMiddleware, userController.profile);
-router.get('/profile/', userController.profile);//saco temporalmente para probar la vista
-router.put('/profile/', uploadFile.single('avatar'), userController.profile);//saco temporalmente para probar la vista
+router.get('/profile', authMiddleware, userController.profile);
 
 // Logout
-//router.get('/logout/', userController.logout);
+router.get('/logout/', userController.logout);
 
 module.exports = router;

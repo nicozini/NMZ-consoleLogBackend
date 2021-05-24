@@ -10,41 +10,40 @@
     <header>
         <%- include('../partials/header')%>
     </header>
+
     <section>
         <div class="center-conteiner">
             <form action="/profile?_method=PUT" method="POST" enctype="multipart/form-data">
                 <div class="data">
                     <div class="image">
-                        <img class="picture" src="/avatars/<%=data.image%> " alt="Imagen de perfil">
-                        <input class="btn" type="file" name="avatar" id="avatar">
+                        <img class="picture" src="/avatars/<%= user.avatar %>" alt="Imagen de perfil">
                     </div>
-
-                    <input type="text"  name="name"     id="name"       value="<%=data.first_name%>">
-                    <input type="text"  name="lastName" id="lastName"   value="<%=data.last_name%>" >
-                    <input type="email" name="email"    id="email"      value="<%=data.email%>"     >
-
                     <div>
-                        <label for="categoy">Condición Fiscal</label>
-                        <% const categoryList=[ 'Usuario' , 'Administrador' , 'Supervisor' ] %>
-                        <select name="categoy" id="categoy">
-                            <option value="">Seleccione una categoría</option>
-                            <% categoryList.forEach(category => {;%>
-                                <option value="<%=category%>" 
-                                       <%data.category===category? "selected" :null %>> 
-                                       <%=category%> 
-                                </option>
-                            <% }) %>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label for="newsLetter">Deseo Recibir Ofertas por e-mail</label>
-                        <input type="checkbox" name="newsLetter" id="newsLetter" value="<% data.newsLetter ? " checked":
-                            null %> ">
-                    </div>
+                        <h2>Hola <%= user.name %> </h2>
+                        <br>
+                        <h3>Tu email registrado es <%= user.email %> </h3>
+                    </div>                    
+                    <br>
+                    <input class="form-data" type="text"  name="name"     id="name"       value="<%=user.name%>">
+                    <br>
+                    <input class="form-data" type="text"  name="lastName" id="lastName"   value="<%=user.lastname%>" >
+                    <br>
+                    <input class="form-data" type="email" name="email"    id="email"      value="<%=user.email%>"     >
+                </div>
+                <div>
+                    <label for="newsLetter">Deseo Recibir Ofertas por e-mail</label>
+                    <input type="checkbox" name="newsLetter" id="newsLetter" value="<% user.newsLetter ? " checked" : null %> ">
+                </div>
+                <input class="btn" type="submit" value="Modificar Datos">
+                <div class="logout">
+                    <form action="/users/logout" method="GET">
+                        <button class="btn">Logout</button>
+                    </form>
                 </div>
             </form>
-            <h2>Mis Compras</h2>
+
+
+            <!-- <h2>Mis Compras</h2>
             <div class="data">
                 <div class="buyCard">
                     <article>
@@ -54,12 +53,18 @@
                         <p>Entregado</p>
                     </article>
                 </div>
-            </div>
+            </div> -->
+        
+
+
         </div>
+
     </section>
+
     <footer>
         <%- include('../partials/footer')%>
     </footer>
+
 </body>
 
 </html>
