@@ -28,5 +28,15 @@
   "confirmpass": "$2a$10$TmJBWkgPHKJIJNYIvUdZAOwDYce4vaVUewH.RrsEXfjCXfXmAU1V2",
   "agree": "on",
   "avatar": "1621889210863_img.jpg"
+ },
+ {
+  "id": 4,
+  "name": "Pepita",
+  "lastname": "A",
+  "email": "iugspach97@gmail.com",
+  "password": "$2a$10$oUcKJgsjeQp1r4F8GpgJluKqyvwdQSwWxFe0GmvG179y2cyRC4ZFS",
+  "confirmpass": "$2a$10$FUhW52GohtlN8vxJRZgx4O3cyk735TQIrML87p5zR.OZfUL2G0mAS",
+  "agree": "on",
+  "avatar": "1621892961101_img.jpg"
  }
 ]
