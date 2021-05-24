@@ -107,9 +107,9 @@ const userController = {
             first_name: "Lindie",
             last_name: "Camblin",
             email: "lcamblin0@shop-pro.jp",
-            category: "user",
+            category: "Usuario",
             image: "user_1.jpg",
-            vegetarian: false
+            newsLetter: true
         }
         res.render('users/profile',{data:userPrueba})
     }

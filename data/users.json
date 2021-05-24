@@ -8,5 +8,15 @@
   "confirmpass": "$2a$10$bkcQE2VC6ILfCqZ3KXYyCeuk7tuHJuLMgK6hzl6ezaVT5lNbZ9wMK",
   "agree": "on",
   "avatar": "1621814762852_img.jpg"
+ },
+ {
+  "id": 2,
+  "name": "mauricio",
+  "lastname": "Mena",
+  "email": "mauri_mena@hotmail.com",
+  "password": "$2a$10$MsyBP3Ykervq5aPNl.tC9OIWLd5OL.uykAeldevhuXOMHkB8m3KeW",
+  "confirmpass": "$2a$10$cPyHEge/pKQSVn53mxkIp.nlXhGE9NRQf325MaigTSqu5BZp/JlBS",
+  "agree": "on",
+  "avatar": "1621865626692_img.jpg"
  }
 ]
