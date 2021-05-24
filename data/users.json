@@ -11,6 +11,7 @@
  },
  {
   "id": 2,
+<<<<<<< HEAD
   "name": "Isabella",
   "lastname": "Augspach",
   "email": "iaugspach97@gmail.com",
@@ -38,5 +39,24 @@
   "confirmpass": "$2a$10$FUhW52GohtlN8vxJRZgx4O3cyk735TQIrML87p5zR.OZfUL2G0mAS",
   "agree": "on",
   "avatar": "1621892961101_img.jpg"
+=======
+  "name": "Mauricio",
+  "lastname": "Mena",
+  "email": "mauri_mena@hotmail.com",
+  "password": "$2a$10$jrmAG1dVRGuet8wWd80CRe11WOb7KWNI1582pPCiw3Y/LpnAvAYRy",
+  "confirmpass": "$2a$10$bY10RrYKHCxL1HAGX5Q2gum1HpHwofEa03vpHHIfRAibVPDX2z/Qi",
+  "agree": "on",
+  "avatar": "1621886506320_img.jpg"
+ },
+ {
+  "id": 3,
+  "name": "Juan",
+  "lastname": "Perez",
+  "email": "juanperez@gmail.com",
+  "password": "$2a$10$U/ZS0AKJbp4trsNfs2FaYeCO/Taay9e9PEsJEImxbQYUMcp4GnMmO",
+  "confirmpass": "$2a$10$Y8Gh7e7AXkE/YgPcaU3d7eEIH7XASKhQOsvtvhqeMo5EJdWqCVneW",
+  "agree": "on",
+  "avatar": "1621886901128_img.jpg"
+>>>>>>> 3387dff364517dbb62135d64c4d086866d4aa080
  }
 ]

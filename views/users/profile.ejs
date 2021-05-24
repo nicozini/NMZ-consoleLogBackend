@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <%- include('../partials/head')%>
-    <link rel="stylesheet" href='/css/profile.css'/>
+        <link rel="stylesheet" href='/css/profile.css' />
 </head>
+
 <body>
     <header>
         <%- include('../partials/header')%>
@@ -11,16 +13,35 @@
 
     <section>
         <div class="center-conteiner">
-
-            <form action="/users/logout" method="GET">
-                <button>Logout</button>
+            <form action="/profile?_method=PUT" method="POST" enctype="multipart/form-data">
+                <div class="data">
+                    <div class="image">
+                        <img class="picture" src="/avatars/<%= user.avatar %>" alt="Imagen de perfil">
+                    </div>
+                    <div>
+                        <h2>Hola <%= user.name %> </h2>
+                        <br>
+                        <h3>Tu email registrado es <%= user.email %> </h3>
+                    </div>                    
+                    <br>
+                    <input class="form-data" type="text"  name="name"     id="name"       value="<%=user.name%>">
+                    <br>
+                    <input class="form-data" type="text"  name="lastName" id="lastName"   value="<%=user.lastname%>" >
+                    <br>
+                    <input class="form-data" type="email" name="email"    id="email"      value="<%=user.email%>"     >
+                </div>
+                <div>
+                    <label for="newsLetter">Deseo Recibir Ofertas por e-mail</label>
+                    <input type="checkbox" name="newsLetter" id="newsLetter" value="<% user.newsLetter ? " checked" : null %> ">
+                </div>
+                <input class="btn" type="submit" value="Modificar Datos">
+                <div class="logout">
+                    <form action="/users/logout" method="GET">
+                        <button class="btn">Logout</button>
+                    </form>
+                </div>
             </form>
 
-            <div class="image">
-                <img class="picture" src="/avatars/<%= user.avatar %>" alt="Imagen de perfil">
-                <h2>Hola <%= user.name %> </h2>
-                <h3>Tu email registrado es <%= user.email %> </h3>
-            </div>
 
             <!-- <h2>Mis Compras</h2>
             <div class="data">
@@ -33,8 +54,11 @@
                     </article>
                 </div>
             </div> -->
+        
+
 
         </div>
+
     </section>
 
     <footer>
@@ -42,4 +66,5 @@
     </footer>
 
 </body>
+
 </html>
