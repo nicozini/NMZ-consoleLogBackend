@@ -8,5 +8,25 @@
   "confirmpass": "$2a$10$OmIyBmd17Tn5/.JNkbSmCuHTv.VcK97agOaoSKzNQgWOcLBNR.2gu",
   "agree": "on",
   "avatar": "1621885532977_img.jpg"
+ },
+ {
+  "id": 2,
+  "name": "Isabella",
+  "lastname": "Augspach",
+  "email": "iaugspach97@gmail.com",
+  "password": "$2a$10$YAlF4Dq8hDkrUGGwgYgPzeK3PgDO0fffXJSVZETmsBX7eRl4QmNkC",
+  "confirmpass": "$2a$10$q8iBsXjessLkhQTIMgVQqOJVmDsHWMTSZds1ztTnkMedn4W9hGtYm",
+  "agree": "on",
+  "avatar": "1621888137685_img.jpg"
+ },
+ {
+  "id": 3,
+  "name": "Isabella",
+  "lastname": "Augspach",
+  "email": "iaugspach@gmail.com",
+  "password": "$2a$10$u5kiAdosNhLyC9YIzfzY9uRsFH.uIs2BGNG1HcKQttmLJ4Gvn.VG2",
+  "confirmpass": "$2a$10$TmJBWkgPHKJIJNYIvUdZAOwDYce4vaVUewH.RrsEXfjCXfXmAU1V2",
+  "agree": "on",
+  "avatar": "1621889210863_img.jpg"
  }
 ]

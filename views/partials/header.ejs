@@ -21,13 +21,13 @@
       <nav class="menu">
         <ul>
           <% if (locals.isLogged) { %>
-            <li><a href="/users/profile">MI PERFIL</a></li><br>
-            <p>Hola <%= locals.userLogged.name %>!</p><br>
+            <li><a href="/users/profile">Hola <%= locals.userLogged.name %>!</a></li><br>
             <img src="/avatars/<%= locals.userLogged.avatar %>" alt="Imagen de usuario" width="30px" height="30px">
-            <li class="cart"><a href="/products/productCart"><i class="fas fa-shopping-cart"></i> </a></li>
             <li><a href="/products">Productos <i class="fas fa-carrot"></i></a> </li> 
             <li><a href="#">Quienes Somos <i class="fas fa-users"></i></a></li>
             <li><a href="#">Contacto <i class="fas fa-phone"></i></a></li>
+            <br>
+            <li class="cart"><a href="/products/productCart"><i class="fas fa-shopping-cart"></i> </a></li>
             <% } else { %>
               <li><a href="/products">Productos <i class="fas fa-carrot"></i></a> </li> 
               <li><a href="#">Quienes Somos <i class="fas fa-users"></i></a></li>
