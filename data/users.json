@@ -1,12 +1,12 @@
 [
  {
   "id": 1,
-  "name": "Homero",
-  "lastname": "Simpson",
-  "email": "homero@simpson.com",
-  "password": "$2a$10$ajWpHKA/BOWK9eEqhsiEDe9QpatfFlui/UvP4EOCMV8CWTS8rXypu",
-  "confirmpass": "$2a$10$bkcQE2VC6ILfCqZ3KXYyCeuk7tuHJuLMgK6hzl6ezaVT5lNbZ9wMK",
+  "name": "Bob",
+  "lastname": "Patino",
+  "email": "bob@patino.com",
+  "password": "$2a$10$Maoi59Zo0lz3W7n8Ig1TpOOVQSBOheiqNQbQxq4/GXSrFpvNAi6t6",
+  "confirmpass": "$2a$10$OmIyBmd17Tn5/.JNkbSmCuHTv.VcK97agOaoSKzNQgWOcLBNR.2gu",
   "agree": "on",
-  "avatar": "1621814762852_img.jpg"
+  "avatar": "1621885532977_img.jpg"
  }
 ]

@@ -8,19 +8,21 @@
     <header>
         <%- include('../partials/header')%>
     </header>
+
     <section>
         <div class="center-conteiner">
+
+            <form action="/users/logout" method="GET">
+                <button>Logout</button>
+            </form>
+
             <div class="image">
-                <img class="picture" src="/avatars/<%=data.image%> " alt="Imagen de perfil">
-                <h2><%=data.first_name%> <%=data.last_name%></h2>
-                <h3><%=data.email%></h3>
-                <h4><%=data.category%></h4>
-                <h4><%=data.category%></h4>
-                <%if (data.vegetarian) {%>
-                    <h4>Vegetariano</h4>
-                <% } %> 
+                <img class="picture" src="/avatars/<%= user.avatar %>" alt="Imagen de perfil">
+                <h2>Hola <%= user.name %> </h2>
+                <h3>Tu email registrado es <%= user.email %> </h3>
             </div>
-            <h2>Mis Compras</h2>
+
+            <!-- <h2>Mis Compras</h2>
             <div class="data">
                 <div class="buyCard">
                     <article>
@@ -30,11 +32,14 @@
                         <p>Entregado</p>
                     </article>
                 </div>
-            </div>
+            </div> -->
+
         </div>
     </section>
+
     <footer>
         <%- include('../partials/footer')%>
     </footer>
+
 </body>
 </html>
