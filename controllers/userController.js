@@ -4,8 +4,7 @@ const User = require('../models/Users');
 // Modulos requeridos
 const {	validationResult } = require('express-validator');
 const bcryptjs = require('bcryptjs');
-
-
+const { findByPk } = require('../models/Users');
 
 // Funcionalidad userController
 const userController = {
@@ -98,10 +97,54 @@ const userController = {
     },
 
     profile: (req,res) => {
-        console.log(req.cookies.userEmail);
+        
         return res.render('users/profile', {
             user: req.session.userLogged
         });
+    },
+
+    updateProfile:(req,res) => {
+
+        const resultValidation = validationResult(req);
+        let avatarN = req.session.userLogged.avatar ;
+        let oldData = {...req.body,
+                        avatar:avatarN};
+                        
+        if (resultValidation.errors.length > 0) {
+            console.log(resultValidation.errors);
+            return res.render('users/profile', {
+                errors: resultValidation.mapped(),
+                user:oldData  });
+            
+        } else{
+            if (req.file){
+               avatarN =  req.file.filename
+            }
+            let userToUpdate = User.findByPk(req.session.userLogged.id)
+            
+            userToUpdate  = {
+                id:    userToUpdate.id,
+                name:  req.body.name,
+                lastname    : req.body.lastname,
+                email       : req.body.email,
+                password    : userToUpdate.password,
+                confirmpass : userToUpdate.confirmpass,
+                agree       : userToUpdate.agree,
+                avatar      : userToUpdate.avatar,
+                newsletter  : req.body.newsletter
+            }            
+            
+            console.log('userToUpdate controller');
+            console.log(userToUpdate);
+            if (User.update(req.session.userLogged.id,userToUpdate )){
+                req.session.userLogged = userToUpdate;
+                delete req.session.userLogged.password ;
+                delete req.session.userLogged.confirmpass ;
+            };
+        }
+        return res.render('users/profile', {
+            user: req.session.userLogged
+        })
     },
 
     logout: (req,res) => {

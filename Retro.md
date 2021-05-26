@@ -1,5 +1,22 @@
 LINK TRELLO https://trello.com/b/4Y5KhZ9u/verdu-market
 
+--------------------  24/05/2021 --------------------------
+
+Comenzar a hacer:
+	-> Testing Juntos y apoyarnos en el trello para ajustar detalles
+	-> Focalizar en mejorar la distribucion de tareas en trello
+Hacer más: 
+	-> Comunicaciones directas expontaneas  en un contexto de trabajo compartido
+Continuar haciendo:
+	-> Seguir avisando cuando nos ponemos a trabajar para compartir un zoom
+	-> Fortalecer vinculo colaborativo entre nosotros
+	 	o sea "buena onda".
+	-> Seguir comunicandonos de la forma que lo hacemos.
+	-> Seguir Participando con responsabilidad en la reuniones planificadas.
+Hacer menos:	
+Dejar de hacer:
+	
+
 --------------------  29/04/2021 --------------------------
 Comenzar a hacer:
 	-> Una Reunion semanal "Fija" (jueves antes de la clase o sábado)

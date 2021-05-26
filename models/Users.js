@@ -59,6 +59,18 @@ const User = {
         let finalUsers = allUsers.filter(oneUser => oneUser.id !== id);
         fs.writeFileSync(this.fileName, JSON.stringify(finalUsers, null, ' '));
         return true;
+    },
+    // Actualiza un usuario
+    update: function(id,newData) {
+         let allUsers    = this.findAll();
+         let finalUsers  = allUsers.filter(oneUser => oneUser.id !== id);
+         finalUsers.push(newData);
+         console.log('newData');
+         console.log(newData);
+         console.log('finalUsers');
+         console.log(finalUsers);
+         fs.writeFileSync(this.fileName, JSON.stringify(finalUsers, null, ' '));
+         return true;
     }
 
 };

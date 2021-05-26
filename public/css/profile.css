@@ -1,55 +1,140 @@
 /* first mobile */
+.title{
+    font-size: 1rem;
+    width: 90%;
+    text-align: left;
+    margin: auto;
+    color:#666 ;
+    padding: 10px;
+    border-bottom: #666 solid 1px;
+    margin-bottom: 10px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .center-conteiner {
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.center-conteiner .form{
+    margin: auto;
+    width: 90%;           
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 }
 
-.center-conteiner .image{
+.center-conteiner .form .image{
+    padding: 10px;
+    flex: 1 1 auto;
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    font-size: 12px;
+    border-bottom: #666 1px solid;
+}
+.center-conteiner .form .image h2, h3{
+    font-size: 1.5em;
 }
 
-.center-conteiner .image .picture{
-    width: 250px;
-    height: 250px;
+.center-conteiner .form .image .picture{
+    width: 40vw;
+    height: 40vw;
     border-radius: 50%;
+    margin: auto;
 }
-.center-conteiner .data .buyCard{
+.center-conteiner .form .data{
+    flex: 1 1 auto;
+    padding: 10px;
+    width: 90%;
+}
+.center-conteiner .form .data .buyCard{
     background-color: #f6d866;
     border-radius: 10%;
     padding:10%;
     margin:auto;
+    
 }
-.center-conteiner .data .form-data{
+.center-conteiner .form .data .form-data{
+    width: 80%;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.center-conteiner .form .data .form-data{
     width: 100%;
     padding: 10px;
     margin: 5px;
     border: none;
     border-radius: 5px;
 }
-.center-conteiner .data .form-data{
-    width: 100%;
-    padding: 10px;
-    margin: 5px;
-    border: none;
-    border-radius: 5px;
-}
+
 .btn {
-    width: 150px;
+    font-size: 0.8em;
+    width: 100px;
     padding: 10px;
     margin: 5px;
     border: none;
     border-radius: 5px;
     color: #ffffff;
     background-color:#8cb944 ;
+    
 }
+.text-danger {
+    color: red;
+    font-size: 20px;
+    text-align: right;
+    background-color: #ededed56;
+    border-radius: 5px;
+  }
 
 
 @media screen and (min-width: 360px) {
-    /* .center-conteiner .image .picture{
-        width: 30%;
-    } */
+    .center-conteiner .form{
+        flex-direction: column;
+    } 
+}
+@media screen and (min-width: 576px) {
+    .title{
+        flex-direction: row;
+        width:80% ;
+    }
+    .center-conteiner{
+        height: 60vh;
+    }
+    .center-conteiner .form{
+        flex-direction: row;
+        width: 80%;           
+    } 
+    .center-conteiner .form .image{
+        width: 50%;
+    }
+    .center-conteiner .form .data{
+        width: 50%;
+        display:flex;
+        flex-direction: column;
+    }
+    .center-conteiner .form .data .btn{
+        align-self: flex-end;
+    }
+    .center-conteiner .form .image .picture{
+        width: 15vw;
+        height: 15vw;
+    }
+    .btn {
+        font-size: 1em;
+        width: 150px;
+    }
+        
+    
 }

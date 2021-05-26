@@ -10,38 +10,58 @@
     <header>
         <%- include('../partials/header')%>
     </header>
-
+    <div class="title">
+        <h1>Perfil de Usuario</h1>
+        <div class="logout">
+            <form action="/users/logout" method="GET">
+                <button class="btn">Cerrar Sesion</button>
+            </form>
+        </div> 
+    </div>
     <section>
         <div class="center-conteiner">
-            <form action="/profile?_method=PUT" method="POST" enctype="multipart/form-data">
-                <div class="data">
-                    <div class="image">
-                        <img class="picture" src="/avatars/<%= user.avatar %>" alt="Imagen de perfil">
-                    </div>
+            <form class="form" action="/users/profile?_method=PUT" method="POST" enctype="multipart/form-data">
+                <div class="image">
+                    <img class="picture" src="/avatars/<%= user.avatar %>" alt="Imagen de perfil">
+                    <br>
+                    <!-- <label for="avatarN">Cambiar mi foto de perfil</label> -->
+                    <!-- //<input type="file" name="avatarN" id="avatarN" value=""> -->
+                    <!-- <input type="file" name="avatarN" id="avatarN"> -->
                     <div>
-                        <h2>Hola <%= user.name %> </h2>
-                        <br>
-                        <h3>Tu email registrado es <%= user.email %> </h3>
-                    </div>                    
-                    <br>
-                    <input class="form-data" type="text"  name="name"     id="name"       value="<%=user.name%>">
-                    <br>
-                    <input class="form-data" type="text"  name="lastName" id="lastName"   value="<%=user.lastname%>" >
-                    <br>
-                    <input class="form-data" type="email" name="email"    id="email"      value="<%=user.email%>"     >
+                        <h3>Hola <%= user.name %> </h3>
+                        <h4><%= user.email %> </h4>
+                    </div>                                        
                 </div>
-                <div>
-                    <label for="newsLetter">Deseo Recibir Ofertas por e-mail</label>
-                    <input type="checkbox" name="newsLetter" id="newsLetter" value="<% user.newsLetter ? " checked" : null %> ">
-                </div>
-                <input class="btn" type="submit" value="Modificar Datos">
-                <div class="logout">
-                    <form action="/users/logout" method="GET">
-                        <button class="btn">Logout</button>
-                    </form>
-                </div>
-            </form>
 
+                <div class="data">
+                    <input class="form-data" type="text"  name="name"     id="name"       value="<%=user.name%>">
+                    <% if(locals.errors && errors.name) { %>
+                        <div class="text-danger">
+                          <%= errors.name.msg %> 
+                        </div>
+                      <% } %>
+                    <input class="form-data" type="text"  name="lastname" id="lastname"  value="<%=user.lastname%>" >
+                    <% if(locals.errors && errors.lastname) { %>
+                        <div class="text-danger">
+                          <%= errors.lastname.msg %> 
+                        </div>
+                      <% } %>
+                    <input class="form-data" type="email" name="email"    id="email"      value="<%=user.email%>"     >
+                    <% if(locals.errors && errors.email) { %>
+                        <div class="text-danger">
+                          <%= errors.email.msg %> 
+                        </div>
+                      <% } %>
+                    <br>
+
+                    <div>
+                        <label for="newsLetter">Deseo Recibir Ofertas por e-mail</label>
+                        <input type="checkbox" name="newsLetter" id="newsLetter" value="<% user.newsLetter ? " checked" : null %> ">
+                    </div>
+                    <br>
+                    <input class="btn" type="submit" value="Modificar">                    
+                </div>
+            </form>            
 
             <!-- <h2>Mis Compras</h2>
             <div class="data">
@@ -54,9 +74,6 @@
                     </article>
                 </div>
             </div> -->
-        
-
-
         </div>
 
     </section>

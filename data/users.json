@@ -1,32 +1,12 @@
 [
  {
   "id": 1,
-  "name": "Bob",
-  "lastname": "Patino",
-  "email": "bob@patino.com",
-  "password": "$2a$10$Maoi59Zo0lz3W7n8Ig1TpOOVQSBOheiqNQbQxq4/GXSrFpvNAi6t6",
-  "confirmpass": "$2a$10$OmIyBmd17Tn5/.JNkbSmCuHTv.VcK97agOaoSKzNQgWOcLBNR.2gu",
-  "agree": "on",
-  "avatar": "1621885532977_img.jpg"
- },
- {
-  "id": 2,
   "name": "Mauricio",
   "lastname": "Mena",
   "email": "mauri_mena@hotmail.com",
-  "password": "$2a$10$jrmAG1dVRGuet8wWd80CRe11WOb7KWNI1582pPCiw3Y/LpnAvAYRy",
-  "confirmpass": "$2a$10$bY10RrYKHCxL1HAGX5Q2gum1HpHwofEa03vpHHIfRAibVPDX2z/Qi",
+  "password": "$2a$10$RILCDrxqD8q71w5F0RjNgeD7q4Pm7jSj2VKT5obPqF4XgLshgpP2K",
+  "confirmpass": "$2a$10$vecdmxytjY3pi1aQu415w.opXwoivMo5F0Do2u73SNclEcYWeIFqS",
   "agree": "on",
-  "avatar": "1621886506320_img.jpg"
- },
- {
-  "id": 3,
-  "name": "Juan",
-  "lastname": "Perez",
-  "email": "juanperez@gmail.com",
-  "password": "$2a$10$U/ZS0AKJbp4trsNfs2FaYeCO/Taay9e9PEsJEImxbQYUMcp4GnMmO",
-  "confirmpass": "$2a$10$Y8Gh7e7AXkE/YgPcaU3d7eEIH7XASKhQOsvtvhqeMo5EJdWqCVneW",
-  "agree": "on",
-  "avatar": "1621886901128_img.jpg"
+  "avatar": "1622071740511_img.jpg"
  }
 ]
