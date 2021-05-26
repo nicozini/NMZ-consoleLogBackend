@@ -26,9 +26,7 @@
     flex-direction: column;
   }
   
-  marquee {
-    margin-top: 20px;
-  }
+ 
   
   .main-login section .login .form-control {
     margin-top: 15px;
@@ -86,6 +84,11 @@
   @media screen and (min-width: 769px) {
     .main-login{
       width: 600px;
+    }
+
+    marquee {
+      margin-top: 60px;
+      margin-bottom: 20px;
     }
   
     body {
