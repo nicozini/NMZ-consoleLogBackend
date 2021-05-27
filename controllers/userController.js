@@ -76,7 +76,7 @@ const userController = {
                     res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60})
                 }
 
-                return res.redirect('/users/profile')
+                return res.redirect('/')
             }   
             return res.render('users/login', {
                 errors: {
@@ -117,6 +117,20 @@ const userController = {
                 user:oldData  });
             
         } else{
+            
+            let userInDB = User.findByField('email', req.body.email);
+
+            if (userInDB && userInDB.id != req.session.userLogged.id ) {
+                return res.render('users/profile', {
+                    errors: {
+                        email: {
+                            msg: 'Este email ya está registrado.'
+                        }
+                    },
+                    user: oldData
+                });            
+            };
+
             if (req.file){
                avatarN =  req.file.filename
             }
@@ -134,17 +148,18 @@ const userController = {
                 newsletter  : req.body.newsletter
             }            
             
-            console.log('userToUpdate controller');
-            console.log(userToUpdate);
             if (User.update(req.session.userLogged.id,userToUpdate )){
+
                 req.session.userLogged = userToUpdate;
                 delete req.session.userLogged.password ;
                 delete req.session.userLogged.confirmpass ;
+                console.log('req.session.userLogged');
+                console.log(req.session.userLogged);
             };
         }
-        return res.render('users/profile', {
-            user: req.session.userLogged
-        })
+        console.log('req.session.userLogged');
+        console.log(req.session.userLogged);
+        return res.redirect('/');
     },
 
     logout: (req,res) => {

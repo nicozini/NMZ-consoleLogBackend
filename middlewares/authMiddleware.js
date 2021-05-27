@@ -3,6 +3,8 @@
 
 function authMiddleware(req, res, next) {
     // Primero pregunto si NO hay algun unsuario en session
+    console.log('req.session.userLogged en middleware');
+    console.log(req.session.userLogged);
     if (!req.session.userLogged) {
         return res.redirect('/users/login');
     }

@@ -38,5 +38,15 @@
   "confirmpass": "$2a$10$FUhW52GohtlN8vxJRZgx4O3cyk735TQIrML87p5zR.OZfUL2G0mAS",
   "agree": "on",
   "avatar": "1621892961101_img.jpg"
+ },
+ {
+  "id": 5,
+  "name": "Mauricio",
+  "lastname": "Mena3",
+  "email": "mauri_mena@hotmail.com",
+  "password": "$2a$10$ytH375i6LOheaQmYfo/qEu0H/kQhyAPrF2BhsaPPLz.cfqhJAYJMC",
+  "confirmpass": "$2a$10$kZv5vB0lbNcKojrpccZfuO/Gur8X7s1pSXhRxauFVEM4hqIG..BqG",
+  "agree": "on",
+  "avatar": "1622149136143_img.jpg"
  }
 ]
