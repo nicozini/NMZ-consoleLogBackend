@@ -24,10 +24,18 @@ module.exports = {
         type: Sequelize.STRING
       },
       addresses_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'addresses',
+          key: 'id'
+        }
       },
       roll_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'rolls',
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,

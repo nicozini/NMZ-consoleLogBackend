@@ -78,15 +78,11 @@
 
 
 
-
-// VAMOS ARGENTINAAAAAAAAAA seguir desde acá!
-
 // ------ PASO 4 ------ Crear todas las relaciones correpondientes
 
 // hasMany, belongsTo, belongsToMany
 
 // ------ PASO 5 ------ Agregar claves foraneas a las migraciones (references, con model y key)
-
 
 
 

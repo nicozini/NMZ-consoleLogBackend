@@ -23,6 +23,13 @@ module.exports = {
       stock_max: {
         type: Sequelize.DECIMAL
       },
+      categories_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'categories',
+          key: 'id'
+        }
+      },
       description: {
         type: Sequelize.TEXT
       },
