@@ -1,5 +1,6 @@
 // Modelo o DB
 const User = require('../models/Users');
+let UserModel = require('../src/database/models/User');
 
 // Modulos requeridos
 const {	validationResult } = require('express-validator');
@@ -16,6 +17,7 @@ const userController = {
 
     // Registro (POST)
     processRegister: (req, res) => {
+        //Tomy
         const resultValidation = validationResult(req);
 
         // Si hay errores, devolver data ingresada y validaciones
@@ -42,6 +44,7 @@ const userController = {
 
         // Si paso las validaciones y el email no esta registrado, creo el usuario
         let userToCreate = {
+            //Tomy
             ...req.body,
             password: bcryptjs.hashSync(req.body.password, 10),
             confirmpass: bcryptjs.hashSync(req.body.confirmpass, 10),
@@ -104,7 +107,7 @@ const userController = {
     },
 
     updateProfile:(req,res) => {
-
+        //Tomy
         const resultValidation = validationResult(req);
         let avatarN = req.session.userLogged.avatar ;
         let oldData = {...req.body,

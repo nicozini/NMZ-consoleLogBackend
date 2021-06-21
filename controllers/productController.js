@@ -1,10 +1,10 @@
 const fs = require('fs');
 let fileOperations = require('../models/fileOperations'); 
-
+let productModel = require('../src/database/models/product');
 
 module.exports = {
-    
     // Traer listado de productos
+    //Nico
     list: (req, res) => {
         let products = fileOperations.getProductList();
         res.render('products/productList', { products });
@@ -15,11 +15,12 @@ module.exports = {
     },
     
     productDetail: (req, res) => {
+        //Nico
         let product = fileOperations.findById(req.params.id)
         res.render('products/productDetail', { product } )
     },
     productSaveNew:(req, res) => {
-
+        //Isa
         let products = fileOperations.getProductList();
         var nuevoId = 0;
         
@@ -59,10 +60,12 @@ module.exports = {
     },
 
     productEdit: (req, res) => {
+        //Isa
         let product = fileOperations.findById(req.params.id)
         res.render('products/productEdit', { product })
     },
     productSave: (req, res) => {
+        //Isa
         let products = fileOperations.getProductList();
         
         products.forEach( (i)=> {
@@ -87,6 +90,7 @@ module.exports = {
 
 
      productDelete: (req,res) => {
+         //Isa
          let products = fileOperations.getProductList();
          let productsNew = products.filter(i => i.id != req.params.id);
     

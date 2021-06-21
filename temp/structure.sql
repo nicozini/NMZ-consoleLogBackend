@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `verdumarket-test`.`products` (
   `createdAt` DATETIME NOT NULL,
   `updatedAt` DATETIME NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `categories_id` (`categories_id` ASC) VISIBLE,
+  INDEX `categories_id` (`categories_id` ASC) ,
   CONSTRAINT `products_ibfk_1`
     FOREIGN KEY (`categories_id`)
     REFERENCES `verdumarket-test`.`categories` (`id`))
@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `verdumarket-test`.`images` (
   `createdAt` DATETIME NOT NULL,
   `updatedAt` DATETIME NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `products_id` (`products_id` ASC) VISIBLE,
+  INDEX `products_id` (`products_id` ASC) ,
   CONSTRAINT `images_ibfk_1`
     FOREIGN KEY (`products_id`)
     REFERENCES `verdumarket-test`.`products` (`id`))
@@ -96,7 +96,7 @@ DEFAULT CHARACTER SET = utf8;
 CREATE TABLE IF NOT EXISTS `verdumarket-test`.`migrations` (
   `name` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`name`),
-  UNIQUE INDEX `name` (`name` ASC) VISIBLE)
+  UNIQUE INDEX `name` (`name` ASC) )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_unicode_ci;
@@ -143,8 +143,8 @@ CREATE TABLE IF NOT EXISTS `verdumarket-test`.`users` (
   `createdAt` DATETIME NOT NULL,
   `updatedAt` DATETIME NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `addresses_id` (`addresses_id` ASC) VISIBLE,
-  INDEX `roll_id` (`roll_id` ASC) VISIBLE,
+  INDEX `addresses_id` (`addresses_id` ASC) ,
+  INDEX `roll_id` (`roll_id` ASC) ,
   CONSTRAINT `users_ibfk_1`
     FOREIGN KEY (`addresses_id`)
     REFERENCES `verdumarket-test`.`addresses` (`id`),
@@ -183,9 +183,9 @@ CREATE TABLE IF NOT EXISTS `verdumarket-test`.`orders` (
   `createdAt` DATETIME NOT NULL,
   `updatedAt` DATETIME NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `payments_id` (`payments_id` ASC) VISIBLE,
-  INDEX `users_id` (`users_id` ASC) VISIBLE,
-  INDEX `states_id` (`states_id` ASC) VISIBLE,
+  INDEX `payments_id` (`payments_id` ASC) ,
+  INDEX `users_id` (`users_id` ASC) ,
+  INDEX `states_id` (`states_id` ASC) ,
   CONSTRAINT `orders_ibfk_1`
     FOREIGN KEY (`payments_id`)
     REFERENCES `verdumarket-test`.`payments` (`id`),
@@ -211,8 +211,8 @@ CREATE TABLE IF NOT EXISTS `verdumarket-test`.`orderdetails` (
   `createdAt` DATETIME NOT NULL,
   `updatedAt` DATETIME NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `orders_id` (`orders_id` ASC) VISIBLE,
-  INDEX `products_id` (`products_id` ASC) VISIBLE,
+  INDEX `orders_id` (`orders_id` ASC) ,
+  INDEX `products_id` (`products_id` ASC) ,
   CONSTRAINT `orderdetails_ibfk_1`
     FOREIGN KEY (`orders_id`)
     REFERENCES `verdumarket-test`.`orders` (`id`),
@@ -235,7 +235,7 @@ CREATE TABLE IF NOT EXISTS `verdumarket-test`.`shippings` (
   `createdAt` DATETIME NOT NULL,
   `updatedAt` DATETIME NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `orders_id` (`orders_id` ASC) VISIBLE,
+  INDEX `orders_id` (`orders_id` ASC) ,
   CONSTRAINT `shippings_ibfk_1`
     FOREIGN KEY (`orders_id`)
     REFERENCES `verdumarket-test`.`orders` (`id`))
