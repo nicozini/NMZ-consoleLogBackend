@@ -21,12 +21,14 @@ module.exports = {
         let weekProduct = products.filter(weekProduct => weekProduct.week === week);
         return weekProduct;
     },
+
     save: (products) => {
         const productJSON = JSON.stringify(products, null, 2);
         
         fs.writeFileSync(archivo, productJSON, 'utf-8');
         return true;
     },
+
     saveNew: (product) => {
         //recibo un un solo articulo
         const jsonProducts = fs.readFileSync(archivo);
@@ -40,6 +42,7 @@ module.exports = {
         fs.writeFileSync(archivo, productJSON, 'utf-8');
         return true;
     },
+    
     delete: function(id) {
         let allProducts = this.getProductList();
         let finalProducts = allProducts.filter(oneProduct => oneProduct.id !== id);

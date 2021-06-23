@@ -17,14 +17,15 @@ module.exports = (sequelize, DataTypes) => {
       })
 
       // hasMany associations
-      Product.hasMany(model.Image,{
+      Product.hasMany(models.Image,{
         as:"images",
         foreingKey:"products_id"
       })
 
       // belongsTo associations
-      Product.belongsTo(model.Category,{
-        as:"categories"
+      Product.belongsTo(models.Category,{
+        as:"categories",
+        foreignKey: "id"
       })
 
     }
