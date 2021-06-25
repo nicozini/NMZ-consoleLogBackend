@@ -1,15 +1,5 @@
 [
  {
-  "id": 1,
-  "name": "Bob",
-  "lastname": "Patino",
-  "email": "bob@patino.com",
-  "password": "$2a$10$Maoi59Zo0lz3W7n8Ig1TpOOVQSBOheiqNQbQxq4/GXSrFpvNAi6t6",
-  "confirmpass": "$2a$10$OmIyBmd17Tn5/.JNkbSmCuHTv.VcK97agOaoSKzNQgWOcLBNR.2gu",
-  "agree": "on",
-  "avatar": "1621885532977_img.jpg"
- },
- {
   "id": 2,
   "name": "Isabella",
   "lastname": "Augspach",
@@ -48,5 +38,15 @@
   "confirmpass": "$2a$10$kZv5vB0lbNcKojrpccZfuO/Gur8X7s1pSXhRxauFVEM4hqIG..BqG",
   "agree": "on",
   "avatar": "1622149136143_img.jpg"
+ },
+ {
+  "id": 1,
+  "name": "Bob",
+  "lastname": "Patino",
+  "email": "bob@patino.com",
+  "password": "$2a$10$Maoi59Zo0lz3W7n8Ig1TpOOVQSBOheiqNQbQxq4/GXSrFpvNAi6t6",
+  "confirmpass": "$2a$10$OmIyBmd17Tn5/.JNkbSmCuHTv.VcK97agOaoSKzNQgWOcLBNR.2gu",
+  "agree": "on",
+  "avatar": "1621885532977_img.jpg"
  }
 ]

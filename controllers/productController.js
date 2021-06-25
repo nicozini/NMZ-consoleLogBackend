@@ -1,15 +1,24 @@
 const fs = require('fs');
 let fileOperations = require('../models/fileOperations'); 
-let productModel = require('../src/database/models/product');
+let db = require('../src/database/models');
+
 
 module.exports = {
     // Traer listado de productos
     //Nico
-    list: (req, res) => {
-        let products = fileOperations.getProductList();
+    list: async (req, res) => {
+
+        let products = [];
+
+        // let products = await db.Product.findAll({
+        //     include: [{association:"categories"}]
+        // });
+
         res.render('products/productList', { products });
     },
-    
+
+
+
     productCart:(req,res) => {    
         res.render('products/productCart');
     },
@@ -19,51 +28,63 @@ module.exports = {
         let product = fileOperations.findById(req.params.id)
         res.render('products/productDetail', { product } )
     },
-    productSaveNew:(req, res) => {
-        //Isa
-        let products = fileOperations.getProductList();
-        var nuevoId = 0;
+    
+    // productSaveNew:(req, res) => {
+    //     //Isa
+    //     let products = fileOperations.getProductList();
+    //     var nuevoId = 0;
         
-        console.log(products);
+    //     console.log(products);
         
 
-        products.forEach((i)=> {
+    //     products.forEach((i)=> {
             
-            if ( nuevoId < i.id ) {
-                nuevoId = i.id
-                console.log('nuevoid');
-                console.log(nuevoId) ;
-            };
+    //         if ( nuevoId < i.id ) {
+    //             nuevoId = i.id
+    //             console.log('nuevoid');
+    //             console.log(nuevoId) ;
+    //         };
             
+    //     });
+
+    //     nuevoId++
+        
+
+    //     let nuevoProducto= {
+    //         id : nuevoId,
+    //         name : req.body.name,
+    //         price : req.body.price,
+    //         category : req.body.category,
+    //         description : req.body.description,
+    //         nutricion : req.body.nutricion,
+    //         facts : req.body.facts
+    //     };
+
+    //     fileOperations.saveNew(nuevoProducto)
+    //     res.redirect('/products')
+    // },
+
+    productSaveNew: async (req,res) => {
+
+        let result = await db.Product.create({
+            name: req.body.name,
+            price: req.body.price,
+            stock: 100,
+            stock_min: 50,
+            stock_max: 150,
+            categories_id: 1,
+            description: req.body.description,
+            week: 10,
+            facts: req.body.facts
+        })
+
+        console.log(result);
+
+        let products = await db.Product.findAll({
+            include:[{association:"categories"}]
         });
 
-        nuevoId++
-        /* guardado : function (req, res) {
-            db.Pelicula.create({
-                title:req.body.titulo,
-                etc...
-            });
-            res.redirect("/peliculas");
-        },
-        listado: function (req, res) {
-            db.Pelicula.findAll(
-                .then(function("listadoPeliculas", {peliculas:peliculas}))
-            )
-        }
-        */
-
-        let nuevoProducto= {
-            id : nuevoId,
-            name : req.body.name,
-            price : req.body.price,
-            category : req.body.category,
-            description : req.body.description,
-            nutricion : req.body.nutricion,
-            facts : req.body.facts
-        };
-
-        fileOperations.saveNew(nuevoProducto)
-        res.redirect('/products')
+        res.json(products);
     },
 
 
@@ -130,7 +151,6 @@ module.exports = {
         fileOperations.save(products)
         res.redirect('/products')
     },
-
 
      productDelete: (req,res) => {
          //Isa por aca min '49 CRUD!

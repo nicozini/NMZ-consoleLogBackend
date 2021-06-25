@@ -167,5 +167,13 @@
     "conservacion": "Para su correcta conserva, podemos colocarlo dentro de la heladera durante unos 7 días aproximadamente. ",
     "facts": "Alto contenido de Vitamina A y C",
     "week": false
+  },
+  {
+    "id": 17,
+    "name": "Papa",
+    "price": "150",
+    "category": "verdura",
+    "description": "Hola soy una papa.",
+    "facts": "Son hidratos."
   }
 ]

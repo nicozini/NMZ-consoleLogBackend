@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
 
       // hasMany associations
-      Roll.hasMany(model.User,{
+      Roll.hasMany(models.User,{
         as:"users",
         foreinKey:"roll_id"
       })
