@@ -89,7 +89,7 @@ module.exports = {
 
 
     productCreate: (req, res) => {
-        res.render('products/productgit Create')
+        res.render('products/productCreate')
     },
 
     productEdit: (req, res) => {

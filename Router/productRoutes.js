@@ -3,6 +3,8 @@ const router = express.Router();
 
 const productController = require("../controllers/productController");
 
+const uploadFileProducts = require('../middlewares/multerProductsMiddleware'); 
+const formValidationsProducts = require('../middlewares/validateProductsMiddleware');
 
 // Listado de productos
 router.get("/", productController.list);
@@ -11,8 +13,7 @@ router.get("/", productController.list);
 router.get('/create', productController.productCreate);
 
 // Guarda el nuevo producto Create (productCart.html)
-router.post('/products', productController.productSaveNew);
-
+router.post('/products', uploadFileProducts.single('avProducts'), formValidationsProducts, productController.productSaveNew);
 // Carrito de compras (productCart.html)
 router.get('/productCart', productController.productCart);
 
