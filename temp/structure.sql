@@ -178,7 +178,6 @@ CREATE TABLE IF NOT EXISTS `verdumarket-test`.`orders` (
   `total` DECIMAL(10,0) NULL DEFAULT NULL,
   `payments_id` INT(11) NULL DEFAULT NULL,
   `users_id` INT(11) NULL DEFAULT NULL,
-  `users_addresses_id` INT(11) NULL DEFAULT NULL,
   `states_id` INT(11) NULL DEFAULT NULL,
   `createdAt` DATETIME NOT NULL,
   `updatedAt` DATETIME NOT NULL,

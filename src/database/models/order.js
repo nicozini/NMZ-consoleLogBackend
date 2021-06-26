@@ -45,7 +45,6 @@ module.exports = (sequelize, DataTypes) => {
     total: DataTypes.DECIMAL,
     payments_id: DataTypes.INTEGER,
     users_id: DataTypes.INTEGER,
-    users_addresses_id: DataTypes.INTEGER,
     states_id: DataTypes.INTEGER
   }, {
     sequelize,
