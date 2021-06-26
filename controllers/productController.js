@@ -98,9 +98,39 @@ module.exports = {
         res.render('products/productEdit', { product })
     },
 
+        /* editar : function (req, res) {
+            let pedidoPelicula = db.Pelicula.findByPK(req.params.id);
+            let pedidoGeneros = db.Genero.findAll();
+            Promise.all([pedidoPelicula, pedidoGeneros])
+                .then(function([pelicula, generos]){
+                    res.render("editarPelicula", {pelicula:pelicula, generos:generos})
+                }
+
+            });
+            res.redirect("/peliculas");
+        },
+        listado: function (req, res) {
+            db.Pelicula.findAll(
+                .then(function("listadoPeliculas", {peliculas:peliculas}))
+            )
+        }
+        */
     productSave: (req, res) => {
         //Isa
         let products = fileOperations.getProductList();
+
+        /* guardado : function (req, res) {
+            db.Pelicula.create({
+                title:req.body.titulo,
+                etc...
+            });
+            where: { 
+                id: req.params.id
+            }
+            
+        });
+        res.redirect("/peliculas/" +req.params.id)
+        */
         
         products.forEach( (i)=> {
             if (i.id == req.params.id) {
@@ -123,7 +153,7 @@ module.exports = {
     },
 
      productDelete: (req,res) => {
-         //Isa
+         //Isa por aca min '49 CRUD!
          let products = fileOperations.getProductList();
          let productsNew = products.filter(i => i.id != req.params.id);
     
