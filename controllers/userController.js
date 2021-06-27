@@ -1,6 +1,7 @@
 // Modelo o DB
 const User = require('../models/Users');
-let UserModel = require('../src/database/models/User');
+//let db = require('../src/database/model');
+const db = require('../src/database/models')
 
 // Modulos requeridos
 const {	validationResult } = require('express-validator');
@@ -12,12 +13,12 @@ const userController = {
     
     // Registro (GET)
     register: (req, res) => {
-        return res.render('users/register');
+        return res.render('users/register');    
     },
 
     // Registro (POST)
-    processRegister: (req, res) => {
-        //Tomy
+    processRegister: async (req, res) => {
+        
         const resultValidation = validationResult(req);
 
         // Si hay errores, devolver data ingresada y validaciones
@@ -43,17 +44,32 @@ const userController = {
         }
 
         // Si paso las validaciones y el email no esta registrado, creo el usuario
+       
+
         let userToCreate = {
-            //Tomy
             ...req.body,
             password: bcryptjs.hashSync(req.body.password, 10),
             confirmpass: bcryptjs.hashSync(req.body.confirmpass, 10),
             avatar: req.file.filename
-        }
+        };
 
-        let userCreated = User.create(userToCreate);
+        // try {
+        //     let response = await db.User.create({
+        //         first_name  : userToCreate.first_name,
+        //         last_name   : userToCreate.last_name,
+        //         email       : userToCreate.email,
+        //         password    : userToCreate.password,
+        //         avatar      : req.file.filename,
+        //         addresses_id: 1 ,
+        //         roll_id     : 1 
+        //     })
+        
+        // };
 
-        return res.redirect('/users/login');
+        //res.json(await db.User.FindAll());
+        //let userCreated = User.create(userToCreate);
+
+        //return res.redirect('/users/login');
     },
 
     // Login (GET)    
