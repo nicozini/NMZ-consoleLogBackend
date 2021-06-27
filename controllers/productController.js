@@ -1,6 +1,8 @@
 const fs = require('fs');
 let fileOperations = require('../models/fileOperations'); 
 let db = require('../src/database/models');
+const Op = db.Sequelize.Op;
+// const { Op } = require("sequelize");
 
 
 module.exports = {
@@ -29,6 +31,20 @@ module.exports = {
                 res.render('products/productDetail.ejs', {product});
             })
             .catch(error => res.send(error))
+    },
+
+    productSearch: (req, res) => {
+        db.Product.findAll({
+            where: {
+                name: { [Op.like ]: '%' + req.query.keyword + '%' }
+            }
+        })
+        .then(products => {
+            if (products.length > 0) {
+                return res.json(products);                
+            }
+            return res.json('No existe stock del producto en este momento')
+        })
     },
     
     // Isa

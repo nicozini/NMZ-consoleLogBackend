@@ -29,4 +29,7 @@ router.get("/:id", productController.productDetail);
 // Ruta para eliminar productos
 router.delete('/delete/:id', productController.productDelete);
 
+// Ruta para mostrar búsqueda de productos
+router.get('/search', productController.productSearch);
+
 module.exports = router;
