@@ -4,66 +4,34 @@ let db = require('../src/database/models');
 
 
 module.exports = {
-    // Traer listado de productos
-    //Nico
-    list: async (req, res) => {
+    
+    list: (req, res) => {
 
-        let products = [];
-
-        // let products = await db.Product.findAll({
-        //     include: [{association:"categories"}]
-        // });
-
-        res.render('products/productList', { products });
+        db.Product.findAll({
+            include: ['categories']
+        })
+            .then(products => {
+                res.render('products/productList.ejs', {products})
+            })
+            .catch(error => res.send(error))
     },
-
-
 
     productCart:(req,res) => {    
         res.render('products/productCart');
     },
     
     productDetail: (req, res) => {
-        //Nico
-        let product = fileOperations.findById(req.params.id)
-        res.render('products/productDetail', { product } )
+        db.Product.findByPk(req.params.id,
+            {
+                include : ['categories', 'images']
+            })
+            .then(product => {
+                res.render('products/productDetail.ejs', {product});
+            })
+            .catch(error => res.send(error))
     },
     
-    // productSaveNew:(req, res) => {
-    //     //Isa
-    //     let products = fileOperations.getProductList();
-    //     var nuevoId = 0;
-        
-    //     console.log(products);
-        
-
-    //     products.forEach((i)=> {
-            
-    //         if ( nuevoId < i.id ) {
-    //             nuevoId = i.id
-    //             console.log('nuevoid');
-    //             console.log(nuevoId) ;
-    //         };
-            
-    //     });
-
-    //     nuevoId++
-        
-
-    //     let nuevoProducto= {
-    //         id : nuevoId,
-    //         name : req.body.name,
-    //         price : req.body.price,
-    //         category : req.body.category,
-    //         description : req.body.description,
-    //         nutricion : req.body.nutricion,
-    //         facts : req.body.facts
-    //     };
-
-    //     fileOperations.saveNew(nuevoProducto)
-    //     res.redirect('/products')
-    // },
-
+    // Isa
     productSaveNew: async (req,res) => {
 
         let result = await db.Product.create({
@@ -86,7 +54,6 @@ module.exports = {
 
         res.json(products);
     },
-
 
     productCreate: (req, res) => {
         res.render('products/productCreate')

@@ -19,13 +19,13 @@ module.exports = (sequelize, DataTypes) => {
       // hasMany associations
       Product.hasMany(models.Image,{
         as:"images",
-        foreingKey:"products_id"
+        foreignKey:"products_id"
       })
 
       // belongsTo associations
       Product.belongsTo(models.Category,{
         as:"categories",
-        foreignKey: "id"
+        foreignKey: "categories_id"
       })
 
     }
