@@ -12,7 +12,9 @@ module.exports = (sequelize, DataTypes) => {
 
       // belongsTo associations
       Image.belongsTo(models.Product,{
-        as: "products"
+        as: "products",
+        foreignKey: "products_id"
+
       })
       
     }

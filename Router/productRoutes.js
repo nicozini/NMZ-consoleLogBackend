@@ -13,12 +13,15 @@ router.get("/", productController.list);
 router.get('/create', productController.productCreate);
 
 // Guarda el nuevo producto Create (productCart.html)
-router.post('/products', uploadFileProducts.single('avProducts'), formValidationsProducts, productController.productSaveNew);
+router.post('/', uploadFileProducts.single('avProducts'), formValidationsProducts, productController.productSaveNew);
 // Carrito de compras (productCart.html)
 router.get('/productCart', productController.productCart);
 
 // Formulario de creación de productos
 router.get('/:id/edit', productController.productEdit);
+
+// Ruta para mostrar búsqueda de productos
+router.get('/search', productController.productSearch);
 
 // Acción de edición
 router.put('/:id', productController.productSave);
@@ -28,5 +31,6 @@ router.get("/:id", productController.productDetail);
 
 // Ruta para eliminar productos
 router.delete('/delete/:id', productController.productDelete);
+
 
 module.exports = router;
