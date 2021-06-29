@@ -49,7 +49,6 @@ module.exports = {
     
     // Isa
     productSaveNew: async (req,res) => {
-
         let result = await db.Product.create({
             name: req.body.name,
             price: req.body.price,
@@ -61,13 +60,10 @@ module.exports = {
             week: 10,
             facts: req.body.facts
         })
-
         console.log(result);
-
         let products = await db.Product.findAll({
             include:[{association:"categories"}]
         });
-
         res.json(products);
     },
 
@@ -77,62 +73,40 @@ module.exports = {
 
     productEdit: (req, res) => {
         //Isa
-        let product = fileOperations.findById(req.params.id)
-        res.render('products/productEdit', { product })
-    },
-
-        /* editar : function (req, res) {
-            let pedidoPelicula = db.Pelicula.findByPK(req.params.id);
-            let pedidoGeneros = db.Genero.findAll();
-            Promise.all([pedidoPelicula, pedidoGeneros])
-                .then(function([pelicula, generos]){
-                    res.render("editarPelicula", {pelicula:pelicula, generos:generos})
-                }
-
+        //let product = fileOperations.findById(req.params.id)
+        //res.render('products/productEdit', { product })         
+            let pedidoProduct = db.Product.findByPK(req.params.id);
+            let pedidoCategory = db.category.findAll();
+            Promise.all([this.pedidoProduct, pedidoCategories])
+                .then(function([products, categories]){
+                    res.render("productEdit", {product:product, category:category})
+                });
+            res.redirect("/products");
+        ;
+            console.log(pedidoProduct);
+            let products = await db.Product.findAll({
+                include:[{association:"categories"}]
             });
-            res.redirect("/peliculas");
+            res.json(products);
         },
-        listado: function (req, res) {
-            db.Pelicula.findAll(
-                .then(function("listadoPeliculas", {peliculas:peliculas}))
-            )
-        }
-        */
     productSave: (req, res) => {
         //Isa
-        let products = fileOperations.getProductList();
 
-        /* guardado : function (req, res) {
-            db.Pelicula.create({
-                title:req.body.titulo,
-                etc...
-            });
-            where: { 
-                id: req.params.id
-            }
-            
+        db.Product.create({
+                name: req.body.name,
+                price: req.body.price,
+                stock: 100,
+                stock_min: 50,
+                stock_max: 150,
+                categories_id: 1,
+                description: req.body.description,
+                week: 10,
+                facts: req.body.facts
         });
-        res.redirect("/peliculas/" +req.params.id)
-        */
-        
-        products.forEach( (i)=> {
-            if (i.id == req.params.id) {
-
-                i.name = req.body.name
-                i.price = req.body.price
-                i.category = req.body.category
-                i.description = req.body.description
-                i.nutricion = req.body.nutricion
-                i.facts = req.body.facts
-
-                // if (req.body.in-sale === 'week'){
-                //     products.week = true
-                // };
-            };
-        });
-        
-        fileOperations.save(products)
-        res.redirect('/products')
+        where: { 
+            id: req.params.id
+        };
+        res.redirect("/products/" +req.params.id);
     },
 
      productDelete: (req,res) => {
