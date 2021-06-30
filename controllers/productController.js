@@ -71,7 +71,7 @@ module.exports = {
         res.render('products/productCreate')
     },
 
-    productEdit: (req, res) => {
+    productEdit: async (req, res) => {
         //Isa
         //let product = fileOperations.findById(req.params.id)
         //res.render('products/productEdit', { product })         
