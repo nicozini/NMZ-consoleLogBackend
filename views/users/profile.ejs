@@ -59,6 +59,20 @@
                         <input type="checkbox" name="newsLetter" id="newsLetter" value="<% user.newsLetter ? " checked" : null %> ">
                     </div>
                     <br>
+                    <input class="form-data" type="text"  name="street"     id="street"    placeholder="Dirección"   value="<%=user.street%>">
+                    <% if(locals.errors && errors.name) { %>
+                        <div class="text-danger">
+                          <%= errors.street.msg %> 
+                        </div>
+                      <% } %>
+
+                    <input class="form-data" type="text"  name="number"     id="number" placeholder="número"      value="<%=user.number%>">
+                    <% if(locals.errors && errors.name) { %>
+                        <div class="text-danger">
+                        <%= errors.number.msg %> 
+                        </div>
+                    <% } %>                      
+
                     <input class="btn" type="submit" value="Modificar">                    
                 </div>
             </form>            

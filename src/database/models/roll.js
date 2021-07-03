@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // hasMany associations
       Roll.hasMany(models.User,{
         as:"users",
-        foreinKey:"roll_id"
+        foreignKey:"roll_id"
       })
       
     }

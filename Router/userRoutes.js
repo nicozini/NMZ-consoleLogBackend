@@ -12,6 +12,9 @@ const profileValidations = require('../middlewares/validateProfileMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 
+//Ruta test
+router.get('/test', guestMiddleware, userController.findAll);
+
 // Formulario de registro
 router.get('/register', guestMiddleware, userController.register);
 

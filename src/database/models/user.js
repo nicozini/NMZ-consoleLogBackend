@@ -16,13 +16,14 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'users_id'
       })
 
-      // belongsTo relations 
-      User.belongsTo(models.Roll, {
-        as: 'rolls'
-      })  
+      User.belongsTo(models.Roll,{
+        as:'rolls',
+        foreignKey:'roll_id'
+      })
       
       User.belongsTo(models.Address, {
-        as: 'addresses'
+        as: 'addresses',
+        foreignKey:'addresses_id'
       })
 
     }
