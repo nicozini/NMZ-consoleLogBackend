@@ -13,7 +13,7 @@ router.get("/", productController.list);
 router.get('/create', productController.productCreate);
 
 // Guarda el nuevo producto Create (productCart.html)
-router.post('/products', uploadFileProducts.single('avProducts'), formValidationsProducts, productController.productSaveNew);
+router.post('/', uploadFileProducts.single('avProducts'), formValidationsProducts, productController.productSaveNew);
 // Carrito de compras (productCart.html)
 router.get('/productCart', productController.productCart);
 

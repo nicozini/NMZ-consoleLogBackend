@@ -48,5 +48,15 @@
   "confirmpass": "$2a$10$OmIyBmd17Tn5/.JNkbSmCuHTv.VcK97agOaoSKzNQgWOcLBNR.2gu",
   "agree": "on",
   "avatar": "1621885532977_img.jpg"
+ },
+ {
+  "id": 2,
+  "name": "Tomas",
+  "lastname": "Glazman",
+  "email": "tt@mm.com",
+  "password": "$2a$10$J/nCqEBR5bFIpwmjcsVMEe4nPh.SmpCPs.XUbFK8RjCmK39HaOdre",
+  "confirmpass": "$2a$10$Vp7ZuTNr.4b2uDzKIFRS1eYkm5R/bXiaFg23vmjVuTYWJc5MZIe9O",
+  "agree": "on",
+  "avatar": "1624748041908_img.png"
  }
 ]
