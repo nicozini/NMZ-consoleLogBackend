@@ -61,7 +61,7 @@ module.exports = {
             facts: req.body.facts
         })
         console.log(result);
-        let products = await db.Product.findAll({
+        let products = db.Product.findAll({
             include:[{association:"categories"}]
         });
         res.json(products);
@@ -84,7 +84,8 @@ module.exports = {
             res.redirect("/products");
         ;
             console.log(pedidoProduct);
-            let products = await db.Product.findAll({
+            // async y await tienen que estar juntos
+            let products = db.Product.findAll({
                 include:[{association:"categories"}]
             });
             res.json(products);
@@ -111,8 +112,12 @@ module.exports = {
 
      productDelete: (req,res) => {
          //Isa por aca min '49 CRUD!
-         let products = fileOperations.getProductList();
-         let productsNew = products.filter(i => i.id != req.params.id);
+        db.Product.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        res.redirect("/products");
     
         // res.send(productsNew);
         fileOperations.save(productsNew)
@@ -121,6 +126,7 @@ module.exports = {
         
      },
 
+     //hay que borrarlo???? (isa)
     productDeleteN: function (req,res) {
         let idToDelete = req.params.id;
         let products = fileOperations.delete(idToDelete); 
