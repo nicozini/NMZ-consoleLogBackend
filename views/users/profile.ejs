@@ -34,26 +34,48 @@
                 </div>
 
                 <div class="data">
-                    <input class="form-data" type="text"  name="name"     id="name"       value="<%=user.name%>">
-                    <% if(locals.errors && errors.name) { %>
+                    <input class="form-data" type="text"  name="first_name" id="first_name"  value="<%=user.first_name%>">
+                    <% if(locals.errors && errors.first_name) { %>
                         <div class="text-danger">
-                          <%= errors.name.msg %> 
+                          <%= errors.first_name.msg %> 
+                        </div>
+                        <% } %>
+                    <input class="form-data" type="text"  name="last_name" id="last_name"  value="<%=user.last_name%>" >
+                    <% if(locals.errors && errors.last_name) { %>
+                        <div class="text-danger">
+                          <%= errors.last_name.msg %> 
                         </div>
                       <% } %>
-                    <input class="form-data" type="text"  name="lastname" id="lastname"  value="<%=user.lastname%>" >
-                    <% if(locals.errors && errors.lastname) { %>
-                        <div class="text-danger">
-                          <%= errors.lastname.msg %> 
-                        </div>
-                      <% } %>
-                    <input class="form-data" type="email" name="email"    id="email"      value="<%=user.email%>"     >
+
+                    <input class="form-data" type="email" name="email"    id="email"    value="<%=user.email%>"     >
                     <% if(locals.errors && errors.email) { %>
                         <div class="text-danger">
                           <%= errors.email.msg %> 
                         </div>
                       <% } %>
-                    <br>
+                    
+                      <input class="form-data" type="text" name="street"    id="street"    value="<%=user.street%>"     >
+                      <% if(locals.errors && errors.street) { %>
+                          <div class="text-danger">
+                            <%= errors.street.msg %> 
+                          </div>
+                        <% } %>
 
+                        <input class="form-data" type="text" name="number"    id="number"    value="<%=user.number%>"     >
+                      <% if(locals.errors && errors.number) { %>
+                          <div class="text-danger">
+                            <%= errors.number.msg %> 
+                          </div>
+                        <% } %>
+
+
+
+
+
+
+
+                      
+                      <br>
                     <div>
                         <label for="newsLetter">Deseo Recibir Ofertas por e-mail</label>
                         <input type="checkbox" name="newsLetter" id="newsLetter" value="<% user.newsLetter ? " checked" : null %> ">

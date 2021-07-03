@@ -27,6 +27,9 @@ app.use(session({
 
 app.use(express.static('public'));
 app.set('view engine','ejs');
+// (Nico) Agrego cambio directorio views
+app.set('views', __dirname + '/views');
+
 
 // URL encode para capturar informacion del formulario en req.body
 app.use(express.urlencoded({ extended: false }));
