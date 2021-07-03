@@ -34,20 +34,26 @@ module.exports = {
     },
 
     productSearch: (req, res) => {
+        // let productSearch = req.query.search
+        // VER HARCODEDO
+        let search = 'coco'
         db.Product.findAll({
             where: {
-                name: { [Op.like ]: '%' + req.query.keyword + '%' }
+                // name: { [Op.like]: '%' + productSearch + '%' }
+                name: { [Op.like]: `%${search}%` } 
             }
         })
         .then(products => {
             if (products.length > 0) {
                 return res.json(products);                
             }
-            return res.json('No existe stock del producto en este momento')
+            return res.json('No se encontró el producto buscado. Por favor, intente nuevamente.');
+        })
+        .catch(function(e) {
+            console.log(e);
         })
     },
     
-    // Isa
     productSaveNew: async (req,res) => {
         let result = await db.Product.create({
             name: req.body.name,

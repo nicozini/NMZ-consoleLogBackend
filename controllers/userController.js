@@ -1,7 +1,7 @@
 // Modelo o DB
-const User = require('../models/Users');
-//let db = require('../src/database/model');
-const db = require('../src/database/models')
+// const User = require('../models/Users');
+// let db = require('../src/database/model');
+const db = require('../src/database/models');
 
 // Modulos requeridos
 const {	validationResult } = require('express-validator');

@@ -98,6 +98,9 @@
     border-radius: 5px;
   }
 
+  .form-direcc{
+    display: flexbox;
+  }
 
 @media screen and (min-width: 360px) {
     .center-conteiner .form{
