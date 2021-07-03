@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head')%>
+    <link rel="stylesheet" href="/css/productDetail.css" />
+  </head>
+
+  <body>
+    <p class="banner">
+      ¡REGISTRATE Y OBTENÉ UN 10% DE DESCUENTO EN TU PRIMERA COMPRA! ¡SI TU
+      COMPRA ES MAYOR A $3500 TENÉS EL ENVÍO BONIFICADO!
+    </p>
+
+    <%- include('../partials/header')%>
+
+    <center>
+      <main>
+        <h1>Edición de productos</h1>
+  
+        <form action="#">
+
+          <label for="">Imagen</label><br>
+          <input type="file"><br>
+    
+          <label for="">Nombre</label><br>
+          <input type="text"><br>
+  
+          <label for="">Descripción</label><br>
+          <input type="text"><br>
+  
+          <label for="">Categoria</label><br>
+          <input type="text"><br>
+  
+          <label for="">Información Nutricional</label><br>
+          <input type="text"><br>
+  
+          <label for="">Precio por KG</label><br>
+          <input type="text"><br>
+
+          <article>
+            <center>
+              <!-- Botón guardar cambios -->
+              <div>
+                <h3 class="buttons"><a href="/products/<%= product.id %>/edit">Guardar cambios</a></h3>
+              </div>
+            </center>
+          </article> 
+
+        </form>    
+      </main>
+    </center>
+
+    <%- include('../partials/footer')%>
+
+  </body>
+</html>
