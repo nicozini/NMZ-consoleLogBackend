@@ -53,20 +53,23 @@ const userController = {
             avatar: req.file.filename
         };
 
-        // try {
-        //     let response = await db.User.create({
-        //         first_name  : userToCreate.first_name,
-        //         last_name   : userToCreate.last_name,
-        //         email       : userToCreate.email,
-        //         password    : userToCreate.password,
-        //         avatar      : req.file.filename,
-        //         addresses_id: 1 ,
-        //         roll_id     : 1 
-        //     })
+        try {
+            let response = await db.User.create({
+                first_name  : userToCreate.name,
+                last_name   : userToCreate.lastname,
+                email       : userToCreate.email,
+                password    : userToCreate.password,
+                avatar      : req.file.filename,
+                addresses_id: 1 ,
+                roll_id     : 1 
+            })
+            console.log(response);
+            res.json( await db.User.findAll());
         
-        // };
+        } catch(err){
+            res.send(err)
+        };
 
-        //res.json(await db.User.FindAll());
         //let userCreated = User.create(userToCreate);
 
         //return res.redirect('/users/login');
