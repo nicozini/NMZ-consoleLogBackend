@@ -76,45 +76,32 @@ module.exports = {
     res.render("products/productCreate");
   },
 
-  productEdit: async function(req, res) {
-//     // //let product = fileOperations.findById(req.params.id)
-//     // //res.render('products/productEdit', { product })
-//     // let pedidoProduct = db.Product.findByPK(req.params.id);
-//     // let pedidoCategory = db.category.findAll();
-//     // Promise.all([this.pedidoProduct, pedidoCategories])
-//     //     .then(function([products, categories]){
-//     //         res.render("productEdit", {product:product, category:category})
-//     //     });
-//     // res.redirect("/products");
-//     // console.log(pedidoProduct);
-//     // // async y await tienen que estar juntos
-//     // let products = db.Product.findAll({
-//     //     include:[{association:"categories"}]
-//     // });
-//     // res.json(products);
+  productEdit: function(req, res) {
+        let product = db.Product.findByPk(4)
+        return res.render('products/productDetailEdit.ejs', { product });
+        
 
-//     try {
-//         await db.Product.update(
-//             {
-//               name: req.body.name,
-//               description: req.body.description,
-//               price: req.body.price,
-//               colors_id: req.body.color,
-//               types_id: req.body.type,
-//               genders_id: req.body.categorie,
-//               stock: req.body.stock,
-//             },
-//             {
-//               where: {
-//                 id: req.params.id,
-//               },
-//             }
-//           );
-//           return res.redirect("/admin/stock");
-//         } catch (error) {
-//           console.log(error);
-//         }
-//       },
+    // //let product = fileOperations.findById(req.params.id)
+    // //res.render('products/productEdit', { product })
+    // let pedidoProduct = db.Product.findByPK(req.params.id);
+    // // let pedidoCategory = db.category.findAll();
+
+    // Promise.all([pedidoProduct])
+    //     .then(function(products) {
+
+    //         res.render("products/productEdit.ejs", {product:product, category:category})
+    //     });
+
+    // res.redirect("/products");
+
+    // console.log(pedidoProduct);
+
+    // // async y await tienen que estar juntos
+    // let products = db.Product.findAll({
+    //     include:[{association:"categories"}]
+    // });
+
+    // res.json(products);
   },
 
   productSave: (req, res) => {

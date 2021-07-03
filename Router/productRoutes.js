@@ -6,25 +6,33 @@ const productController = require("../controllers/productController");
 const uploadFileProducts = require('../middlewares/multerProductsMiddleware'); 
 const formValidationsProducts = require('../middlewares/validateProductsMiddleware');
 
+
 // Listado de productos
 router.get("/", productController.list);
 
 // Formulario de creación de productos (productCart.html)
 router.get('/create', productController.productCreate);
 
+// Acción de creación de producto nuevo en la DB
+router.put('/:id', productController.productSave);
+
 // Guarda el nuevo producto Create (productCart.html)
 router.post('/', uploadFileProducts.single('avProducts'), formValidationsProducts, productController.productSaveNew);
+
 // Carrito de compras (productCart.html)
 router.get('/productCart', productController.productCart);
-
-// Formulario de creación de productos
-router.get('/:id/edit', productController.productEdit);
 
 // Ruta para mostrar búsqueda de productos
 router.get('/search', productController.productSearch);
 
-// Acción de edición
-router.put('/:id', productController.productSave);
+
+// Formulario de edición de productos
+router.get('/:id/edit', productController.productEdit);
+
+// Acción de guardado del producto editado
+
+
+
 
 // Detalle de producto según :id
 router.get("/:id", productController.productDetail);
