@@ -1,12 +1,9 @@
 // Modelo o DB
-// const User = require('../models/Users');
-// let db = require('../src/database/model');
-const db = require('../src/database/models');
+const db = require('../src/database/models')
 
 // Modulos requeridos
 const {	validationResult } = require('express-validator');
 const bcryptjs = require('bcryptjs');
-const { findByPk } = require('../models/Users');
 
 // Funcionalidad userController
 const userController = {
@@ -30,7 +27,11 @@ const userController = {
         }
 
         // Verifico que el email no este registrado caso contrario retorno error
-        let userInDB = User.findByField('email', req.body.email);
+        let userInDB = await db.User.findOne({
+            where:{
+                email: req.body.email
+            }
+        });
 
         if (userInDB) {
             return res.render('users/register', {
@@ -44,7 +45,6 @@ const userController = {
         }
 
         // Si paso las validaciones y el email no esta registrado, creo el usuario
-       
 
         let userToCreate = {
             ...req.body,
@@ -63,8 +63,6 @@ const userController = {
                 addresses_id: 1 ,
                 roll_id     : 1 
             })
-            console.log(response);
-            res.json( await db.User.findAll());
         
         } catch(err){
             res.send(err)
@@ -72,19 +70,27 @@ const userController = {
 
         //let userCreated = User.create(userToCreate);
 
-        //return res.redirect('/users/login');
+        return res.redirect('/users/login');
     },
-
+    //metodo de test
+    findAll:async (req,res)=>{
+        res.json( await db.User.findAll());
+    },
     // Login (GET)    
     login:(req, res)=>{    
         return res.render('users/login');
     },
 
     // Login (POST) - Session de usuario
-    processLogin: (req, res) => {
+    processLogin: async (req, res) => {
 
         // Verifico si el usuario está registrado
-        let userToLogin = User.findByField('email', req.body.email);
+        //let userToLogin = User.findByField('email', req.body.email);
+        let userToLogin = await db.User.findOne({
+            where:{
+                email: req.body.email
+            }
+        });
 
         if (userToLogin) {
             let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
@@ -125,8 +131,8 @@ const userController = {
         });
     },
 
-    updateProfile:(req,res) => {
-        //Tomy
+    updateProfile:async (req,res) => {
+        
         const resultValidation = validationResult(req);
         let avatarN = req.session.userLogged.avatar ;
         let oldData = {...req.body,
@@ -140,7 +146,11 @@ const userController = {
             
         } else{
             
-            let userInDB = User.findByField('email', req.body.email);
+            let userInDB = await db.User.findOne({
+                where:{
+                    email: req.body.email
+                }
+            });
 
             if (userInDB && userInDB.id != req.session.userLogged.id ) {
                 return res.render('users/profile', {
@@ -156,27 +166,49 @@ const userController = {
             if (req.file){
                avatarN =  req.file.filename
             }
-            let userToUpdate = User.findByPk(req.session.userLogged.id)
-            
-            userToUpdate  = {
-                id:    userToUpdate.id,
-                name:  req.body.name,
-                lastname    : req.body.lastname,
-                email       : req.body.email,
-                password    : userToUpdate.password,
-                confirmpass : userToUpdate.confirmpass,
-                agree       : userToUpdate.agree,
-                avatar      : userToUpdate.avatar,
-                newsletter  : req.body.newsletter
-            }            
-            
-            if (User.update(req.session.userLogged.id,userToUpdate )){
+            try {
+                let userToUpdate    = await db.User.findByPk(req.session.userLogged.id);
+                let prevAddress     = await db.Address.findByPk(userToUpdate.addresses_id);
+                let updAddress = {
+                    street : req.body.street,
+                    number : req.body.number
+                };
+                
+                if  ((prevAddress.street != updAddress.street) || (prevAddress.number != updAddress.number) ) {
+                    if ( userToUpdate.addresses_id = 1 ){
+                        //significa que tiene que insertar una nueva dirección
+                        updAddress = await db.Address.create({
+                            street : updAddress.street,
+                            number : updAddress.number
+                            });
+                    }else{
+                        //significa que tiene que actualizar la direccion con ese Id
+                        updAddress = await db.Address.update({
+                            street : req.body.street,
+                            number : req.body.number
+                            },
+                            { where : { id: userToUpdate.addresses_id}
+                             }
+                             );
+                    }
+                };
 
-                req.session.userLogged = userToUpdate;
-                delete req.session.userLogged.password ;
-                delete req.session.userLogged.confirmpass ;
-                console.log('req.session.userLogged');
-                console.log(req.session.userLogged);
+                await db.User.update({
+                    first_name   : req.body.name,
+                    last_name    : req.body.lastname,
+                    email        : req.body.email,
+                    password     : userToUpdate.password,
+                    addresses_id : updAddress.id != null ? updAddress.id : prevAddress.id
+                    },
+                    {
+                        where:{ id:userToUpdate.id}
+                    });
+                req.session.userLogged = await db.User.findByPk(userToUpdate.id);
+                //borro la contraseña por seguridad
+                delete req.session.userLogged.password ; 
+                
+            }catch(err){
+                res.send(err);
             };
         }
         console.log('req.session.userLogged');

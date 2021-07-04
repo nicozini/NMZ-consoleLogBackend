@@ -1,3 +1,10 @@
+Mauri:
+	Estuvo haciendo: 		    Ajustando el header
+	Encontró un Impedimento: 	costo un poco retomar temas de css
+	Queda por hacer:		    use
+
+
+
 -------------------------------------------Jueves 06 - 05- 2021  ------------------------------------------
 Isa: 
 	Estuvo haciendo: 		    Rutas del post del register. con express validator
