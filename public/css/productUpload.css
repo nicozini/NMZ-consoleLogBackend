@@ -111,6 +111,16 @@
     background-image: url('/images/fondo-cart.jpg');
     background-size: cover;
    }
+
+   .stock-form{
+    display: flex;
+    justify-content: space-between;
+   }
+
+.stock-form .control{
+  display: inline-block;
+}
+
   /* ------  MQ Register    ------ */
   @media screen and (min-width: 769px) {
     .main-register{

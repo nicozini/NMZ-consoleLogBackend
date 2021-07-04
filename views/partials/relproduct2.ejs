@@ -1,4 +1,4 @@
-<div class="column2">
+<!-- <div class="column2">
   <img src="/img/<%= i.image %>" alt="<%= i.name %>" style="width: 100%;">
   <div class="product-desc2">
     <h5>
@@ -15,4 +15,21 @@
     <input type="number" name="amount" value="1" min="1" max="50" step="1" class="amount control1" />
     <button type="button" class="add-bt">Agregar</button>
   </div>
+</div> -->
+
+<div class="product-recommendations">
+  <ul>
+    <% for( let i = 0; i < relproduct.length; i++ ) { %>
+    <li class="rel-product">
+        <img src="/img/<%= relproduct[i].image %>"
+        alt="<%=relproduct.name%>"
+        class="naranja-img"/>
+        <div class="product-desc">
+          <h4>Categoría: <%= relproduct[i].category %></h4>
+          <h3><%= relproduct[i].name %></h3>
+          <h4>Precio por Kilo:<%= relproduct[i].price %></h4>
+        </div>
+    </li>
+    <% } %>
+  </ul>
 </div>

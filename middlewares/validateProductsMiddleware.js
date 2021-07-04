@@ -7,6 +7,9 @@ module.exports = [
     body('name').notEmpty().withMessage('Completá el nombre'),
     body('price').notEmpty().withMessage('Completá el precio'),
     body('description').notEmpty().withMessage('Completá la descripción'),
+    body('stock').notEmpty().withMessage('Completá el stock').isNumeric({ min: 1}),
+    body('stock_min').notEmpty().withMessage('Completá el Stock minimo').isNumeric({ min: 1}),
+    body('stock_max').notEmpty().withMessage('Completá el Stock maximo').isNumeric(),
     body('avProducts').custom((value, { req }) => {
         // Obtengo el archivo
         let file = req.file; 
