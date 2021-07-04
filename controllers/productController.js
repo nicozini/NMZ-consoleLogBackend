@@ -1,6 +1,6 @@
 const { promiseImpl } = require('ejs');
 const fs = require('fs');
-let fileOperations = require('../models/fileOperations'); 
+let fileOperations = require('../models/fileOperations');
 let db = require('../src/database/models');
 const Op = db.Sequelize.Op;
 // const { Op } = require("sequelize");
@@ -42,10 +42,9 @@ module.exports = {
     .then((products) => {
         if (products.length > 0) {
             return res.render('products/productSearch.ejs', { products });
+            // return res.json(products);
         }
-        return res.json(
-          "No se encontró el producto buscado. Por favor, intente nuevamente."
-        );
+        return res.render('products/productSearch.ejs', { products });
     })
     .catch(function (e) {
         console.log(e);

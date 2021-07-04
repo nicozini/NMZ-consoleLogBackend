@@ -32,16 +32,39 @@
                     <option value="4">Dietética</option>
                 </select>
           </div>
+          <div class="stock-form">
+          <div class="form-control">
+            <input type="text" name="stock" id="stock" placeholder="Stock"  class="control" ">
+            <span class="Feedback"></span>
+          </div> 
+          <div class="form-control">
+            <input type="text" name="stock_min" id="stock_min" placeholder="Stock Minimo"  class="control" ">
+            <span class="Feedback"></span>
+          </div> 
+          <div class="form-control">
+            <input type="text" name="stock_max" id="stock_max" placeholder="Stock Maximo" class="control" ">
+            <span class="Feedback"></span>
+          </div> 
+        </div>
           <div class="form-control">
           <textarea type="text" name="description" id="Description"  placeholder="Descripción" required class="control"></textarea>
           <span class="Feedback"></span>
           </div>
           <br>
           <br>
-          <label class= "image" > Seleccionar una imagen para el producto </label>
-          <br>
-          <input class="image" type="file" name="avProducts" accept=".jpg" multiple>
-          <br>
+          <!-- <label class= "image" > Seleccionar una imagen para el producto </label> -->
+          <!-- <br>
+          <input class="image" type="file" name="Imagen" accept=".png" multiple>
+          <br> -->
+          <div>
+            <label><b>Subí la imagen del producto</b></label>
+            <input class='form-control' type="file" name="avProducts">
+            <% if(locals.errors && errors.avProducts) { %>
+              <div class="text-danger">
+                <%= errors.avProducts.msg %> 
+              </div>
+            <% } %>
+          </div>
           <div class="form-control">
             <input type="text" name="facts" id="facts" placeholder="Nutrición" required class="control" >
             <span class="Feedback"></span>
