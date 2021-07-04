@@ -1,5 +1,5 @@
 const fs = require('fs');
-let fileOperations = require('../models/fileOperations'); 
+let fileOperations = require('../models/fileOperations');
 let db = require('../src/database/models');
 const Op = db.Sequelize.Op;
 // const { Op } = require("sequelize");
@@ -41,6 +41,7 @@ module.exports = {
     .then((products) => {
         if (products.length > 0) {
             return res.render('products/productSearch.ejs', { products });
+            // return res.json(products);
         }
         return res.render('products/productSearch.ejs', { products });
     })
@@ -77,7 +78,7 @@ module.exports = {
   productEdit: function(req, res) {
         let product = db.Product.findByPk(4)
         return res.render('products/productDetailEdit.ejs', { product });
-        
+
 
     // //let product = fileOperations.findById(req.params.id)
     // //res.render('products/productEdit', { product })
