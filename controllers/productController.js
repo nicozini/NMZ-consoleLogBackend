@@ -38,6 +38,7 @@ module.exports = {
       where: {
         name: { [Op.like]: `%${search}%` },
       },
+      include: ["categories", "images"]
     })
     .then((products) => {
         if (products.length > 0) {
@@ -83,7 +84,7 @@ module.exports = {
   },
 
   productEdit: async function(req, res) {
-        let product = await db.Product.findByPk(4)
+        let product = await db.Product.findByPk(req.params.id)
 
         return res.render('products/productEdit', { product });
         

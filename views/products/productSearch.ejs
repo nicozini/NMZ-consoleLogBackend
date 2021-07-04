@@ -20,8 +20,11 @@
       <div class="card">
 
           <div class="product-image-container">
-            <img src="/img/img-000000001.jpg" alt="<%=products.name%>" class="product-image">
-            <!-- <img src="/img/<%#=products.image%>" alt="<%#=products.name%>" class="product-image"> -->
+            <!-- <img src="/img/img-000000001.jpg" alt="<%=//products.name%>" class="product-image"> -->
+            <% for( let i = 0; i < products.images.length; i++ ) { %>
+              <img src="/img/<%=products.images[i].name%>" alt="<%=products.images[i].name%>" class="product-image">
+            <% } %>
+            
           </div>
 
           <div class="product-card">
@@ -34,7 +37,7 @@
             </p>
             <p>Descripción:<%= products.description%>
             </p>
-            <p>Categoría:<%= products.categories_id%>
+            <p>Categoría:<%= products.categories.name%>
             </p>
           </div>
           
