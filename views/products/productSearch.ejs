@@ -11,27 +11,47 @@
   <%- include('../partials/header')%>
 
     <h1>Resultados de tu búsqueda:</h1>
-    
+
+    <% if (products.length > 0) { %>     
+
     <article class="container-card">
     <% products.forEach(products=> { %>
-        <div class="card">
-          <img src="/img/img-000000001.jpg" alt="<%=products.name%>" style="width:100%">
-          <h1><%= products.name%></h1>
-          <p class="price">
-          <p>
-            <b>Precio por KG: $</b>
-            <%= products.price %>
-          </p>
-          </p>
-          <p>Descripción:<%= products.description%>
-          </p>
-          <p>Categoría:<%= products.category%>
-          </p>
-          <br>
-          <p><button>Add to Cart</button></p>
-        </div>
+
+      <div class="card">
+
+          <div class="product-image-container">
+            <img src="/img/img-000000001.jpg" alt="<%=products.name%>" class="product-image">
+            <!-- <img src="/img/<%#=products.image%>" alt="<%#=products.name%>" class="product-image"> -->
+          </div>
+
+          <div class="product-card">
+            <h1><%= products.name%></h1>
+            <p class="price">
+            <p>
+              <b>Precio por KG: $</b>
+              <%= products.price %>
+            </p>
+            </p>
+            <p>Descripción:<%= products.description%>
+            </p>
+            <p>Categoría:<%= products.category%>
+            </p>
+          </div>
+          
+          <div class="product-add">
+            <p><button>Agregar al carrito</button></p>            
+          </div>
+
+      </div>
       <% }); %>
     </article>
+
+    <% } else { %>
+      <h2 class="lost">No se encontró el producto buscado o no hay stock del mismo. Por favor, intentá nuevamente.</h2>
+    <% } %> 
+
 </body>
+
 <%-include('../partials/footer')%>
+
 </html>

@@ -40,12 +40,9 @@ module.exports = {
     })
     .then((products) => {
         if (products.length > 0) {
-            // return res.render('products/productSearch.ejs', { products });
-            return res.json(products);
+            return res.render('products/productSearch.ejs', { products });
         }
-        return res.json(
-          "No se encontró el producto buscado. Por favor, intente nuevamente."
-        );
+        return res.render('products/productSearch.ejs', { products });
     })
     .catch(function (e) {
         console.log(e);
