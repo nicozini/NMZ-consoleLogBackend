@@ -1,3 +1,4 @@
+const { promiseImpl } = require('ejs');
 const fs = require('fs');
 let fileOperations = require('../models/fileOperations'); 
 let db = require('../src/database/models');
@@ -8,7 +9,7 @@ const Op = db.Sequelize.Op;
 module.exports = {
   list: (req, res) => {
     db.Product.findAll({
-      include: ["categories"],
+      include: ["categories","images"],
     })
       .then((products) => {
         res.render("products/productList.ejs", { products });
@@ -52,19 +53,25 @@ module.exports = {
   },
 
   productSaveNew: async (req, res) => {
-    let result = await db.Product.create({
-      name: req.body.name,
-      price: req.body.price,
-      stock: 100,
-      stock_min: 50,
-      stock_max: 150,
-      categories_id: 1,
-      description: req.body.description,
-      week: 10,
-      facts: req.body.facts,
-    });
-
-    console.log(result);
+    db.Product.create({
+        name: req.body.name,
+        price: req.body.price,
+        stock: 100,
+        stock_min: 50,
+        stock_max: 150,
+        categories_id: 1,
+        description: req.body.description,
+        week: 10,
+        facts: req.body.facts,
+      })
+      .then((data)=>{
+        db.Image.create ({
+          name       :  req.file.filename,
+          products_id:  data.id } )
+      })
+      .catch((err)=>{
+        res.send(err);
+      })
 
     let products = db.Product.findAll({
       include: [{ association: "categories" }],
@@ -76,9 +83,10 @@ module.exports = {
     res.render("products/productCreate");
   },
 
-  productEdit: function(req, res) {
-        let product = db.Product.findByPk(4)
-        return res.render('products/productDetailEdit.ejs', { product });
+  productEdit: async function(req, res) {
+        let product = await db.Product.findByPk(4)
+
+        return res.render('products/productEdit', { product });
         
 
     // //let product = fileOperations.findById(req.params.id)
@@ -103,24 +111,25 @@ module.exports = {
 
     // res.json(products);
   },
-
-  productSave: (req, res) => {
-    db.Product.create({
-      name: req.body.name,
-      price: req.body.price,
-      stock: 100,
-      stock_min: 50,
-      stock_max: 150,
-      categories_id: 1,
-      description: req.body.description,
-      week: 10,
-      facts: req.body.facts,
-    });
-    where: {
-      id: req.params.id;
+  productSave: async (req, res) => {
+    try {
+        await db.Product.update({
+          name: req.body.name,
+          price: req.body.price,
+          stock: 100,
+          stock_min: 50,
+          stock_max: 150,
+          categories_id: 1,
+          description: req.body.description,
+          week: 10,
+          facts: req.body.facts,
+        },
+        { where: { id: req.params.id }});
+    } catch(err){
+      res.send(err);
     }
-    res.redirect("/products/" + req.params.id);
-  },
+    
+    res.redirect("/products/" + req.params.id); },
 
   productDelete: (req, res) => {
     db.Product.destroy({

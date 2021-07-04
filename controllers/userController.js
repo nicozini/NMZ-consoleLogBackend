@@ -166,7 +166,10 @@ const userController = {
             if (req.file){
                avatarN =  req.file.filename
             }
+            //const transaction = await sequelize.transaction();
             try {
+
+
                 let userToUpdate    = await db.User.findByPk(req.session.userLogged.id);
                 let prevAddress     = await db.Address.findByPk(userToUpdate.addresses_id);
                 let updAddress = {
@@ -189,6 +192,7 @@ const userController = {
                             },
                             { where : { id: userToUpdate.addresses_id}
                              }
+                             //,{transaction}
                              );
                     }
                 };
@@ -201,14 +205,18 @@ const userController = {
                     addresses_id : updAddress.id != null ? updAddress.id : prevAddress.id
                     },
                     {
-                        where:{ id:userToUpdate.id}
-                    });
+                        where:{ id:userToUpdate.id},
+                    
+                    }
+                    //,{transaction}
+                    );
                 req.session.userLogged = await db.User.findByPk(userToUpdate.id);
                 //borro la contraseña por seguridad
                 delete req.session.userLogged.password ; 
-                
+                //await transaction.commit();
             }catch(err){
                 res.send(err);
+                //await transaction.commit();
             };
         }
         console.log('req.session.userLogged');
