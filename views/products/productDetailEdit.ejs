@@ -6,11 +6,6 @@
   </head>
 
   <body>
-    <p class="banner">
-      ¡REGISTRATE Y OBTENÉ UN 10% DE DESCUENTO EN TU PRIMERA COMPRA! ¡SI TU
-      COMPRA ES MAYOR A $3500 TENÉS EL ENVÍO BONIFICADO!
-    </p>
-
     <%- include('../partials/header')%>
 
     <center>
@@ -19,23 +14,107 @@
   
         <form action="#">
 
-          <label for="">Imagen</label><br>
-          <input type="file"><br>
-    
-          <label for="">Nombre</label><br>
-          <input type="text"><br>
-  
-          <label for="">Descripción</label><br>
-          <input type="text"><br>
-  
-          <label for="">Categoria</label><br>
-          <input type="text"><br>
-  
-          <label for="">Información Nutricional</label><br>
-          <input type="text"><br>
-  
-          <label for="">Precio por KG</label><br>
-          <input type="text"><br>
+          <div class="form-control">
+            <input 
+              type="text" 
+              name="name" 
+              id="name" 
+              placeholder="Nombre"
+              class="control" <%= locals.Errors && errors.name ? 'is-invalid' : null %>" 
+              value="<%= locals.oldData ? oldData.name : null %>" 
+            >
+            <span class="Feedback"></span>
+            <% if(locals.errors && errors.name) { %>
+              <div class="text-danger">
+                <%= errors.name.msg %> 
+              </div>
+            <% } %>
+          </div>
+
+          <div class="form-control">
+            <input 
+              type="file" 
+              name="Imagen 
+              id="Imagen" 
+              placeholder="Nombre"
+              class="control" <%= locals.Errors && errors.Imagen ? 'is-invalid' : null %>" 
+              value="<%= locals.oldData ? oldData.imagen : null %>" 
+            >
+            <span class="Feedback"></span>
+            <% if(locals.errors && errors.imagen) { %>
+              <div class="text-danger">
+                <%= errors.imagen.msg %> 
+              </div>
+            <% } %>
+          </div>
+
+          <div class="form-control">
+            <input 
+              type="text" 
+              name="Descripcion" 
+              id="Descripcion" 
+              placeholder="Descripción"
+              class="control" <%= locals.Errors && errors.Descripcion ? 'is-invalid' : null %>" 
+              value="<%= locals.oldData ? oldData.Descripción : null %>" 
+            >
+            <span class="Feedback"></span>
+            <% if(locals.errors && errors.Descripcion) { %>
+              <div class="text-danger">
+                <%= errors.Descripcion.msg %> 
+              </div>
+            <% } %>
+          </div>
+          
+          <div class="form-control">
+            <input 
+              type="text" 
+              name="Categoria" 
+              id="Categoria" 
+              placeholder="Categoria"
+              class="control" <%= locals.Errors && errors.Categoria ? 'is-invalid' : null %>" 
+              value="<%= locals.oldData ? oldData.Categoria : null %>" 
+            >
+            <span class="Feedback"></span>
+            <% if(locals.errors && errors.Categoria) { %>
+              <div class="text-danger">
+                <%= errors.Categoria.msg %> 
+              </div>
+            <% } %>
+          </div>
+
+          <div class="form-control">
+            <input 
+              type="text" 
+              name="InfoNutricional" 
+              id="InfoNutricional" 
+              placeholder="Información Nutricional"
+              class="control" <%= locals.Errors && errors.InfoNutricional ? 'is-invalid' : null %>" 
+              value="<%= locals.oldData ? oldData.InfoNutricional : null %>" 
+            >
+            <span class="Feedback"></span>
+            <% if(locals.errors && errors.InfoNutricional) { %>
+              <div class="text-danger">
+                <%= errors.InfoNutricional.msg %> 
+              </div>
+            <% } %>
+          </div>
+
+          <div class="form-control">
+            <input 
+              type="text" 
+              name="Precio" 
+              id="Precio" 
+              placeholder="Precio"
+              class="control" <%= locals.Errors && errors.Precio ? 'is-invalid' : null %>" 
+              value="<%= locals.oldData ? oldData.Precio : null %>" 
+            >
+            <span class="Feedback"></span>
+            <% if(locals.errors && errors.Precio) { %>
+              <div class="text-danger">
+                <%= errors.Precio.msg %> 
+              </div>
+            <% } %>
+          </div>
 
           <article>
             <center>
@@ -45,7 +124,6 @@
               </div>
             </center>
           </article> 
-
         </form>    
       </main>
     </center>
