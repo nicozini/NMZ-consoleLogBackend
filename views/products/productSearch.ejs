@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <%- include('../partials/head')%>
+<head>
+  <%- include('../partials/head')%>
     <link rel="stylesheet" href="/css/productCart.css" />
-  </head>
+    <link rel="stylesheet" href="/css/search.css" />
+</head>
 
-  <body>
-    <%- include('../partials/header')%>
+<body>
+  <%- include('../partials/header')%>
 
     <h1>Resultados de tu búsqueda:</h1>
-
-    <ul>
-        <li>Soy un item probando la vista</li>
-    </ul>
-
-
-
-
-
-
-  </body>
-
-  <%-include('../partials/footer')%>
-
+    <article class="container-card">
+    <% products.forEach(products=> { %>
+        <div class="card">
+          <img src="/img/img-000000001.jpg" alt="<%=products.name%>" style="width:100%">
+          <h1><%= products.name%></h1>
+          <p class="price">
+          <p>
+            <b>Precio por KG: $</b>
+            <%= products.price %>
+          </p>
+          </p>
+          <p>Descripción:<%= products.description%>
+          </p>
+          <p>Categoría:<%= products.category%>
+          </p>
+          <br>
+          <p><button>Add to Cart</button></p>
+        </div>
+      <% }); %>
+    </article>
+</body>
+<%-include('../partials/footer')%>
 </html>
