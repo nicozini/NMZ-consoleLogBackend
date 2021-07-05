@@ -1,7 +1,7 @@
 const { promiseImpl } = require('ejs');
 const fs = require('fs');
-let fileOperations = require('../models/fileOperations');
-let db = require('../src/database/models');
+// let fileOperations = require('../models/fileOperations'); // NICO DEBERIA ELIMINAR YA NO SE USA
+let db = require('../database/models');
 const Op = db.Sequelize.Op;
 // const { Op } = require("sequelize");
 

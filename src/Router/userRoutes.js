@@ -5,12 +5,14 @@ const router = express.Router();
 // Controller
 const userController = require('../controllers/userController');
 
+
 // Middlewares
 const uploadFile = require('../middlewares/multerMiddleware'); 
 const formValidations = require('../middlewares/validateRegisterMiddleware');
 const profileValidations = require('../middlewares/validateProfileMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
+
 
 //Ruta test
 router.get('/test', guestMiddleware, userController.findAll);
@@ -32,8 +34,8 @@ router.get('/profile', authMiddleware, userController.profile);
 // Actalizo Perfil de Usuario
 router.put('/profile', authMiddleware, uploadFile.single('avatar') ,profileValidations , userController.updateProfile);
 
-
 // Logout
 router.get('/logout/', userController.logout);
+
 
 module.exports = router;

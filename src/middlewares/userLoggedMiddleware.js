@@ -1,7 +1,7 @@
 // Nivel: aplicación
 // Objetivo: Ocultar register/login de nav bar si el usuario esta logueado
 
-const db = require('../src/database/models')
+const db = require('../database/models');
  
 async function userLoggedMiddleware(req,res,next)  {
         

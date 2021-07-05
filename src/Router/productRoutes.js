@@ -29,10 +29,6 @@ router.get('/search', productController.productSearch);
 // Formulario de edición de productos
 router.get('/:id/edit', productController.productEdit);
 
-// Acción de guardado del producto editado
-
-
-
 
 // Detalle de producto según :id
 router.get("/:id", productController.productDetail);

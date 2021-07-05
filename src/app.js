@@ -11,13 +11,13 @@ const cookies = require('cookie-parser');
 
 
 //Rutas
-const userRoutes = require('./Router/userRoutes');
-const productRoutes = require('./Router/productRoutes');
-const mainRoutes = require('./Router/mainRoutes');
+const userRoutes = require('../src/Router/userRoutes');
+const productRoutes = require('../src/Router/productRoutes');
+const mainRoutes = require('../src/Router/mainRoutes');
 
 
 //Middleware de Session
-const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
+const userLoggedMiddleware = require('../src/middlewares/userLoggedMiddleware');
 
 app.use(session({
     secret: 'verduSecret, shh!',
@@ -25,9 +25,9 @@ app.use(session({
     saveUninitialized: false,
 }));
 
+
 app.use(express.static('public'));
 app.set('view engine','ejs');
-// (Nico) Agrego cambio directorio views
 app.set('views', __dirname + '/views');
 
 
@@ -38,7 +38,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 app.use(cookies());
 app.use(userLoggedMiddleware);
-
 
 
 // Routes

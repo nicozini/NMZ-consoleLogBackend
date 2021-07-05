@@ -1,5 +1,5 @@
 // Modelo o DB
-const db = require('../src/database/models')
+const db = require('../database/models');
 
 // Modulos requeridos
 const {	validationResult } = require('express-validator');
