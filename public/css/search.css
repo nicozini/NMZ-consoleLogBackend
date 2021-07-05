@@ -1,13 +1,12 @@
  .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     width: 100%;
+    height: 170px;
     margin-bottom: 20px;
     text-align: center;
     font-family: arial;
     display: flex;
-    /* flex-wrap: wrap;
-   justify-content: space-between; */
-   background-color: #ebebeb94;
+    background-color: #ebebeb94;
   }
   
   .product-image-container {
@@ -16,7 +15,8 @@
 
   .product-image {
     display: block;
-    width: 100%;
+    width: 80%;
+    height: 100%;
   }
 
   .product-card {
