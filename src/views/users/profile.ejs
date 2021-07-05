@@ -28,7 +28,7 @@
                     <!-- //<input type="file" name="avatarN" id="avatarN" value=""> -->
                     <!-- <input type="file" name="avatarN" id="avatarN"> -->
                     <div>
-                        <h3>Hola <%= user.name %> </h3>
+                        <h3>Hola <%= user.first_name %> </h3>
                         <h4><%= user.email %> </h4>
                     </div>                                        
                 </div>
@@ -54,47 +54,25 @@
                         </div>
                       <% } %>
                     
-                      <input class="form-data" type="text" name="street"    id="street"    value="<%=user.street%>"     >
+                      <input class="form-data" type="text" name="street"    id="street"  placeholder="Dirección"  value="<%=user.street%>"     >
                       <% if(locals.errors && errors.street) { %>
                           <div class="text-danger">
                             <%= errors.street.msg %> 
                           </div>
                         <% } %>
 
-                        <input class="form-data" type="text" name="number"    id="number"    value="<%=user.number%>"     >
+                        <input class="form-data" type="text" name="number"    id="number"  placeholder="Número"   value="<%=user.number%>"  >
                       <% if(locals.errors && errors.number) { %>
                           <div class="text-danger">
                             <%= errors.number.msg %> 
                           </div>
                         <% } %>
-
-
-
-
-
-
-
-                      
                       <br>
                     <div>
                         <label for="newsLetter">Deseo Recibir Ofertas por e-mail</label>
                         <input type="checkbox" name="newsLetter" id="newsLetter" value="<% user.newsLetter ? " checked" : null %> ">
                     </div>
                     <br>
-                    <input class="form-data" type="text"  name="street"     id="street"    placeholder="Dirección"   value="<%=user.street%>">
-                    <% if(locals.errors && errors.name) { %>
-                        <div class="text-danger">
-                          <%= errors.street.msg %> 
-                        </div>
-                      <% } %>
-
-                    <input class="form-data" type="text"  name="number"     id="number" placeholder="número"      value="<%=user.number%>">
-                    <% if(locals.errors && errors.name) { %>
-                        <div class="text-danger">
-                        <%= errors.number.msg %> 
-                        </div>
-                    <% } %>                      
-
                     <input class="btn" type="submit" value="Modificar">                    
                 </div>
             </form>            

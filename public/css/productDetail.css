@@ -9,12 +9,16 @@ body {
   background-color: #f6f6f6;
 }
 
-/* .naranja-img{
-  margin-right: 18%;
-  margin-left: 18%;
-  width: 64%;
-  border-radius: 8px;
-} */
+.imgproduct {
+  width: 200px;
+  height: 200px;
+}
+
+.product-detail-image {
+  display: block;
+  width: 100%;
+}
+
 
 /* Trabajo sobre el nav */
 
@@ -110,10 +114,10 @@ nav {
     article{
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
-        margin-right: 10%;
+        justify-content: space-around;
+        /* margin-right: 10%;
         margin-left: 10%;
-        margin-top: 130px;
+        margin-top: 130px; */
     }
      div .imgproduct{
         width: 60%;
@@ -121,6 +125,9 @@ nav {
     }
     .conteiner1{
       width: 40%;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
     }
     .product-desc{
         text-align: left;
@@ -141,10 +148,7 @@ nav {
     .product-desc h4{
       font-size: 15px;
   }
-  .description{
-      margin-top: 50px;
-  }
-  
+
   .column2{
     display: block;
     flex: 50%;

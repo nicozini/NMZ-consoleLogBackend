@@ -15,39 +15,45 @@
   <%- include('../partials/header')%>
 
     <main>
+
       <article>
+
         <div class="imgproduct">
-          <img src="/img/<%= product.image %>" alt="<%=//product.name%>" class="naranja-img" />
+          <% for( let i = 0; i < product.images.length; i++ ) { %>
+            <img src="/img/<%=product.images[i].name%>" alt="<%=product.images[i].name%>" class="product-detail-image">
+          <% } %>
         </div>
+
         <div class="conteiner1">
           <div class="product-desc">
-            <h4>Categoría: <%= product.category %>
-            </h4>
-            <h3>
-              <%= product.name %>
-            </h3>
-            <h4>Precio por Kilo:<%= product.price %>
-            </h4>
+            <h4>Categoría: <%= product.category %></h4>
+            <h3><%= product.name %></h3>
+            <h4>Precio por Kilo:<%= product.price %></h4>
           </div>
+
           <div>
             <h3 class="buttons"><a href="/products/<%= product.id %>/edit">Modificar</a></h3>
           </div>
+
           <div>
             <form method="POST" action="/products/delete/<%= product.id %>?_method=DELETE">
               <input class="buttons" type="submit" value="Eliminar">
             </form>
           </div>
+
+          <div class="description">
+            <h2>Descripcion</h2>
+            <p>
+              <%= product.description %>
+            </p>
+            <h4>Informacion Nutricional:<%= product.facts%>
+            </h4>
+          </div>
         </div>
+
+
       </article>
 
-      <div class="description">
-        <h2>Descripcion</h2>
-        <p>
-          <%= product.description %>
-        </p>
-        <h4>Informacion Nutricional:<%= product.facts%>
-        </h4>
-      </div>
       <br>
 
       <h2 class="relproduct">Productos relacionados</h2>

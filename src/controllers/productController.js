@@ -76,7 +76,7 @@ module.exports = {
     let products = db.Product.findAll({
       include: [{ association: "categories" }],
     });
-    res.json(products);
+    res.redirect('/products');
   },
 
   productCreate: (req, res) => {
