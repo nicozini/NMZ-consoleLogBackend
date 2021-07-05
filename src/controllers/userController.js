@@ -124,11 +124,24 @@ const userController = {
         })
     },
 
-    profile: (req,res) => {
-        
+    profile:async (req,res) => {
+        let userLogged = req.session.userLogged
+        await db.Address.findByPk(userLogged.addresses_id)
+            .then((data)=>{
+                userLogged= {
+                    first_name  :userLogged.first_name,
+                    last_name   :userLogged.last_name,
+                    email       :userLogged.email,
+                    avatar      :userLogged.avatar,
+                    street      :data.street,
+                    number      :data.number
+                }
+            })
+        console.log(userLogged)
         return res.render('users/profile', {
-            user: req.session.userLogged
+            user: userLogged
         });
+
     },
 
     updateProfile:async (req,res) => {
@@ -210,7 +223,10 @@ const userController = {
                     }
                     //,{transaction}
                     );
-                req.session.userLogged = await db.User.findByPk(userToUpdate.id);
+                await db.User.findByPk(userToUpdate.id)
+                    .then((data)=>{
+                        req.session.userLogged = data
+                    })
                 //borro la contraseña por seguridad
                 delete req.session.userLogged.password ; 
                 //await transaction.commit();
