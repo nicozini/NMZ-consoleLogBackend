@@ -12,11 +12,13 @@
     <main class="main-list">
         <a class="new" href="/products/create">+</a>
         <section class="list">
+
             <% products.forEach(product => { %>
                 <article>
                     <div class="image">
-                        <img src="/img/<%=product.image%> " alt="<%=product.name %> " >
-                        <!-- <img src="/img/img-000000001.jpg " alt="<%=//product.name %> " > -->
+                        <% for( let i = 0; i < product.images.length; i++ ) { %>
+                            <img src="/img/<%=product.images[i].name%>" alt="<%=product.images[i].name%>" class="product-image">
+                        <% } %>
                     </div>               
                     <div class="data">
                         <div class="edit">

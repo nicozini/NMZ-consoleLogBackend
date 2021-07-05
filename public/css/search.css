@@ -21,6 +21,7 @@
 
   .product-card {
     width: 40%;
+    overflow: scroll;
   }
 
   .lost {
