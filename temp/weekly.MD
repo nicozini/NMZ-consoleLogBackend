@@ -1,11 +1,26 @@
+----------------------------------  martes 07 - 07- 2021  ------------------------------------------
 Mauri:
-	Estuvo haciendo: 		    Ajustando el header
-	Encontró un Impedimento: 	costo un poco retomar temas de css
-	Queda por hacer:		    use
+	Estuvo haciendo: 		    modificando el Usercontroller
+	Encontró un Impedimento: 	el modelo de la base no se adecua por completo al negocio
+	Queda por hacer:		    dar vuelta la clave foranea de las direcciones para poder dar de alta un 							 usuario sin dirección
+
+Nico:
+	Estuvo haciendo: 		    modificando el productcontroller y las vistas de search
+	Encontró un Impedimento: 	ninguno
+	Queda por hacer:		    referenciar la tabla de categorias en las vistas
+
+Isa:
+	Estuvo haciendo: 		    modificando el productcontroller y usercontroller 
+	Encontró un Impedimento: 	problemas al insertar datos en la base de datos
+	Queda por hacer:		    poblar la base de datos
+
+Tomy:
+	Estuvo haciendo: 		    modificando la vista de detalle de productos
+	Encontró un Impedimento: 	problemas al refernecias lo partials
+	Queda por hacer:		    modificar detalles esteticos a las vistas
 
 
-
--------------------------------------------Jueves 06 - 05- 2021  ------------------------------------------
+------------------------------Jueves 06 - 05- 2021  ------------------------------------------
 Isa: 
 	Estuvo haciendo: 		    Rutas del post del register. con express validator
 	Encontró un impedimento: 	le costó hacer funcionar el register.
