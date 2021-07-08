@@ -1,4 +1,25 @@
 LINK TRELLO https://trello.com/b/4Y5KhZ9u/verdu-market
+stackoverflow y medium
+---------------------- 08/07/21 ------------------------------------ (lo escribió mauri)
+Comenzar a hacer: 
+	-> Leer el sprint completo y hacer el trello TODOS JUNTOS! hacer las tareas. Planificar juntos como equipe. 
+	-> Ser más organizados, planificadores. Hacer un tablero para cada sprint. Más limpio. 
+Hacer más: 
+	-> Un poco lo que pusimos arriba en comenzar a hacer, ser más organizados. 
+	->apoyarnos en el trello. 
+
+Continuar haciendo:
+	-> reuniones semanales
+	-> buena onda al trabajo 
+
+Hacer menos: 
+	-> Desperdiciar tiempo de trabajo en grupo con distracciones (charlar y etc)
+	->División de tareas sin previa planificación. 
+
+	En general nos llevamos super bien! Es un equipazo. Somos muy buena onda, estamos planeando la fiesta de graduación. 
+
+
+
 
 --------------------  24/05/2021 --------------------------
 
