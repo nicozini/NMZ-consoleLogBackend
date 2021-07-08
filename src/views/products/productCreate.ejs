@@ -26,10 +26,9 @@
           <div class="form-control">
             <label class="text" for="category">Categoría:</label>
                 <select class= "options" name="category" id="category" class="control" required " >
-                    <option value="1">Frutas</option>
-                    <option value="2">Verduras</option>
-                    <option value="3">Almacén</option>
-                    <option value="4">Dietética</option>
+                  <% for( let i = 0; i < categories.length; i++ ) { %>
+                    <option value="<%=categories[i].id%>"><%=categories[i].name%></option>
+                  <% } %>
                 </select>
           </div>
           <div class="stock-form">

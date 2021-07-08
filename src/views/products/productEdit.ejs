@@ -31,10 +31,9 @@
           <div class="form-control">
             <label class="text" for="category">Categoría:</label>
                 <select class= "options" name="category" id="category" class="control" required value="<%=product.category%>" >
-                    <option value="fruta">Frutas</option>
-                    <option value="verdura">Verduras</option>
-                    <option value="almacen">Almacén</option>
-                    <option value="dietetica">Dietética</option>
+                  <% for( let i = 0; i < categories.length; i++ ) { %>
+                    <option value="<%=categories[i].id%>"><%=categories[i].name%></option>
+                  <% } %>
                 </select>
           </div>
           <div class="form-control">

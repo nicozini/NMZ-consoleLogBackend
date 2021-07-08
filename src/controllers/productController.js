@@ -56,10 +56,10 @@ module.exports = {
     db.Product.create({
         name: req.body.name,
         price: req.body.price,
-        stock: 100,
-        stock_min: 50,
-        stock_max: 150,
-        categories_id: 1,
+        stock: req.body.stock,
+        stock_min: req.body.stock_min,
+        stock_max: req.body.stock_max,
+        categories_id: req.body.category,
         description: req.body.description,
         week: 10,
         facts: req.body.facts,
@@ -80,13 +80,28 @@ module.exports = {
   },
 
   productCreate: (req, res) => {
-    res.render("products/productCreate");
+    db.Category.findAll()
+      .then((categories)=>{
+        res.render("products/productCreate",{categories});
+      })
+      .catch((error)=>{
+        res.send(error)
+      })
   },
 
   productEdit: async function(req, res) {
-        let product = await db.Product.findByPk(req.params.id)
+        let listProduct    = await db.Product.findByPk(req.params.id);
+        let listCategories = await db.Category.findAll();
 
-        return res.render('products/productEdit', { product });
+        Promise.all([listProduct,listCategories])
+          .then(([product,categories])=>{
+            return res.render('products/productEdit', { product , categories});
+          })
+          .catch((error)=>{
+            res.send(error);
+          });
+
+        
         
 
     // //let product = fileOperations.findById(req.params.id)
@@ -116,10 +131,10 @@ module.exports = {
         await db.Product.update({
           name: req.body.name,
           price: req.body.price,
-          stock: 100,
-          stock_min: 50,
-          stock_max: 150,
-          categories_id: 1,
+          stock: req.body.stock,
+          stock_min: req.body.stock_min,
+          stock_max: req.body.stock_max,
+          categories_id: req.body.category,
           description: req.body.description,
           week: 10,
           facts: req.body.facts,
