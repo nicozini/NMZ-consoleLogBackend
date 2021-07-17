@@ -47,7 +47,7 @@
           <br>
           <label class= "image" > Seleccionar una imagen para el producto </label>
           <br>
-          <input class="image" type="file" name="Imagen" accept=".png" multiple>
+          <input id= 'image' class="image" type="file" name="Imagen" accept=".png" multiple>
           <br>
           <div class="form-control">
             <input type="text" name="facts" id="facts" placeholder="Nutrición" required class="control" value="<%=product.facts%> ">
@@ -55,7 +55,7 @@
           </div>
           <div class="form-control">
             <label class="text" for="in-sale">Oferta:</label>
-                <select class= "options" name="in-sale" id="in-sale" class="control" required value="<%if (product.week==true) { "week" }%>" >
+                <select class= "options" name="in-sale" id="inSale" class="control" required value="<%if (product.week==true) { "week" }%>" >
                     <option value="week">Oferta de la semana</option>
                     <option value="weekFalse">Común</option>
                 </select>
