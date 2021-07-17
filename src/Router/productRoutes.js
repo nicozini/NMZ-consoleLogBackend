@@ -5,6 +5,7 @@ const productController = require("../controllers/productController");
 
 const uploadFileProducts = require('../middlewares/multerProductsMiddleware'); 
 const formValidationsProducts = require('../middlewares/validateProductsMiddleware');
+const formValidationsEditProducts = require('../middlewares/validateProductsEditMiddleware');
 
 
 // Listado de productos
@@ -14,7 +15,7 @@ router.get("/", productController.list);
 router.get('/create', productController.productCreate);
 
 // Acción de creación de producto nuevo en la DB
-router.put('/:id', productController.productSave);
+router.put('/:id', formValidationsEditProducts, productController.productSave);
 
 // Guarda el nuevo producto Create (productCart.html)
 router.post('/', uploadFileProducts.single('avProducts'), formValidationsProducts, productController.productSaveNew);

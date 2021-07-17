@@ -15,14 +15,25 @@
           <marquee behavior="" direction="">Creacion de un nuevo producto </marquee>
         <% } %>
 
-        <form action="/products/<%=product.id%>?_method=PUT" method=POST class="formulario">
+        <form action="/products/<%=product.id%>?_method=PUT" method=POST id='form-control' class="formulario">
           <div class="form-control">
             <input type="text" name="name" id="name" placeholder="Nombre"  class="control" value="<%=product.name%> ">
             <span class="Feedback"></span>
+              <% if (locals.errors && errors.name) { %>
+                <div class="text-danger">
+                  <%= errors.name.msg %> 
+                </div>
+              <% } %>
+            
           </div>
           <div class="form-control">
             <input type="text" name="price" id="price" placeholder="Precio" class="control" value="<%=product.price%>">
             <span class="Feedback"></span>
+            <% if (locals.errors && errors.price) { %>
+              <div class="text-danger">
+                <%= errors.price.msg %> 
+              </div>
+            <% } %>
           </div>          
           <!-- <div class="form-control">
             <input type="text" name="category" id="category" placeholder="Categoria" required class="control"  >
@@ -37,7 +48,7 @@
                 </select>
           </div>
           <div class="form-control">
-          <textarea type="text" name="description" id="Description"  placeholder="Descripción" class="control"><%=product.description%></textarea>
+          <textarea type="text" name="description" id="description"  placeholder="Descripción" class="control"><%=product.description%></textarea>
           <span class="Feedback"></span>
           </div>
           <br>
@@ -70,6 +81,6 @@
     </section>
   </main>
   <%- include('../partials/footer')%>
-  <script src="/js/productEditValidation.js"></script>
+  <!-- <script src="/js/productEditValidation.js"></script> -->
 </body>
 </html>
