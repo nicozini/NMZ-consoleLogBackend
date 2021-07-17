@@ -129,24 +129,17 @@ module.exports = {
   productSave: async (req, res) => {
     const resultEditValidation = validationResult(req);
     // Si hay errores, devolver data ingresada y validaciones
-    let categoriesdb = []
-    db.Category.findAll()
-      .then((categories)=>{categoriesdb = categories
-      })
-      .catch((error)=>{
-        res.send(error)
-      })
+    let categoriesdb = await  db.Category.findAll();
+    console.log(resultEditValidation.mapped());
 
     if (resultEditValidation.errors.length > 0) {
-        return res.render("products/productEdit", {
-            errors: resultEditValidation.mapped(),
-            product: req.body,
-            
-            categories:categoriesdb
-
-        
+        return res.render("products/productEdit" , {
+            errors    : resultEditValidation.mapped(),
+            product   : req.body,
+            categories: categoriesdb
         });
     };
+
     try {
         await db.Product.update({
           name: req.body.name,
@@ -163,7 +156,8 @@ module.exports = {
     } catch(err){
       res.send(err);
     }
-    res.redirect("/products/" + req.params.id); },
+    res.redirect("/products"); 
+  },
 
   productDelete:  (req, res) => {
     

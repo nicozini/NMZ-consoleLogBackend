@@ -14,8 +14,9 @@
          <% } else { %>
           <marquee behavior="" direction="">Creacion de un nuevo producto </marquee>
         <% } %>
-
+        
         <form action="/products/<%=product.id%>?_method=PUT" method=POST id='form-control' class="formulario">
+          <input type="number" name="id" id="id" value="<%=product.id%>" hidden>
           <div class="form-control">
             <input type="text" name="name" id="name" placeholder="Nombre"  class="control" value="<%=product.name%> ">
             <span class="Feedback"></span>

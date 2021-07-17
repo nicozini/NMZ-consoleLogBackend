@@ -5,3 +5,7 @@ INSERT INTO `verdumarket-test`.`categories` (`id`, `name`) VALUES ('4', 'Dieteti
 
 
 INSERT INTO `verdumarket-test`.`addresses` (`street`, `number`) VALUES ('Sin Especificar', '0');
+
+
+INSERT INTO `verdumarket-test`.`rolls` (`type`) VALUES ('User');
+INSERT INTO `verdumarket-test`.`rolls` (`type`) VALUES ('Administrator');
