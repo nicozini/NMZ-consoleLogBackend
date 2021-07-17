@@ -17,11 +17,11 @@
 
         <form action="/products/<%=product.id%>?_method=PUT" method=POST class="formulario">
           <div class="form-control">
-            <input type="text" name="name" id="name" placeholder="Nombre" required class="control" value="<%=product.name%> ">
+            <input type="text" name="name" id="name" placeholder="Nombre"  class="control" value="<%=product.name%> ">
             <span class="Feedback"></span>
           </div>
           <div class="form-control">
-            <input type="text" name="price" id="price" placeholder="Precio" required class="control" value="<%=product.price%>">
+            <input type="text" name="price" id="price" placeholder="Precio" class="control" value="<%=product.price%>">
             <span class="Feedback"></span>
           </div>          
           <!-- <div class="form-control">
@@ -30,14 +30,14 @@
           </div> -->
           <div class="form-control">
             <label class="text" for="category">Categoría:</label>
-                <select class= "options" name="category" id="category" class="control" required value="<%=product.category%>" >
+                <select class= "options" name="category" id="category" class="control" value="<%=product.category%>" >
                   <% for( let i = 0; i < categories.length; i++ ) { %>
                     <option value="<%=categories[i].id%>"><%=categories[i].name%></option>
                   <% } %>
                 </select>
           </div>
           <div class="form-control">
-          <textarea type="text" name="description" id="Description"  placeholder="Descripción" required class="control"><%=product.description%></textarea>
+          <textarea type="text" name="description" id="Description"  placeholder="Descripción" class="control"><%=product.description%></textarea>
           <span class="Feedback"></span>
           </div>
           <br>
@@ -50,12 +50,12 @@
           <input id= 'image' class="image" type="file" name="Imagen" accept=".png" multiple>
           <br>
           <div class="form-control">
-            <input type="text" name="facts" id="facts" placeholder="Nutrición" required class="control" value="<%=product.facts%> ">
+            <input type="text" name="facts" id="facts" placeholder="Nutrición" class="control" value="<%=product.facts%> ">
             <span class="Feedback"></span>
           </div>
           <div class="form-control">
             <label class="text" for="in-sale">Oferta:</label>
-                <select class= "options" name="in-sale" id="inSale" class="control" required value="<%if (product.week==true) { "week" }%>" >
+                <select class= "options" name="in-sale" id="inSale" class="control"  value="<%if (product.week==true) { "week" }%>" >
                     <option value="week">Oferta de la semana</option>
                     <option value="weekFalse">Común</option>
                 </select>

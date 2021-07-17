@@ -1,3 +1,5 @@
+const { name } = require("ejs");
+
 <link rel="stylesheet" href='/css/validacionesFrontEnd.css'/>
 
 let errors = {};
@@ -7,11 +9,33 @@ let form = document.getElementById('form-control');
 const name = document.getElementById('name');
 
 
+// --- Validaciones --- //
+let validateName = function(){
+    let feedback = '';
+    let feedbackElement = name.nextElementSibling;
+
+    if(user.value.trim() == '0' ){
+        feedback = 'El nombre no puede estar vacío';
+    }
+    //else if(expresión regular) -
+
+    if(feedback){
+        validateName.classList.add('error-input');
+        errors.name = feedback;
+    }
+    else{
+        name.classList.remove('error-input');
+        //feedbackElement.remove();
+        delete errors.name;
+    }
+
+    feedbackElement.innerText = feedback;
+}
 let validatePrice = function(){
     let feedback = '';
     let feedbackElement = price.nextElementSibling;
 
-    if(user.value.trim() == '' ){
+    if(user.value.trim() == '0' ){
         feedback = 'El precio no puede estar vacío';
     }
     //else if(expresión regular) -
