@@ -7,7 +7,7 @@ module.exports = [
     body('name').notEmpty().withMessage('Completá el nombre'),
     body('price').notEmpty().withMessage('Completá el precio'),
     body('description').notEmpty().withMessage('Completá la descripción'),
-    body('avProducts').custom((value, { req }) => {
+    body('image').custom((value, { req }) => {
         // Obtengo el archivo
         let file = req.file; 
 
