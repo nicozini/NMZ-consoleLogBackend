@@ -1,5 +1,6 @@
 const {	validationResult } = require('express-validator');
-const { promiseImpl } = require('ejs');
+
+
 const fs = require('fs');
 // let fileOperations = require('../models/fileOperations'); // NICO DEBERIA ELIMINAR YA NO SE USA
 let db = require('../database/models');
@@ -54,6 +55,22 @@ module.exports = {
   },
 
   productSaveNew: async (req, res) => {
+
+    const resultEditValidation = validationResult(req);
+    // Si hay errores, devolver data ingresada y validaciones
+    let categoriesdb = await  db.Category.findAll();
+    console.log(resultEditValidation.mapped());
+
+    if (resultEditValidation.errors.length > 0) {
+        return res.render("products/productCreate" , {
+            errors    : resultEditValidation.mapped(),
+            oldData   : req.body,
+            categories: categoriesdb
+        });
+    };
+
+
+
     db.Product.create({
         name: req.body.name,
         price: req.body.price,
@@ -82,7 +99,9 @@ module.exports = {
   productCreate: (req, res) => {
     db.Category.findAll()
       .then((categories)=>{
-        res.render("products/productCreate",{categories});
+        res.render("products/productCreate",{
+            categories: categories,
+             product: {}});
       })
       .catch((error)=>{
         res.send(error)
