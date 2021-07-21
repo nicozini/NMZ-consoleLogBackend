@@ -30,115 +30,115 @@ let validateName = function(){
     }
     feedbackElement.innerText=feedback;
 };
-// // let validatePrice = function(){
-// //     let feedback = '';
-// //     let feedbackElement = price.nextElementSibling;
+let validatePrice = function(){
+    let feedback = '';
+    let feedbackElement = price.nextElementSibling;
 
-// //     if(user.value.trim() == '0' ){
-// //         feedback = 'El precio no puede estar vacío';
-// //     }
-// //     //else if(expresión regular) -
+    if(price.value.trim() == '' ){
+        feedback = 'El precio no puede estar vacío';
+    }
+    //else if(expresión regular) -
 
-// //     if(feedback){
-// //         validatePrice.classList.add('error-input');
-// //         errors.user = feedback;
-// //     }
-// //     else{
-// //         price.classList.remove('error-input');
-// //         //feedbackElement.remove();
-// //         delete errors.user;
-// //     }
+    if(feedback){        
+        price.classList.add('error-input'); // crear estilos
+        errors.price = feedback;
+    }
+    else{
+        price.classList.remove('error-input');
+        //feedbackElement.remove();
+        delete errors.price;
 
-// //     feedbackElement.innerText = feedback;
-// // }
+    }
+    feedbackElement.innerText=feedback;
+};
 
-// // let validateCategory = function(){
-// //     let feedback = '';
-// //     let feedbackElement = category.nextElementSibling;
-
-// //     if(user.value.trim() == '' ){
-// //         feedback = 'La categoría no puede estar vacía';
-// //     }
-// //     //else if(expresión regular) -
-
-// //     if(feedback){
-// //         validateCategory.classList.add('error-input');
-// //         errors.user = feedback;
-// //     }
-// //     else{
-// //         category.classList.remove('error-input');
-// //         //feedbackElement.remove();
-// //         delete errors.category;
-// //     }
-
-// //     feedbackElement.innerText = feedback;
-// // }
-
-// let validateDescription = function(){
+// let validateCategory = function(){
 //     let feedback = '';
-//     let feedbackElement = description.nextElementSibling;
+//     let feedbackElement = category.nextElementSibling;
 
-//     if(description.value.trim() == '' ){
-//         feedback = 'La descripción no puede estar vacía';
+//     if(user.value.trim() == '' ){
+//         feedback = 'La categoría no puede estar vacía';
 //     }
 //     //else if(expresión regular) -
 
 //     if(feedback){
-//         validateDescription.classList.add('error-input');
+//         validateCategory.classList.add('error-input');
 //         errors.user = feedback;
 //     }
 //     else{
-//         description.classList.remove('error-input');
+//         category.classList.remove('error-input');
 //         //feedbackElement.remove();
-//         delete errors.description;
+//         delete errors.category;
 //     }
 
 //     feedbackElement.innerText = feedback;
 // }
 
-// // let validateImage = function(){
-// //     let feedback = '';
-// //     let feedbackElement = price.nextElementSibling;
+let validateDescription = function(){
+    let feedback = '';
+    let feedbackElement = description.nextElementSibling;
 
-// //     if(user.value.trim() == '' ){
-// //         feedback = 'El precio no puede estar vacío';
-// //     }
-// //     //else if(expresión regular) -
+    if(description.value.trim() == '' ){
+        feedback = 'La descripción no puede estar vacío';
+    }
+    //else if(expresión regular) -
 
-// //     if(feedback){
-// //         validatePrice.classList.add('error-input');
-// //         errors.user = feedback;
-// //     }
-// //     else{
-// //         price.classList.remove('error-input');
-// //         //feedbackElement.remove();
-// //         delete errors.user;
-// //     }
+    if(feedback){        
+        description.classList.add('error-input'); // crear estilos
+        errors.description = feedback;
+    }
+    else{
+        description.classList.remove('error-input');
+        //feedbackElement.remove();
+        delete errors.description;
 
-// //     feedbackElement.innerText = feedback;
-// // }
+    }
+    feedbackElement.innerText=feedback;
+};
 
-// let validateFacts = function(){
-//     let feedback = '';
-//     let feedbackElement = facts.nextElementSibling;
+ let validateImage = function(){
+    let feedback = '';
+    let feedbackElement = Image.nextElementSibling;
 
-//     if(facts.value.trim() == '' ){
-//         feedback = 'El detalle nutricional no puede estar vacío';
-//     }
-//     //else if(expresión regular) -
+    if(Image.value.trim() == '' ){
+        feedback = 'La imagen no puede estar vacío';
+    }
+    //else if(expresión regular) -
 
-//     if(feedback){
-//         validateFacts.classList.add('error-input');
-//         errors.user = feedback;
-//     }
-//     else{
-//         facts.classList.remove('error-input');
-//         //feedbackElement.remove();
-//         delete errors.user;
-//     }
+    if(feedback){        
+        Image.classList.add('error-input'); // crear estilos
+        errors.Image = feedback;
+    }
+    else{
+        Image.classList.remove('error-input');
+        //feedbackElement.remove();
+        delete errors.description;
 
-//     feedbackElement.innerText = feedback;
-// }
+    }
+    feedbackElement.innerText=feedback;
+ }
+
+let validateFacts = function(){
+    let feedback = '';
+    let feedbackElement = facts.nextElementSibling;
+
+    if(facts.value.trim() == '' ){
+        feedback = 'La descripción no puede estar vacío';
+    }
+    //else if(expresión regular) -
+
+    if(feedback){        
+        facts.classList.add('error-input'); // crear estilos
+        errors.facts = feedback;
+    }
+    else{
+        facts.classList.remove('error-input');
+        //feedbackElement.remove();
+        delete errors.facts;
+
+    }
+    feedbackElement.innerText=feedback;
+};
 
 // let validateinSale = function(){
 //     let feedback = '';
@@ -162,21 +162,21 @@ let validateName = function(){
 //     feedbackElement.innerText = feedback;
 // }
 productName.addEventListener('blur', validateName);
-// price.addEventListener('blur', validatePrice);
-// //category.addEventListener('blur', validateCategory);
-// // //image.addEventListener('blur', validateImage);
-// description.addEventListener('blur', validateDescription);
-// facts.addEventListener('blur', validateFacts);
-// // //inSale.addEventListener('blur', validateinSale);
+price.addEventListener('blur', validatePrice);
+//category.addEventListener('blur', validateCategory);
+//image.addEventListener('blur', validateImage);
+description.addEventListener('blur', validateDescription);
+facts.addEventListener('blur', validateFacts);
+//inSale.addEventListener('blur', validateinSale);
 
 form.addEventListener('submit', function(e){
     validateName();
-    // validatePrice();
-    // // //validateCategory();
-    // // //validateImage();
-    // validateDescription();
-    // validateFacts();
-    // // //validateinSale();
+    validatePrice();
+    //validateCategory();
+    //validateImage();
+    validateDescription();
+    validateFacts();
+    //validateinSale();
     if(Object.keys(errors).length){
         e.preventDefault();
     }

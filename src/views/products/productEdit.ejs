@@ -60,11 +60,21 @@
           <label class= "image" > Seleccionar una imagen para el producto </label>
           <br>
           <input id= 'image' class="image" type="file" name="Imagen" accept=".png" multiple>
+          <% if(locals.errors && errors.image) { %>
+            <div class="text-danger">
+              <%= errors.image.msg %> 
+            </div>
+          <% } %>
           <br>
           <div class="form-control">
             <input type="text" name="facts" id="facts" placeholder="Nutrición" class="control" value="<%=product.facts%> ">
             <span class="Feedback"></span>
           </div>
+          <% if (locals.errors && errors.facts) { %>
+            <div class="text-danger">
+              <%= errors.facts.msg %> 
+            </div>
+          <% } %>
           <div class="form-control">
             <label class="text" for="in-sale">Oferta:</label>
                 <select class= "options" name="in-sale" id="inSale" class="control"  value="<%if (product.week==true) { "week" }%>" >
@@ -82,6 +92,6 @@
     </section>
   </main>
   <%- include('../partials/footer')%>
-  <!-- <script src="/js/productEditValidation.js"></script> -->
+<script src="/js/productEditValidation.js"></script>
 </body>
 </html>
