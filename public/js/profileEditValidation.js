@@ -1,1 +1,1 @@
-<link rel="stylesheet" href='/css/validacionesFrontEnd.css'/>
+{/* <link rel="stylesheet" href='/css/validacionesFrontEnd.css'/> */}

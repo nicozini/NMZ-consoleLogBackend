@@ -4,11 +4,11 @@ const { body } = require('express-validator');
 
 module.exports = [
 
-    body('name').notEmpty().withMessage('Completá el nombre'),
-    body('lastname').notEmpty().withMessage('Completá el apellido'),
+    body('name').notEmpty().withMessage('Completá el nombre').isLength({ min: 2 }).withMessage('El nombre debe tener al menos 2 caracteres'),
+    body('lastname').notEmpty().withMessage('Completá el apellido').isLength({ min: 2 }).withMessage('El apellido debe tener al menos 2 caracteres'),
     body('email').notEmpty().withMessage('Completá el correo electrónico').bail()
                  .isEmail().withMessage('Debes completar con un correo electrónico válido'),
-    body('password').notEmpty().withMessage('Completá la contraseña'),
+    body('password').notEmpty().withMessage('Completá la contraseña').isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres'),
     body('confirmpass').notEmpty().withMessage('Reconfirmá la contraseña'),
     body('agree').notEmpty().withMessage('Lee y confirma los terminos y condiciones del sitio'),
     // body('user').notEmpty() .withMessage('Completá el usuario'),
@@ -24,7 +24,7 @@ module.exports = [
         let file = req.file; 
 
         // Defino que extensiones son válidas
-        let acceptedExtensions = ['.jpg', '.png', '.gif'];
+        let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
         
         if (!file) {
             throw new Error('Tienes que subir una imágen de perfil');

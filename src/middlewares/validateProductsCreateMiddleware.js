@@ -2,11 +2,10 @@
 const path = require('path');
 const { body } = require('express-validator');
 
-
 module.exports = [
-    body('name').notEmpty().withMessage('Completá el nombre').isLength({ min: 4 }),
+    body('name').notEmpty().withMessage('Completá el nombre').isLength({ min: 4 }).withMessage('el nombre debe contener al menos 4 caracteres'),
     body('price').notEmpty().withMessage('Completá el precio'),
-    body('description').notEmpty().withMessage('Completá la descripción').isLength({ min: 20 }),
+    body('description').notEmpty().withMessage('Completá la descripción').isLength({ min: 20 }).withMessage('la descripcion debe contener al menos 20 caracteres'),
     body('avProducts').custom((value, { req }) => {
         // Obtengo el archivo
         let file = req.file; 
