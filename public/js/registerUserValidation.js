@@ -92,7 +92,10 @@ let validateEmail = function(){
     // let emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
     let emailRegex = /[\w._%+-]+@[\w.-]+\.[a-zA-Z]{2,4}/
 
-    if (!emailRegex.test(email.value)) {
+
+    if(email.value.trim() == '' ){
+        feedback = 'El email no puede estar vacío';
+    } else if (!emailRegex.test(email.value)) {
         feedback = 'Email incorrecto. Por favor ingrese un correo electrónico válido.'        
     }    
     
@@ -123,8 +126,8 @@ let validatePassword = function() {
 
     if(pass.trim() == '' ) {
         feedback = 'La contraseña no puede estar vacía';
-    } else if (pass.length < 6) {
-        feedback = 'La contraseña debe tener al menos 6 caracteres.'
+    } else if (pass.length < 8) {
+        feedback = 'La contraseña debe tener al menos 8 caracteres.'
     } else if (!regex.test(pass)) {
         feedback = 'La contraseña debe contener una letra minúscula y una letra mayúscula.'
     }
@@ -185,111 +188,3 @@ form.addEventListener('submit', function(e){
         e.preventDefault();
     }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/// ------------------------------------------ 
-
-// let errors = {};
-
-// let form = document.querySelector('form.formulario');
-
-// const firstName = document.getElementById('name');
-// const lastName = document.getElementById('lastname');
-// const email = document.getElementById('email');
-// const password = document.getElementById('pass');
-// const confirmPassword = document.getElementById('confirmpass');
-// const profileAvatar = document.getElementById('avatar');
-// const terms = document.getElementById('agree');
-
-
-// const user = document.getElementById('user');
-// const password = document.getElementById('password');
-
-
-// --- Validaciones --- //
-
-
-
-
-
-// // Email
-// let validateEmail = function(){
-//     let feedback = '';
-//     let feedbackElement = email.nextElementSibling;
-
-//     if(email.value.trim() == '' ){
-//         feedback = 'El email no puede estar vacío';
-//     }
-
-//     //else if(expresión regular) -
-//     // Agregar expresiones regulares 
-//     // https://es.stackoverflow.com/questions/142/validar-un-email-en-javascript-que-acepte-todos-los-caracteres-latinos
-//     if(feedback){
-//         email.classList.add('error-input');
-//         errors.email = feedback;
-//     }
-//     else{
-//         email.classList.remove('error-input');
-//         delete errors.email;
-//     }
-
-//     feedbackElement.innerText = feedback;
-// }
-
-// // Contraseña
-// let validatePassword = function () {
-//   let feedback = "";
-//   let feedbackElement = password.nextElementSibling;
-
-//   if (password.value.trim() == "") {
-//     feedback = "El campo contraseña no puede estar vacío";
-//   } else if (password.value.length < 6) {
-//     feedback = "La contraseña tiene que tener por lo menos 6 caracteres";
-//   }
-
-//   if (feedback) {
-//     password.classList.add("error-input");
-//     errors.password = feedback;
-//   } else {
-//     password.classList.remove("error-input");
-//     delete errors.password;
-//   }
-
-//   feedbackElement.innerText = feedback;
-// };
-
-
-// // Confirmar contraseña
-// // Imagen de perfil
-// // Terminos y condiciones
-
-
-// firstName.addEventListener('blur', validateFirstName);
-// lastName.addEventListener('blur', validateLastName);
-// email.addEventListener('blur', validateEmail);
-// password.addEventListener('blur', validatePassword);
-
-// form.addEventListener('submit', function(e){
-//     validateFirstName();
-//     validateLastName();
-//     validateEmail();
-//     validatePassword();
-//     if(Object.keys(errors).length){
-//         e.preventDefault();
-//     }
-// })
