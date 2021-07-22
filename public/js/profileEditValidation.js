@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <link rel="stylesheet" href='/css/validacionesFrontEnd.css' />
 
 
@@ -138,3 +139,6 @@ form.addEventListener('submit', function (e) {
         e.preventDefault();
     }
 });
+=======
+{/* <link rel="stylesheet" href='/css/validacionesFrontEnd.css'/> */}
+>>>>>>> 4971854fc787d837ec66a9eb13571a86be6d8b4c

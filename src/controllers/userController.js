@@ -110,6 +110,9 @@ const userController = {
                 errors: {
                     email: {
                         msg: 'Email o contraseña inválida'
+                    },
+                    password: {
+                        msg: 'Contraseña inválida'
                     }
                 }
             })     
@@ -235,8 +238,7 @@ const userController = {
                 //await transaction.commit();
             };
         }
-        console.log('req.session.userLogged');
-        console.log(req.session.userLogged);
+        
         return res.redirect('/');
     },
 

@@ -1,4 +1,5 @@
-const { promiseImpl } = require('ejs');
+const {	validationResult } = require('express-validator');
+
 const fs = require('fs');
 // let fileOperations = require('../models/fileOperations'); // NICO DEBERIA ELIMINAR YA NO SE USA
 let db = require('../database/models');
@@ -53,35 +54,48 @@ module.exports = {
   },
 
   productSaveNew: async (req, res) => {
-    db.Product.create({
-        name: req.body.name,
-        price: req.body.price,
-        stock: req.body.stock,
-        stock_min: req.body.stock_min,
-        stock_max: req.body.stock_max,
-        categories_id: req.body.category,
-        description: req.body.description,
-        week: 10,
-        facts: req.body.facts,
-      })
-      .then((data)=>{
-        db.Image.create ({
-          name       :  req.file.filename,
-          products_id:  data.id } )
-          res.redirect('/products');
-      }
-      )
-      .catch((err)=>{
-        res.send(err);
-      })
 
-   
+    const resultEditValidation = validationResult(req);
+    // Si hay errores, devolver data ingresada y validaciones
+    let categoriesdb = await  db.Category.findAll();
+    console.log(resultEditValidation.mapped());
+
+    if (resultEditValidation.errors.length > 0) {
+        return res.render("products/productCreate" , {
+            errors    : resultEditValidation.mapped(),
+            oldData   : req.body,
+            categories: categoriesdb
+        });
+    }else{
+      
+    db.Product.create({
+      name: req.body.name,
+      price: req.body.price,
+      stock: req.body.stock,
+      stock_min: req.body.stock_min,
+      stock_max: req.body.stock_max,
+      categories_id: req.body.category,
+      description: req.body.description,
+      week: 10,
+      facts: req.body.facts,
+    })
+    .then((data)=>{
+      db.Image.create ({
+        name       :  req.file.filename,
+        products_id:  data.id } )
+        res.redirect('/products');
+    }
+    )
+    .catch((err)=>{
+      res.send(err);
+    })   }
   },
 
   productCreate: (req, res) => {
     db.Category.findAll()
       .then((categories)=>{
-        res.render("products/productCreate",{categories});
+        res.render("products/productCreate",{
+            categories: categories});
       })
       .catch((error)=>{
         res.send(error)
@@ -126,6 +140,19 @@ module.exports = {
     // res.json(products);
   },
   productSave: async (req, res) => {
+    const resultEditValidation = validationResult(req);
+    // Si hay errores, devolver data ingresada y validaciones
+    let categoriesdb = await  db.Category.findAll();
+    console.log(resultEditValidation.mapped());
+
+    if (resultEditValidation.errors.length > 0) {
+        return res.render("products/productEdit" , {
+            errors    : resultEditValidation.mapped(),
+            product   : req.body,
+            categories: categoriesdb
+        });
+    };
+
     try {
         await db.Product.update({
           name: req.body.name,
@@ -142,8 +169,8 @@ module.exports = {
     } catch(err){
       res.send(err);
     }
-    
-    res.redirect("/products/" + req.params.id); },
+    res.redirect("/products"); 
+  },
 
   productDelete:  (req, res) => {
     

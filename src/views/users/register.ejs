@@ -74,6 +74,7 @@
               placeholder="Contraseña"
               class="control" <%= locals.Errors && errors.password ? 'is-invalid' : null %>" 
               value="<%= locals.oldData ? oldData.password : null %>" >
+              <span class="Feedback"></span>
             <% if(locals.errors && errors.password) { %>
               <div class="text-danger">
                 <%= errors.password.msg %> 
@@ -89,6 +90,7 @@
               placeholder="Confirmar contraseña"
               class="control"
               value="<%= locals.oldData ? oldData.confirmpass : null %>" >
+              <span class="Feedback"></span>
               <% if(locals.errors && errors.confirmpass) { %>
                 <div class="text-danger">
                   <%= errors.confirmpass.msg %> 

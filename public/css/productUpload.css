@@ -47,6 +47,11 @@
     flex-wrap: wrap;
     justify-content: space-between;
   }
+  .main-register .text-danger{
+    color: red;
+    font-size: 20px;
+    text-align: right;
+  }
   .main-register section .register .form-address #address {
     width: 100%;
   }

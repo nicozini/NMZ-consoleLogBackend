@@ -1,4 +1,10 @@
-input.control {
-    background-color: chartreuse;
+div input.error-input {
+    /* Styles TO DO */
 }
 
+span {
+    color: red;
+    background-color: rgba(53, 49, 49, 0.527);
+    display: flex;
+    justify-content: flex-end;
+}

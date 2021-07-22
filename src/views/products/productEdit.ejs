@@ -14,15 +14,27 @@
          <% } else { %>
           <marquee behavior="" direction="">Creacion de un nuevo producto </marquee>
         <% } %>
-
-        <form action="/products/<%=product.id%>?_method=PUT" method=POST class="formulario">
+        
+        <form action="/products/<%=product.id%>?_method=PUT" method=POST id='form-control' class="formulario">
+          <input type="number" name="id" id="id" value="<%=product.id%>" hidden>
           <div class="form-control">
             <input type="text" name="name" id="name" placeholder="Nombre"  class="control" value="<%=product.name%> ">
             <span class="Feedback"></span>
+              <% if (locals.errors && errors.name) { %>
+                <div class="text-danger">
+                  <%= errors.name.msg %> 
+                </div>
+              <% } %>
+            
           </div>
           <div class="form-control">
             <input type="text" name="price" id="price" placeholder="Precio" class="control" value="<%=product.price%>">
             <span class="Feedback"></span>
+            <% if (locals.errors && errors.price) { %>
+              <div class="text-danger">
+                <%= errors.price.msg %> 
+              </div>
+            <% } %>
           </div>          
           <!-- <div class="form-control">
             <input type="text" name="category" id="category" placeholder="Categoria" required class="control"  >
@@ -37,7 +49,7 @@
                 </select>
           </div>
           <div class="form-control">
-          <textarea type="text" name="description" id="Description"  placeholder="Descripción" class="control"><%=product.description%></textarea>
+          <textarea type="text" name="description" id="description"  placeholder="Descripción" class="control"><%=product.description%></textarea>
           <span class="Feedback"></span>
           </div>
           <br>
@@ -47,12 +59,22 @@
           <br>
           <label class= "image" > Seleccionar una imagen para el producto </label>
           <br>
-          <input id= 'image' class="image" type="file" name="Imagen" accept=".png" multiple>
+          <input id= 'image' class="image" type="file" name="Imagen" >
+          <% if(locals.errors && errors.image) { %>
+            <div class="text-danger">
+              <%= errors.image.msg %> 
+            </div>
+          <% } %>
           <br>
           <div class="form-control">
             <input type="text" name="facts" id="facts" placeholder="Nutrición" class="control" value="<%=product.facts%> ">
             <span class="Feedback"></span>
           </div>
+          <% if (locals.errors && errors.facts) { %>
+            <div class="text-danger">
+              <%= errors.facts.msg %> 
+            </div>
+          <% } %>
           <div class="form-control">
             <label class="text" for="in-sale">Oferta:</label>
                 <select class= "options" name="in-sale" id="inSale" class="control"  value="<%if (product.week==true) { "week" }%>" >
@@ -70,6 +92,6 @@
     </section>
   </main>
   <%- include('../partials/footer')%>
-  <script src="/js/productEditValidation.js"></script>
+<script src="/js/productEditValidation.js"></script>
 </body>
 </html>

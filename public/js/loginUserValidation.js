@@ -1,4 +1,3 @@
-<link rel="stylesheet" href='/css/validacionesFrontEnd.css'/>
 let errors = {};
 
 let form = document.getElementById('form-login');
