@@ -3,6 +3,7 @@
 <head>
    <%- include('../partials/head')%>
    <link rel="stylesheet" href='/css/login2.css'/>
+   <link rel="stylesheet" href="/css/validacionesFrontEnd.css">
 </head>   
 <body>
   <%- include('../partials/header')%>
@@ -23,7 +24,7 @@
               name="email" 
               id="email" 
               placeholder="Email"
-              class="control" <%= locals.Errors && errors.email ? 'is-invalid' : null %>" 
+              class="control <%= locals.Errors && errors.email ? 'is-invalid' : null %>" 
               value="<%= locals.oldData ? oldData.email : null %>"
             >
             <span class="Feedback"></span>
