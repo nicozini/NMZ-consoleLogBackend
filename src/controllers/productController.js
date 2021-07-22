@@ -1,6 +1,5 @@
 const {	validationResult } = require('express-validator');
 
-
 const fs = require('fs');
 // let fileOperations = require('../models/fileOperations'); // NICO DEBERIA ELIMINAR YA NO SE USA
 let db = require('../database/models');
@@ -67,41 +66,36 @@ module.exports = {
             oldData   : req.body,
             categories: categoriesdb
         });
-    };
-
-
-
+    }else{
+      
     db.Product.create({
-        name: req.body.name,
-        price: req.body.price,
-        stock: req.body.stock,
-        stock_min: req.body.stock_min,
-        stock_max: req.body.stock_max,
-        categories_id: req.body.category,
-        description: req.body.description,
-        week: 10,
-        facts: req.body.facts,
-      })
-      .then((data)=>{
-        db.Image.create ({
-          name       :  req.file.filename,
-          products_id:  data.id } )
-          res.redirect('/products');
-      }
-      )
-      .catch((err)=>{
-        res.send(err);
-      })
-
-   
+      name: req.body.name,
+      price: req.body.price,
+      stock: req.body.stock,
+      stock_min: req.body.stock_min,
+      stock_max: req.body.stock_max,
+      categories_id: req.body.category,
+      description: req.body.description,
+      week: 10,
+      facts: req.body.facts,
+    })
+    .then((data)=>{
+      db.Image.create ({
+        name       :  req.file.filename,
+        products_id:  data.id } )
+        res.redirect('/products');
+    }
+    )
+    .catch((err)=>{
+      res.send(err);
+    })   }
   },
 
   productCreate: (req, res) => {
     db.Category.findAll()
       .then((categories)=>{
         res.render("products/productCreate",{
-            categories: categories,
-             product: {}});
+            categories: categories});
       })
       .catch((error)=>{
         res.send(error)

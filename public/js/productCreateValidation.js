@@ -8,26 +8,19 @@ const price         = document.getElementById('price');
 const description   = document.getElementById('description');
 const image         = document.getElementById('avProducts');
 
-
-console.log(productName) ;
-
 // --- Validaciones --- //
-
 //  Nombre
 let validateName = function() {
     let feedback = '';
     let feedbackElement = productName.nextElementSibling;
 
-    console.log(typeof(productName.value));
+
     if(productName.value.trim() == '' ){
         feedback = 'El nombre no puede estar vacío';
     }else if (productName.value.length < 5) {
         feedback = 'El nombre debe contener al menos 4 caracteres';
         //kiwi tiene 4 
-    }else if ( typeof(productName.value / 2 ) === 'number') {
-        //el typeof devuelve string pero si someto a la division lo convierto a numerico
-        feedback = 'El nombre no puede ser un número';
-    }
+    };
 
     if(feedback){        
         productName.classList.add('error-input'); // crear estilos
@@ -77,10 +70,6 @@ let validateDescription = function() {
         feedback = 'La descripcion del producto debe contener al menos 20 caracteres';
     }else if (description.value.length < 21) {
         feedback = 'La descripcion del producto debe contener al menos 20 caracteres';
-        
-    }else if ( typeof(description.value / 2 ) === 'number') {
-        //el typeof devuelve string pero si someto a la division lo convierto a numerico
-        feedback = 'El nombre no puede ser un número';
     }
 
     if(feedback){        
@@ -101,12 +90,13 @@ let validateDescription = function() {
 let validateImg = function() {
     let feedback = '';
     let feedbackElement = image.nextElementSibling;
-    let allowedExtensions = /(.jpg|.jpeg|.png)$/i;
-    
-    if(!allowedExtensions.exec(image.value)){
-        feedback = 'Solo podés subir imagenes .jpg ó jpeg ó png ó gif'
-    };
-    
+    let allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
+
+    if (image.value==''|| image.value==''){
+        feedback = 'Debes subir una imagen';
+    }else if(!allowedExtensions.exec(image.value)){
+        feedback = 'Solo podés subir imagenes .jpg ó jpeg ó png ó gif';
+    };   
 
     if(feedback){        
         image.classList.add('error-input'); 
@@ -125,7 +115,8 @@ let validateImg = function() {
 // --- Eventos --- //
 productName.addEventListener('blur',function(){validateName()   });
 price.addEventListener      ('blur',function(){validatePrice()  });
-//image.addEventListener      ('blur',function(){validateImg()    });
+description.addEventListener('blur',function(){validateDescription()  });
+
 
 
 form.addEventListener('submit', function(e){

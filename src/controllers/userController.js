@@ -235,8 +235,7 @@ const userController = {
                 //await transaction.commit();
             };
         }
-        console.log('req.session.userLogged');
-        console.log(req.session.userLogged);
+        
         return res.redirect('/');
     },
 

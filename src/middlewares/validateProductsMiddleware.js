@@ -4,9 +4,9 @@ const { body } = require('express-validator');
 
 module.exports = [
 
-    body('name').notEmpty().withMessage('Completá el nombre'),
+    body('name').notEmpty().withMessage('Completá el nombre').isLength({ min: 4 }).withMessage('el nombre debe contener al menos 4 caracteres'),
     body('price').notEmpty().withMessage('Completá el precio'),
-    body('description').notEmpty().withMessage('Completá la descripción'),
+    body('description').notEmpty().withMessage('Completá la descripción').isLength({ min: 20 }).withMessage('la descripcion debe contener al menos 20 caracteres'),
     body('stock').notEmpty().withMessage('Completá el stock').isNumeric({ min: 1}),
     body('stock_min').notEmpty().withMessage('Completá el Stock minimo').isNumeric({ min: 1}),
     body('stock_max').notEmpty().withMessage('Completá el Stock maximo').isNumeric(),
