@@ -213,19 +213,21 @@ const userController = {
                     }
                 };
 
+                let idtemp = userToUpdate.id
+
                 await db.User.update({
-                    first_name   : req.body.name,
-                    last_name    : req.body.lastname,
+                    first_name   : req.body.first_name,
+                    last_name    : req.body.last_name,
                     email        : req.body.email,
                     password     : userToUpdate.password,
                     addresses_id : updAddress.id != null ? updAddress.id : prevAddress.id
                     },
                     {
-                        where:{ id:userToUpdate.id},
-                    
+                        where:{ id:idtemp}
                     }
                     //,{transaction}
                     );
+
                 await db.User.findByPk(userToUpdate.id)
                     .then((data)=>{
                         req.session.userLogged = data
