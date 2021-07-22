@@ -59,7 +59,7 @@
           <br>
           <label class= "image" > Seleccionar una imagen para el producto </label>
           <br>
-          <input id= 'image' class="image" type="file" name="Imagen" accept=".png" >
+          <input id= 'image' class="image" type="file" name="Imagen" >
           <% if(locals.errors && errors.image) { %>
             <div class="text-danger">
               <%= errors.image.msg %> 

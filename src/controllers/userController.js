@@ -110,6 +110,9 @@ const userController = {
                 errors: {
                     email: {
                         msg: 'Email o contraseña inválida'
+                    },
+                    password: {
+                        msg: 'Contraseña inválida'
                     }
                 }
             })     
