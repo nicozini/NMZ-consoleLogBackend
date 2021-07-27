@@ -13,3 +13,11 @@ DB_HOST= us-cdbr-east-04.cleardb.com
 DB_DATABASE= heroku_e9dbf045c77d415
 DB_PORT= 3306
 DB_DIALECT= mysql
+
+->local
+DB_USERNAME = root
+DB_PASSWORD = 
+DB_HOST = localhost
+DB_DATABASE = verdumarket-test
+DB_PORT = 3306
+DB_DIALECT = mysql

@@ -11,13 +11,13 @@ const cookies = require('cookie-parser');
 
 
 //Rutas
-const userRoutes = require('../src/Router/userRoutes');
-const productRoutes = require('../src/Router/productRoutes');
-const mainRoutes = require('../src/Router/mainRoutes');
+const userRoutes = require('./src/Router/userRoutes');
+const productRoutes = require('./src/Router/productRoutes');
+const mainRoutes = require('./src/Router/mainRoutes');
 
 
 //Middleware de Session
-const userLoggedMiddleware = require('../src/middlewares/userLoggedMiddleware');
+const userLoggedMiddleware = require('./src/middlewares/userLoggedMiddleware');
 
 app.use(session({
     secret: 'verduSecret, shh!',
@@ -28,7 +28,7 @@ app.use(session({
 
 app.use(express.static('public'));
 app.set('view engine','ejs');
-app.set('views', __dirname + '/views');
+app.set('views', __dirname + '/src/views');
 
 
 // URL encode para capturar informacion del formulario en req.body
