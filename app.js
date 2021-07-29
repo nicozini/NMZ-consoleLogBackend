@@ -11,9 +11,11 @@ const cookies = require('cookie-parser');
 
 
 //Rutas
-const userRoutes = require('./src/Router/userRoutes');
-const productRoutes = require('./src/Router/productRoutes');
-const mainRoutes = require('./src/Router/mainRoutes');
+const userRoutes        = require('./src/Router/userRoutes');
+const productRoutes     = require('./src/Router/productRoutes');
+const mainRoutes        = require('./src/Router/mainRoutes');
+const productApiRoutes  = require('./src/Router/api/productApiRoutes');
+const userApiRoutes     = require('./src/Router/api/userApiRoutes');
 
 
 //Middleware de Session
@@ -44,6 +46,8 @@ app.use(userLoggedMiddleware);
 app.use('/', mainRoutes) ;
 app.use('/users', userRoutes) ; 
 app.use('/products', productRoutes) ;
+app.use('/users/api', userApiRoutes) ; 
+app.use('/products/api', productApiRoutes) ;
 
  
 // Server
