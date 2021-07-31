@@ -44,11 +44,12 @@ module.exports = {
   },
   //tomi
   productDetail: (req, res) => {
+    
     db.Product.findByPk(req.params.id, {
       include: ["categories","images"],
     })
       .then((product) => {
-        return res.json(products);
+        return res.json(product);
       })
       .catch((error) => res.send(error));
   },

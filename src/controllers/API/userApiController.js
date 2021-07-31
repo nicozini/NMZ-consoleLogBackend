@@ -30,17 +30,25 @@ module.exports = {
     try {
 
       let userInDb = await db.User.findAll({
-        include: ["id","name", "email"],
+        include: ["addresses","rolls"],
+      });
+      let users = [];
+      userInDb.forEach(i => {
+        users.push({
+            id: i.id,
+            name: i.name,
+            email: i.email,
+            url: `http://localhost:3030/api/users/${i.id}`
+        })
       });
 
-      let countUser = await db.Product.count();
+      let countUser = await db.User.count();
       
     Promise.all([userInDb,countUser])
       .then(([dataUserInDb, dataCountUser])=>{          
           res.json({
-            users: dataUserInDb,
-            count: dataCountUser
-            
+            count: dataCountUser,
+            users: users
           });
       })
       .catch((error)=>{
@@ -59,7 +67,7 @@ module.exports = {
       include: ["id","name", "email"],
     })
       .then((user) => {
-        return res.json(users);
+        return res.json(user);
       })
       .catch((error) => res.send(error));
   },
