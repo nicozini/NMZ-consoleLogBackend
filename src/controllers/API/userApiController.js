@@ -15,7 +15,7 @@
 //          ■ Una URL para la imagen de perfil (para mostrar la imagen).
 //          ■ Sin información sensible (ej: password y categoría).
 
-// Entregable: URL funcionales devolviendo datos de usuarios en formato
+// Entregable: URL funcionales devolviendo datos de usuarios en formato JSON
 
 const {	validationResult } = require('express-validator');
 
@@ -28,16 +28,17 @@ const Op = db.Sequelize.Op;
 module.exports = {
   list: async (req, res) => {
     try {
+
       let userInDb = await db.User.findAll({
         include: ["id","name", "email"],
       });
+
       let countUser = await db.Product.count();
       
-    Promise.all([UserInDb,countUser])
-      .then(([dataUserInDb, dataCountUser])=>{
-          
+    Promise.all([userInDb,countUser])
+      .then(([dataUserInDb, dataCountUser])=>{          
           res.json({
-            users :dataUsersInDb,
+            users: dataUserInDb,
             count: dataCountUser
             
           });
@@ -51,6 +52,7 @@ module.exports = {
     };
 
   },
+
   //segunda parte 
   userDetail: (req, res) => {
     db.User.findByPk(req.params.id, {
@@ -61,6 +63,7 @@ module.exports = {
       })
       .catch((error) => res.send(error));
   },
+
   userSearch: (req, res) => {
     let search = req.query.search;
     db.User.findAll({

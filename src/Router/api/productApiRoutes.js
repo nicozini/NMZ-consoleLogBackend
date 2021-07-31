@@ -6,10 +6,6 @@ const productApiController = require('../../controllers/api/productApiController
 
 //Listado de productos
 router.get('/list', productApiController.list);
-// //Contar cantidad de productos
-// router.get('/api/products/count', productApiController.list);
-// //Contar cantidad de productos por categoría
-// router.get('/api/products/countbycategory', productApiController.list);
 //Info productos
 router.get('/:id', productApiController.productDetail);
 

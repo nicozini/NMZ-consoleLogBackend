@@ -1,14 +1,12 @@
 const express = require('express');
 const router = express.Router();
-//const actorsAPIController = require('../../controllers/api/actorsAPIController');
+const userApiController = require('../../controllers/api/userApiController');
 
 //Rutas
 
 //Listado de usuarios
-//router.get('/api/users/list', actorsAPIController.detail);
-//Contar cantidad de usuarios
-//router.get('/api/users/count', actorsAPIController.list);
+router.get('/list', userApiController.list);
 //Info usuario
-//router.get('/api/users/:id', actorsAPIController.list);
+// router.get('/:id', userApiController.info);
 
 module.exports = router;

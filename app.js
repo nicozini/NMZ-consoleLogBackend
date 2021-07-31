@@ -46,8 +46,8 @@ app.use(userLoggedMiddleware);
 app.use('/', mainRoutes) ;
 app.use('/users', userRoutes) ; 
 app.use('/products', productRoutes) ;
-app.use('/users/api', userApiRoutes) ; 
-app.use('/products/api', productApiRoutes) ;
+app.use('/api/users', userApiRoutes) ; 
+app.use('/api/products', productApiRoutes) ;
 
  
 // Server
