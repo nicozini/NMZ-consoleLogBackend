@@ -49,62 +49,21 @@ module.exports = {
 
   },
 
-  // No tocar este método
   info: async (req, res) => {
     db.User.findByPk(req.params.id, {
       include: ["addresses"],
     })
       .then((user) => {
-        return res.json(user);
-      })
-      .catch((error) => res.send(error));
-  },
-
-  // Metodo de testeo
-  information: async (req, res) => {
-    db.User.findByPk(req.params.id, {
-      include: ["addresses"],
-    })
-      .then((user) => {
         return res.json({
-          id: user.id,
-          name: user.first_name,
-          lastName: user.last_name,
-          email: user.email,
-          avatar: `http://localhost:3030/api/users/${user.avatar}`
+          user_info: {
+            id: user.id,
+            name: user.first_name,
+            lastName: user.last_name,
+            email: user.email
+          },
+          user_avatar: `http://localhost:3030/api/users/${user.avatar}`
         });
       })
       .catch((error) => res.send(error));
   },
-
-
-
-
-
-
-
-
-
-
-
-
-  // userSearch: (req, res) => {
-  //   let search = req.query.search;
-  //   db.User.findAll({
-  //     where: {
-  //       name: { [Op.like]: `%${search}%` },
-  //     },
-  //     include: ["id","email"],
-  //   })
-  //   .then((users) => {
-  //       if (users.length > 0) {
-  //           return res.json(users);
-  //       }
-  //       return res.json(users);
-  //   })
-  //   .catch(function (e) {
-  //       console.log(e);
-  //   });
-  // }
-  
 }
