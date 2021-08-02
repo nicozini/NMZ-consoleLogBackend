@@ -26,11 +26,29 @@ module.exports = {
       
       Promise.all([productInDb,countProduct,countByCategory])
       .then(([dataProductInDb,dataCountProduct,dataCountByCategory])=>{
+
+        let products = [] ;
+        dataProductInDb.forEach(i=> {
+          products.push({
+            id:i.id,
+            name:i.name,
+            description:i.description,
+            images: i.images,
+            detail:`http://localhost:3030/api/products/${i.id}`
+          })
+        });
+        let countByCategory=[];
+        dataCountByCategory.rows.forEach(i=>{
+          countByCategory.push({
+            name:i.name,
+            productByCategory: i.products.length
+          })
+        })
           
           res.json({
             count: dataCountProduct,
-            countByCategory:dataCountByCategory,
-            products :dataProductInDb
+            countByCategory:countByCategory,
+            products :products
           });
       })
       .catch((error)=>{
@@ -48,11 +66,27 @@ module.exports = {
     db.Product.findByPk(req.params.id, {
       include: ["categories","images"],
     })
-      .then((product) => {
-        return res.json(product);
-      })
+      .then((productInDb) => {
+          let product = {
+            id:           productInDb.id,
+            name:         productInDb.name,
+            price:        productInDb.price,
+            stock:        productInDb.stock,
+            stock_min:    productInDb.stock_min,
+            stock_max:    productInDb.stock_max,            
+            categories_id:productInDb.categories_id,            
+            description:  productInDb.description,            
+            week:         productInDb.week,            
+            facts:        productInDb.facts,
+            categories:   productInDb.categories,
+            images:       productInDb.images,
+            imgUrl:       `http://localhost:3030/img/${productInDb.images[0].name}`
+          }
+          return res.json({ product });
+        })
       .catch((error) => res.send(error));
   },
+
   productSearch: (req, res) => {
     let search = req.query.search;
     db.Product.findAll({
@@ -61,10 +95,10 @@ module.exports = {
       },
       include: ["categories","images"],
     })
-    .then((products) => {
+    .then((productsInDb) => {
         if (products.length > 0) {
-            return res.json(products);
-            // return res.json(products);
+          return res.json(products);
+          // return res.json(products);
         }
         return res.json(products);
     })
