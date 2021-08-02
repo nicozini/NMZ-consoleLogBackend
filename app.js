@@ -48,6 +48,7 @@ app.use('/users', userRoutes) ;
 app.use('/products', productRoutes) ;
 app.use('/api/users', userApiRoutes) ; 
 app.use('/api/products', productApiRoutes) ;
+app.use((req,res,next)=>{res.status(404).render('not-found')});
 
  
 // Server
