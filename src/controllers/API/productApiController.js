@@ -60,6 +60,7 @@ module.exports = {
       })
  
     } catch(error){
+      console.log(error);
       res.json({
         status : 500,
         detail : 'Error interno en la peticion de la información'
@@ -99,6 +100,7 @@ module.exports = {
             data: product });
         })
       .catch((error) => {
+        console.log(error);
         res.json({
           status : 500,
           detail : 'Error interno en la peticion de la información'
