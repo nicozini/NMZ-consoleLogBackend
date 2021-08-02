@@ -44,7 +44,8 @@ module.exports = {
       })
 
      } catch(error){
-       res.json({
+      console.log(error);
+      res.json({
         status : 500,
         detail : 'Error interno en la peticion de la información'
       })
@@ -57,7 +58,7 @@ module.exports = {
     })
 
     .then((user) => {
-
+      console.log(req.headers);
       let response = {
         meta: {
           status: 200,
