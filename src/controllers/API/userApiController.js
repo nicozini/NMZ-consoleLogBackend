@@ -26,7 +26,7 @@ module.exports = {
             id: i.id,
             name: i.name,
             email: i.email,
-            url: `http://localhost:3030/api/users/${i.id}`
+            url: `https://verdumarket8.herokuapp.com/api/users/${i.id}`
         })
       });
 
@@ -61,7 +61,7 @@ module.exports = {
             lastName: user.last_name,
             email: user.email
           },
-          user_avatar: `http://localhost:3030/api/users/${user.avatar}`
+          user_avatar: `https://verdumarket8.herokuapp.com/api/users/${user.avatar}`
         });
       })
       .catch((error) => res.send(error));
