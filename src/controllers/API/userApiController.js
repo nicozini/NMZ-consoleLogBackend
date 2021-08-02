@@ -24,7 +24,8 @@ module.exports = {
       userInDb.forEach(i => {
         users.push({
             id: i.id,
-            name: i.name,
+            name: i.first_name,
+            last_name: i.last_name,
             email: i.email,
             url: `https://verdumarket8.herokuapp.com/api/users/${i.id}`
         })
