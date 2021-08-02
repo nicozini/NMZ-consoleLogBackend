@@ -34,7 +34,7 @@ module.exports = {
             name:i.name,
             description:i.description,
             images: i.images,
-            detail:`http://localhost:3030/api/products/${i.id}`
+            detail:`https://verdumarket8.herokuapp.com/api/products/${i.id}`
           })
         });
         let countByCategory=[];
@@ -80,7 +80,7 @@ module.exports = {
             facts:        productInDb.facts,
             categories:   productInDb.categories,
             images:       productInDb.images,
-            imgUrl:       `http://localhost:3030/img/${productInDb.images[0].name}`
+            imgUrl:       `https://verdumarket8.herokuapp.com/img/${productInDb.images[0].name}`
           }
           return res.json({ product });
         })
