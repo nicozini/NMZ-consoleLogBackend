@@ -130,21 +130,17 @@ module.exports = {
   //fin Tomi
   lastProduct: async (req, res) => {
     try {
-        // Busco el id del ultimo producto creado
         let lastProductId = await Products.findOne({
             attributes: [[sequelize.fn('max', sequelize.col('id')), 'id']],
             raw: true
         });
-        // Busco el ultimo producto creado
-        let product = await Products.findOne({where: {id: lastProductId.id}, include: ["image"]});
+        let product = await Products.findOne({where: {id: lastProductId.id}, include: ["images"]});
 
-        // Almaceno url de img en variable
-        let imgUrl = "http://" + req.headers.host + `/images/productos/${product.dataValues.image[0].name}`;
+        let imgUrl = "http://" + req.headers.host + `/img/${productInDb.images[0].name}`;
+        //http://${req.headers.host}/img/${productInDb.images[0].name}
 
-        // Inserto url de imagen en product
         product.dataValues.urlImg = imgUrl;
 
-        // Armo respuesta
         let respuesta = {
             meta: {
                 status : 200,
