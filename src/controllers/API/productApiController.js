@@ -155,5 +155,3 @@ module.exports = {
     }
 }
 }
-
-module.exports = productsAPIController;
