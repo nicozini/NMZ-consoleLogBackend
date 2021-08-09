@@ -1,13 +1,11 @@
 // Express
 const express = require('express');
 const app = express();
-
 const port = process.env.PORT;
-
 const methodOverride = require('method-override');
 const session = require('express-session');
-
 const cookies = require('cookie-parser');
+const cors    = require('cors')
 
 
 //Rutas
@@ -32,7 +30,7 @@ app.use(express.static('public'));
 app.set('view engine','ejs');
 app.set('views', __dirname + '/src/views');
 
-
+app.use(cors());
 // URL encode para capturar informacion del formulario en req.body
 app.use(express.urlencoded({ extended: false }));
 

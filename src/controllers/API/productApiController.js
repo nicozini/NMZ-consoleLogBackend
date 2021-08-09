@@ -34,7 +34,7 @@ module.exports = {
             name:i.name,
             description:i.description,
             images: i.images,
-            detail:`https://verdumarket8.herokuapp.com/api/products/${i.id}`
+            detail: `http://${req.headers.host}/api/products/${i.id}`
           })
         });
         let countByCategory=[];
@@ -46,17 +46,26 @@ module.exports = {
         })
           
           res.json({
-            count: dataCountProduct,
-            countByCategory:countByCategory,
-            products :products
+            meta:{
+              status: 200,
+              total : dataCountProduct,
+              url : `http://${req.headers.host}/api/products`
+            },
+            data:{
+              count: dataCountProduct,
+              countByCategory:countByCategory,
+              products :products
+            }
           });
-      })
-      .catch((error)=>{
-        console.log(error)
       })
  
     } catch(error){
-      res.send(error)
+      console.log(error);
+      res.json({
+        status : 500,
+        detail : 'Error interno en la peticion de la información'
+      })
+
     };
 
   },
@@ -80,11 +89,23 @@ module.exports = {
             facts:        productInDb.facts,
             categories:   productInDb.categories,
             images:       productInDb.images,
-            imgUrl:       `https://verdumarket8.herokuapp.com/img/${productInDb.images[0].name}`
+            imgUrl:       `http://${req.headers.host}/img/${productInDb.images[0].name}`
           }
-          return res.json({ product });
+          return res.json({ 
+            meta:{
+              status: 200,
+              total : productInDb.length,
+              url :`http://${req.headers.host}/api/products/${productInDb.id}`
+            },
+            data: product });
         })
-      .catch((error) => res.send(error));
+      .catch((error) => {
+        console.log(error);
+        res.json({
+          status : 500,
+          detail : 'Error interno en la peticion de la información'
+        })
+      });
   },
 
   productSearch: (req, res) => {
