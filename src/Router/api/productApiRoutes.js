@@ -11,4 +11,7 @@ router.get('/', productApiController.list);
 //Info productos
 router.get('/:id', productApiController.productDetail);
 
+// Ultimo producto cargado en DB
+router.get('/lastProduct', productsAPIController.lastProduct);
+
 module.exports = router;
