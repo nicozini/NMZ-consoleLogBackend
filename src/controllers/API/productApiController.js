@@ -128,8 +128,29 @@ module.exports = {
     })
     .catch(function (e) {
         console.log(e);
-    });
-  }
+    })
+  },
   //fin Tomi
+  lastProduct: async (req, res) =>{
+    
+      try {
+        let lastProductId = await db.Product.findOne({
+            attributes: [sequelize.fn('max', sequelize.col('id'))],
+        });
+        let product = await db.Product.findOne({where: {id: lastProductId.id}, include: ["image", "id", "name"]});
+        let imgUrl = "http://" + req.headers.host + `/api/lastProduct/${productInDb.id}`;
+        let respuesta = {
+            meta: {
+                status : 200,
+                url: `api/lastProduct`
+            },
+            data: product
+        }
+        res.json(respuesta);
+    } catch (error) {
+        res.send({ err: 'Not found' });
+    }
+
   
-};
+  }
+}

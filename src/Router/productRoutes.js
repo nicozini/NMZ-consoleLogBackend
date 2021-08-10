@@ -38,4 +38,6 @@ router.get("/:id", productController.productDetail);
 router.delete('/delete/:id', productController.productDelete);
 
 
+
+
 module.exports = router;
