@@ -38,11 +38,13 @@ module.exports = {
           })
         });
         let countByCategory=[];
+        let totalCategories = 0
         dataCountByCategory.rows.forEach(i=>{
           countByCategory.push({
             name:i.name,
             productByCategory: i.products.length
           })
+          totalCategories ++
         })
           
           res.json({
@@ -54,7 +56,8 @@ module.exports = {
             data:{
               count: dataCountProduct,
               countByCategory:countByCategory,
-              products :products
+              products :products,
+              totalCategories: totalCategories
             }
           });
       })
