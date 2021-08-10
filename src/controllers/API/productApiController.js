@@ -128,19 +128,14 @@ module.exports = {
     })
   },
   //fin Tomi
-  lastProduct: async (req, res) => {
-    try {
-        let lastProductId = await Products.findOne({
-            attributes: [[sequelize.fn('max', sequelize.col('id')), 'id']],
-            raw: true
+  lastProduct: async (req, res) =>{
+    
+      try {
+        let lastProductId = await db.Product.findOne({
+            attributes: [sequelize.fn('max', sequelize.col('id'))],
         });
-        let product = await Products.findOne({where: {id: lastProductId.id}, include: ["images"]});
-
-        let imgUrl = "http://" + req.headers.host + `/img/${productInDb.images[0].name}`;
-        //http://${req.headers.host}/img/${productInDb.images[0].name}
-
-        product.dataValues.urlImg = imgUrl;
-
+        let product = await db.Product.findOne({where: {id: lastProductId.id}, include: ["image", "id", "name"]});
+        let imgUrl = "http://" + req.headers.host + `/api/lastProduct/${productInDb.id}`;
         let respuesta = {
             meta: {
                 status : 200,
@@ -150,8 +145,9 @@ module.exports = {
         }
         res.json(respuesta);
     } catch (error) {
-        console.log(error);
-        return res.status(500);
+        res.send({ err: 'Not found' });
     }
-}
+
+  
+  }
 }
