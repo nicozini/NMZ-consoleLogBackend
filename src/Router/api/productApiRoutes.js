@@ -4,11 +4,10 @@ const productApiController = require('../../controllers/API/productApiController
 
 
 //Rutas
-
-//Listado de productos
-router.get('/', productApiController.list);
 // Ultimo producto cargado en DB
 router.get('/lastProduct', productApiController.lastProduct);
+//Listado de productos
+router.get('/', productApiController.list);
 //Info productos
 router.get('/:id', productApiController.productDetail);
 
