@@ -1,5 +1,25 @@
 LINK TRELLO https://trello.com/b/4Y5KhZ9u/verdu-market
 stackoverflow y medium
+---------------------- 12/08/21 ------------------------------------ (lo escribió mauri)
+Comenzar a hacer: 
+	-> fiesta de despedida en Córdoba con un rico asado.
+	-> Empezar a arreglar los estilos para hacer la página más coqueta y simpática. 
+
+Hacer más: 
+	->Apoyarnos en el trello. 
+	-> Ser más organizados, planificadores. Hacer un tablero para cada sprint. Más limpio. 
+
+Continuar haciendo:
+	-> reuniones semanales
+	-> buena onda al trabajo 
+	-> Leer el sprint completo y hacer el trello TODOS JUNTOS! hacer las tareas. Planificar juntos como equipe. 
+	
+Hacer menos: 
+	-> Desperdiciar tiempo de trabajo en grupo con distracciones (charlar y etc)
+
+
+
+
 ---------------------- 08/07/21 ------------------------------------ (lo escribió mauri)
 Comenzar a hacer: 
 	-> Leer el sprint completo y hacer el trello TODOS JUNTOS! hacer las tareas. Planificar juntos como equipe. 
