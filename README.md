@@ -1,3 +1,17 @@
+Tablero sprint 7 : https://trello.com/b/UoAnEnqv/sprint-8-the-last-one
+
+Endpoint de usuarios :
+https://verdumarket8.herokuapp.com/api/users
+http://verdumarket8.herokuapp.com/api/users/5
+
+Endpoints de Productos:
+https://verdumarket8.herokuapp.com/api/products
+http://verdumarket8.herokuapp.com/api/products/15
+https://verdumarket8.herokuapp.com/api/products/lastproduct
+
+
+
+
 Temática:
 Mercado online de frutas y verduras
 
